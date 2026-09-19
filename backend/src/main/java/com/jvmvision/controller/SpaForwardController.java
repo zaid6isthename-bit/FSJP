@@ -11,7 +11,10 @@ public class SpaForwardController {
             "/visualizer/{sessionId}",
             "/examples",
             "/history",
-            "/about"
+            "/about",
+            "/syllabus",
+            "/syllabus/**",
+            "/demo"
     })
     public String forwardSpaRoutes() {
         return "forward:/index.html";

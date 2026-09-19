@@ -1,4 +1,5 @@
 com\jvmvision\InterpreterTest.class
+com\jvmvision\SyllabusControllerTest.class
 com\jvmvision\LexerTest.class
 com\jvmvision\ExecutionControllerTest.class
 com\jvmvision\ParserTest.class

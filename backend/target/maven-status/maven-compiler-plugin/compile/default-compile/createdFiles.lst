@@ -3,6 +3,7 @@ com\jvmvision\engine\ast\ExpressionStatementNode.class
 com\jvmvision\engine\trace\ExecutionEvent.class
 com\jvmvision\engine\ast\ObjectCreationNode.class
 com\jvmvision\engine\ast\UnaryExpressionNode.class
+com\jvmvision\model\SyllabusExperiment.class
 com\jvmvision\repository\JdbcExecutionSessionRepository.class
 com\jvmvision\engine\ast\ThrowNode.class
 com\jvmvision\repository\ExecutionSessionRepository.class
@@ -29,6 +30,7 @@ com\jvmvision\engine\ast\VariableDeclarationNode.class
 com\jvmvision\engine\errors\ExecutionLimitException.class
 com\jvmvision\config\CorsConfig.class
 com\jvmvision\engine\ast\TryCatchNode.class
+com\jvmvision\controller\BookController.class
 com\jvmvision\engine\ast\ParameterNode.class
 com\jvmvision\engine\ast\BinaryExpressionNode.class
 com\jvmvision\engine\trace\ExecutionTrace.class
@@ -41,6 +43,8 @@ com\jvmvision\engine\lexer\Token.class
 com\jvmvision\controller\ExecutionController.class
 com\jvmvision\engine\ast\ProgramNode.class
 com\jvmvision\engine\parser\Parser.class
+com\jvmvision\repository\JdbcSyllabusRepository.class
+com\jvmvision\repository\JdbcBookRepository.class
 com\jvmvision\exception\GlobalExceptionHandler.class
 com\jvmvision\repository\ExecutionEventRepository.class
 com\jvmvision\repository\JdbcExampleRepository.class
@@ -54,14 +58,21 @@ com\jvmvision\engine\lexer\Lexer.class
 com\jvmvision\engine\ast\ASTNode.class
 com\jvmvision\dto\RunCodeRequest.class
 com\jvmvision\engine\trace\HeapArraySnapshot.class
+com\jvmvision\controller\SpaForwardController.class
 com\jvmvision\engine\runtime\HeapObject.class
 com\jvmvision\engine\errors\ArithmeticSimulationException.class
 com\jvmvision\repository\JdbcExecutionEventRepository.class
 com\jvmvision\engine\ast\ExpressionNode.class
 com\jvmvision\engine\ast\IfNode.class
+com\jvmvision\controller\SyllabusController.class
+com\jvmvision\repository\JdbcSyllabusRepository$1.class
+com\jvmvision\repository\BookRepository.class
 com\jvmvision\engine\ast\LiteralNode.class
 com\jvmvision\engine\errors\FailureForensics.class
 com\jvmvision\engine\ast\MethodCallNode.class
+com\jvmvision\service\BookService.class
+com\jvmvision\model\Book.class
+com\jvmvision\service\SyllabusService.class
 com\jvmvision\engine\ast\VariableExpressionNode.class
 com\jvmvision\controller\ExampleController.class
 com\jvmvision\model\Example.class
@@ -71,4 +82,5 @@ com\jvmvision\engine\runtime\StackFrame.class
 com\jvmvision\engine\runtime\HeapArray.class
 com\jvmvision\dto\ValidateCodeRequest.class
 com\jvmvision\engine\errors\ArrayIndexOutOfBoundsSimulationException.class
+com\jvmvision\repository\SyllabusRepository.class
 com\jvmvision\service\ExecutionService.class

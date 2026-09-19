@@ -30,6 +30,8 @@ C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvisi
 C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\engine\parser\ParseException.java
 C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\dto\ValidateCodeRequest.java
 C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\engine\trace\HeapArraySnapshot.java
+C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\repository\JdbcSyllabusRepository.java
+C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\repository\BookRepository.java
 C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\engine\ast\ClassNode.java
 C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\engine\ast\FieldAccessNode.java
 C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\engine\parser\Parser.java
@@ -41,9 +43,15 @@ C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvisi
 C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\engine\ast\WhileNode.java
 C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\engine\errors\ArithmeticSimulationException.java
 C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\engine\ast\LiteralNode.java
+C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\service\BookService.java
 C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\model\Example.java
+C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\controller\SpaForwardController.java
+C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\controller\SyllabusController.java
+C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\service\SyllabusService.java
+C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\controller\BookController.java
 C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\engine\interpreter\Interpreter.java
 C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\controller\SessionController.java
+C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\repository\SyllabusRepository.java
 C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\engine\ast\ObjectCreationNode.java
 C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\exception\GlobalExceptionHandler.java
 C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\engine\trace\ExecutionEvent.java
@@ -52,6 +60,7 @@ C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvisi
 C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\engine\errors\ExecutionLimitException.java
 C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\engine\ast\BlockNode.java
 C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\engine\trace\ExecutionTrace.java
+C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\repository\JdbcBookRepository.java
 C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\engine\ast\MethodNode.java
 C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\engine\ast\AssignmentNode.java
 C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\repository\ExecutionSessionRepository.java
@@ -61,6 +70,8 @@ C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvisi
 C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\service\SessionService.java
 C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\engine\lexer\Token.java
 C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\engine\lexer\Lexer.java
+C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\model\Book.java
+C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\model\SyllabusExperiment.java
 C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\engine\ast\ASTNode.java
 C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\dto\RunCodeRequest.java
 C:\Users\Zaid Mohammed\OneDrive\Documents\java\backend\src\main\java\com\jvmvision\engine\ast\ReturnNode.java
