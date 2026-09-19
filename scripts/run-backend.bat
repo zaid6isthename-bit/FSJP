@@ -1,16 +1,12 @@
 @echo off
 setlocal
 echo ========================================================================
-echo   MESHNOTE - Starting Spring Boot Local Java Node (:8080)
+echo   JVM VISION - Starting Spring Boot Backend (:8080)
 echo ========================================================================
-
-set ROOT_DIR=%~dp0..
-cd /d "%ROOT_DIR%"
-
-set MVN_CMD="%ROOT_DIR%\.tools\apache-maven-3.9.6\bin\mvn.cmd"
+cd /d "%~dp0..\backend"
+set MVN_CMD="%~dp0..\.tools\apache-maven-3.9.6\bin\mvn.cmd"
 if not exist %MVN_CMD% (
     set MVN_CMD=mvn
 )
-
-call %MVN_CMD% spring-boot:run -f backend/pom.xml
+call %MVN_CMD% spring-boot:run
 endlocal

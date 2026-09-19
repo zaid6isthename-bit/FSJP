@@ -1,3 +1,4 @@
-com\meshnote\service\FileServiceTest.class
-com\meshnote\util\PathSanitizerTest.class
-com\meshnote\network\UdpDiscoveryPacketTest.class
+com\jvmvision\InterpreterTest.class
+com\jvmvision\LexerTest.class
+com\jvmvision\ExecutionControllerTest.class
+com\jvmvision\ParserTest.class

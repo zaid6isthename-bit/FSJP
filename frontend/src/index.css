@@ -6,14 +6,14 @@
   html, body {
     margin: 0;
     padding: 0;
-    background-color: #07090C;
-    color: #e1e2e9;
+    background-color: #070A0F;
+    color: #E2E8F0;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     overflow-x: hidden;
   }
 }
 
-/* Hide scrollbars cleanly while preserving scrollability */
+/* Custom Clean Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -32,43 +32,40 @@
   background: rgba(255, 255, 255, 0.24);
 }
 
-/* Mesh animations */
-@keyframes beacon-ripple {
-  0% {
-    transform: scale(0.95);
-    opacity: 0.9;
-  }
-  50% {
-    transform: scale(1.6);
-    opacity: 0.3;
-  }
-  100% {
-    transform: scale(2.2);
-    opacity: 0;
-  }
-}
-
-.animate-beacon {
-  animation: beacon-ripple 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
-}
-
-@keyframes node-float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-}
-
-.animate-float {
-  animation: node-float 4s ease-in-out infinite;
-}
-
-/* Glassmorphic backdrops */
+/* Glassmorphism */
 .glass-panel {
-  background: rgba(21, 25, 32, 0.75);
+  background: rgba(17, 24, 39, 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-elevated {
+  background: rgba(22, 32, 50, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Code Execution Highlight */
+.executing-line {
+  background: linear-gradient(90deg, rgba(56, 189, 248, 0.18) 0%, rgba(37, 99, 235, 0.04) 100%);
+  border-left: 3px solid #38BDF8;
+  transition: all 0.15s ease-out;
+}
+
+.error-line {
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.24) 0%, rgba(239, 68, 68, 0.05) 100%);
+  border-left: 3px solid #EF4444;
+  transition: all 0.15s ease-out;
+}
+
+/* Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

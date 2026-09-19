@@ -1,8 +1,8 @@
 @echo off
 setlocal
 echo ========================================================================
-echo   MESHNOTE - Automated Full-Stack Build Pipeline
-echo   Frontend (React + Tailwind) + Backend (Spring Boot + Java 21)
+echo   JVM VISION - Automated Full-Stack Build Pipeline
+echo   Interactive Java Runtime Visualization & Failure Analysis Platform
 echo ========================================================================
 
 set SCRIPT_DIR=%~dp0
@@ -34,11 +34,12 @@ if %errorlevel% neq 0 (
     exit /b %errorlevel%
 )
 
-copy /Y "backend\target\meshnote.jar" "meshnote.jar"
+copy /Y "backend\target\jvm-vision.jar" "jvm-vision.jar"
 
 echo ========================================================================
 echo   BUILD SUCCESSFUL!
-echo   Single runnable JAR created at: meshnote.jar
-echo   To run: java -jar meshnote.jar
+echo   Single runnable JAR created at: jvm-vision.jar
+echo   To run: java -jar jvm-vision.jar
+echo   Then open: http://localhost:8080
 echo ========================================================================
 endlocal

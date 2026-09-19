@@ -1,11 +1,8 @@
 @echo off
 setlocal
 echo ========================================================================
-echo   MESHNOTE - Starting React Frontend Development Server (Vite)
+echo   JVM VISION - Starting Vite Dev Server (:5173)
 echo ========================================================================
-
-set ROOT_DIR=%~dp0..
-cd /d "%ROOT_DIR%\frontend"
-
+cd /d "%~dp0..\frontend"
 call npm run dev
 endlocal

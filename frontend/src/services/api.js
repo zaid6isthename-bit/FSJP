@@ -1,49 +1,56 @@
-const BASE_URL = '/api';
+const API_BASE = import.meta.env.VITE_API_URL || '/api';
 
-export async function request(endpoint, options = {}) {
-  const url = `${BASE_URL}${endpoint}`;
-  const headers = options.headers || {};
-
-  if (!(options.body instanceof FormData)) {
-    headers['Content-Type'] = 'application/json';
-  }
-
+async function request(endpoint, options = {}) {
+  const url = `${API_BASE}${endpoint}`;
   const config = {
+    headers: {
+      'Content-Type': 'application/json',
+      ...options.headers,
+    },
     ...options,
-    headers,
   };
 
   try {
-    const response = await fetch(url, config);
-    const result = await response.json().catch(() => ({
-      success: response.ok,
-      data: null,
-      message: response.statusText,
-    }));
-
-    if (!response.ok || result.success === false) {
-      const error = new Error(result.message || 'Request failed');
-      error.status = response.status;
-      error.errorCode = result.errorCode;
-      throw error;
-    }
-
-    return result.data;
+    const res = await fetch(url, config);
+    const json = await res.json();
+    return json;
   } catch (err) {
-    console.error(`API Error on [${options.method || 'GET'}] ${endpoint}:`, err);
-    throw err;
+    console.error(`API Error on ${url}:`, err);
+    return {
+      success: false,
+      message: err.message || 'Network error connecting to JVM VISION server',
+      errorCode: 'NETWORK_ERROR',
+    };
   }
 }
 
 export const api = {
-  get: (endpoint) => request(endpoint, { method: 'GET' }),
-  post: (endpoint, body) => request(endpoint, {
-    method: 'POST',
-    body: body instanceof FormData ? body : JSON.stringify(body),
-  }),
-  put: (endpoint, body) => request(endpoint, {
-    method: 'PUT',
-    body: body instanceof FormData ? body : JSON.stringify(body),
-  }),
-  delete: (endpoint) => request(endpoint, { method: 'DELETE' }),
+  validateCode: (code) =>
+    request('/execution/validate', {
+      method: 'POST',
+      body: JSON.stringify({ code }),
+    }),
+
+  runCode: (code, title = 'Untitled Program') =>
+    request('/execution/run', {
+      method: 'POST',
+      body: JSON.stringify({ code, title }),
+    }),
+
+  getSessionTrace: (sessionId) =>
+    request(`/execution/${sessionId}`),
+
+  getExamples: () =>
+    request('/examples'),
+
+  getExampleById: (id) =>
+    request(`/examples/${id}`),
+
+  getSessions: () =>
+    request('/sessions'),
+
+  deleteSession: (sessionId) =>
+    request(`/sessions/${sessionId}`, {
+      method: 'DELETE',
+    }),
 };
