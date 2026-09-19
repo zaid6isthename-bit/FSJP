@@ -1,0 +1,3 @@
+com\meshnote\service\FileServiceTest.class
+com\meshnote\util\PathSanitizerTest.class
+com\meshnote\network\UdpDiscoveryPacketTest.class

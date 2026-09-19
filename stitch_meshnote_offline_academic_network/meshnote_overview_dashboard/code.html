@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-active":"#202630","inverse-surface":"#e1e2e9","on-primary-container":"#003871","on-tertiary-fixed":"#002113","border-subtle":"rgba(255, 255, 255, 0.08)","secondary":"#aec6ff","surface-dim":"#101319","primary-container":"#66a3ff","error-container":"#93000a","tertiary-fixed":"#74fbbb","on-surface":"#e1e2e9","primary":"#a9c7ff","on-tertiary":"#003823","text-tertiary":"#707985","surface-elevated":"#151920","outline":"#8c919d","status-error":"#FF6F7D","on-primary":"#003062","text-secondary":"#A9B0BA","secondary-fixed":"#d8e2ff","secondary-container":"#0163d6","tertiary-container":"#20b87e","canvas-deep":"#07090C","surface-container-lowest":"#0b0e13","primary-fixed-dim":"#a9c7ff","glow-focus":"rgba(102, 163, 255, 0.20)","on-error-container":"#ffdad6","surface-variant":"#32353a","text-primary":"#F5F7FA","background":"#101319","secondary-fixed-dim":"#aec6ff","surface-container-low":"#191c21","surface-tint":"#a9c7ff","canvas-base":"#0B0D10","on-secondary-fixed-variant":"#004396","on-error":"#690005","on-secondary":"#002e6a","border-strong":"rgba(255, 255, 255, 0.14)","surface-container":"#1d2025","surface-container-high":"#272a2f","text-disabled":"#4F5660","surface":"#101319","surface-hover":"#1A1F27","tertiary":"#55dea1","on-surface-variant":"#c2c6d4","status-warning":"#FFCC66","accent-soft":"rgba(102, 163, 255, 0.14)","on-primary-fixed":"#001b3d","surface-bright":"#36393f","error":"#ffb4ab","on-background":"#e1e2e9","on-secondary-fixed":"#001a42","inverse-primary":"#025db5","on-primary-fixed-variant":"#00468b","primary-fixed":"#d6e3ff","on-tertiary-fixed-variant":"#005235","surface-container-highest":"#32353a","on-tertiary-container":"#00422a","inverse-on-surface":"#2e3036","outline-variant":"#424752","tertiary-fixed-dim":"#55dea1","on-secondary-container":"#e0e8ff"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"margin-desktop":"2.5rem","space-md":"0.75rem","margin-wide":"3.5rem","space-lg":"1rem","space-sm":"0.5rem","margin":"1rem","space-xl":"1.5rem","space-xs":"0.25rem","gutter":"1rem","margin-tablet":"1.5rem","gutter-desktop":"1.5rem"},fontFamily:{"label-md":["Inter"],"display":["Inter"],"headline-lg":["Inter"],"headline-lg-mobile":["Inter"],"body-md":["Inter"],"body-md-medium":["Inter"],"display-mobile":["Inter"],"headline-md":["Inter"],"label-mono":["Inter"],"body-lg":["Inter"],"headline-sm":["Inter"]},fontSize:{"label-md":["11px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"500"}],"display":["48px",{"lineHeight":"56px","letterSpacing":"-0.04em","fontWeight":"600"}],"headline-lg":["32px",{"lineHeight":"38px","letterSpacing":"-0.03em","fontWeight":"600"}],"headline-lg-mobile":["26px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-md":["13px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"400"}],"body-md-medium":["13px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"500"}],"display-mobile":["36px",{"lineHeight":"42px","letterSpacing":"-0.03em","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"30px","letterSpacing":"-0.02em","fontWeight":"600"}],"label-mono":["11px",{"lineHeight":"16px","letterSpacing":"0.06em","fontWeight":"500"}],"body-lg":["15px",{"lineHeight":"22px","letterSpacing":"0em","fontWeight":"400"}],"headline-sm":["18px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}]}}}};</script></head><body class="bg-canvas-deep text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><aside class="fixed left-0 top-0 h-screen w-[248px] bg-[#101318] z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="h-[72px] px-space-lg flex items-center gap-space-md"><img alt="MESHNOTE Emblem" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W_5XnGvk1bbmG_cXGNrcqBZoo3Y68HISQYdaPi9Ru_OiPoOySzk18W-P7hHX7kqHAvboxJkwB-5coQyHHqCGFWeAZXevz1oGqHkLkCxHrMeqMPi7_4VwovauuQ0kLvDADODkdFM3O-FbnrLSt8dxYmwPANJ9CNOaRPu9bGoV2j3OOsSV45B_0CGXntYV0ybTPPKxjut48MzWab5beBDxM23LMOiaQn1dXC2OCRksghmhkwEZlXHachPro"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-text-primary tracking-tight leading-none">MESHNOTE</span><span class="font-label-md text-label-md text-text-tertiary mt-space-xs">Local Academic Network</span></div></div><div class="px-space-md py-space-sm"><div class="mb-space-lg"><div class="px-space-sm mb-space-xs font-label-mono text-label-mono text-text-tertiary uppercase tracking-wider">Main</div><nav class="space-y-space-xs" data-active-classes="bg-surface-active text-primary-fixed-dim"><a aria-current="page" class="flex items-center justify-between px-space-sm py-space-sm rounded-xl transition-all bg-surface-active text-primary-fixed-dim" data-path="overview" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">grid_view</span><span class="font-body-md-medium text-body-md-medium">Overview</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-hover hover:text-on-surface transition-all" data-path="discover" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">explore</span><span class="font-body-md-medium text-body-md-medium">Discover</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-hover hover:text-on-surface transition-all" data-path="my-library" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span class="font-body-md-medium text-body-md-medium">My Library</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-hover hover:text-on-surface transition-all" data-path="shared-with-me" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">drive_file_move</span><span class="font-body-md-medium text-body-md-medium">Shared With Me</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-hover hover:text-on-surface transition-all" data-path="transfers" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">sync_alt</span><span class="font-body-md-medium text-body-md-medium">Transfers</span></div><span class="font-label-mono text-label-mono px-space-xs py-0.5 rounded-full bg-accent-soft text-primary-fixed">2</span></a></nav></div><div class="mb-space-lg"><div class="px-space-sm mb-space-xs font-label-mono text-label-mono text-text-tertiary uppercase tracking-wider">Network</div><nav class="space-y-space-xs" data-active-classes="bg-surface-active text-primary-fixed-dim"><a class="flex items-center justify-between px-space-sm py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-hover hover:text-on-surface transition-all" data-path="nearby-peers" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">group</span><span class="font-body-md-medium text-body-md-medium">Nearby Peers</span></div><span class="font-label-mono text-label-mono px-space-xs py-0.5 rounded-full bg-tertiary-container/20 text-tertiary">4</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-hover hover:text-on-surface transition-all" data-path="network-activity" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">ssid_chart</span><span class="font-body-md-medium text-body-md-medium">Network Activity</span></div></a></nav></div><div class="mb-space-md"><div class="px-space-sm mb-space-xs font-label-mono text-label-mono text-text-tertiary uppercase tracking-wider">Personal</div><nav class="space-y-space-xs" data-active-classes="bg-surface-active text-primary-fixed-dim"><a class="flex items-center justify-between px-space-sm py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-hover hover:text-on-surface transition-all" data-path="profile" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">account_circle</span><span class="font-body-md-medium text-body-md-medium">Profile</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-hover hover:text-on-surface transition-all" data-path="settings" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">tune</span><span class="font-body-md-medium text-body-md-medium">Settings</span></div></a></nav></div></div></div><div class="p-space-sm space-y-space-sm"><div class="p-space-md rounded-xl bg-surface-elevated flex flex-col gap-space-xs shadow-[0_10px_30px_rgba(0,0,0,0.22)]"><div class="flex items-center justify-between"><span class="font-label-mono text-label-mono text-text-tertiary uppercase">LOCAL NETWORK</span><span class="material-symbols-outlined text-tertiary text-[16px]">wifi_tethering</span></div><div class="flex items-center gap-space-xs mt-space-xs"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span></span><span class="font-body-md-medium text-body-md-medium text-text-primary">Connected</span></div><div class="flex items-center justify-between pt-space-xs"><span class="font-body-md text-body-md text-text-secondary truncate max-w-[130px]">LTCE-AIML-Network</span><span class="font-label-mono text-label-mono text-text-tertiary">4 peers</span></div></div><div class="p-space-sm rounded-xl bg-surface-elevated flex items-center justify-between hover:bg-surface-hover transition-colors"><div class="flex items-center gap-space-sm min-w-0"><div class="relative flex-shrink-0"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-yegZcaMYdV5szHyK61G0A3xRyAnuwLSYDM5RWtwVkzBgI10HLK5X0_gitS8w8eghBSu9YZqGNzFbjI8sK8Tr2gWQ1vRDvOag56HyQ4gpmuClNYLJzuSoIgRgSCHMxlUCRGvMaMJm_tseqLoa-cm1hw4TlEVNvNaH74cAM06AwPNMA4DrQn5PnLjk8E7ICuZrRGhx2kNTZJXcJOTp6KMnzWh9yzptKZsy5vfasWZLG6TNg2AoaijB"/><span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-tertiary ring-2 ring-[#101318]"></span></div><div class="flex flex-col min-w-0"><span class="font-body-md-medium text-body-md-medium text-text-primary truncate">Zaid Mohammed</span><span class="font-label-md text-label-md text-text-tertiary truncate">AI & ML · Sem 3</span></div></div><span class="material-symbols-outlined text-text-disabled text-[18px]">more_vert</span></div></div></aside><div class="pl-[248px] min-h-screen bg-canvas-deep flex flex-col"><header class="fixed top-0 left-[248px] right-0 h-[72px] z-40 bg-canvas-deep/80 backdrop-blur-xl flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm text-text-tertiary"><span class="material-symbols-outlined text-[16px]">hub</span><span class="font-body-md text-body-md text-text-secondary">Peer Mesh</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="font-body-md-medium text-body-md-medium text-text-primary">LTCE AI-ML Node</span></div></div><div class="flex items-center gap-space-lg"><div class="relative w-[340px]"><span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-text-tertiary text-[18px]">search</span><input class="w-full h-11 pl-10 pr-space-md rounded-xl bg-[#101318] text-text-primary placeholder:text-text-tertiary font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container focus:bg-surface-elevated transition-all" placeholder="Search notes, subjects, files or peers... (⌘K / Ctrl K)" type="text"/></div><div class="flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-accent-soft"><span class="h-1.5 w-1.5 rounded-full bg-tertiary"></span><span class="font-label-md text-label-md text-primary-fixed">LTCE-AIML-Network</span></div><button class="relative p-space-sm rounded-xl text-text-secondary hover:text-text-primary hover:bg-surface-elevated transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-1.5 h-1.5 rounded-full bg-primary-container"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-border-strong cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-yegZcaMYdV5szHyK61G0A3xRyAnuwLSYDM5RWtwVkzBgI10HLK5X0_gitS8w8eghBSu9YZqGNzFbjI8sK8Tr2gWQ1vRDvOag56HyQ4gpmuClNYLJzuSoIgRgSCHMxlUCRGvMaMJm_tseqLoa-cm1hw4TlEVNvNaH74cAM06AwPNMA4DrQn5PnLjk8E7ICuZrRGhx2kNTZJXcJOTp6KMnzWh9yzptKZsy5vfasWZLG6TNg2AoaijB"/></div></div></header><main class="w-full pt-[72px] px-space-xl pb-space-xl flex-1"><div class="flex flex-col w-full gap-space-xl">
+<!-- Top Welcome Banner & Peer Hub Status -->
+<div class="relative w-full rounded-xl bg-surface-elevated p-space-xl shadow-xl overflow-hidden">
+<div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-primary-container/10 blur-3xl pointer-events-none"></div>
+<div class="absolute right-1/3 -bottom-20 w-80 h-80 rounded-full bg-tertiary/10 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-space-lg">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-mono text-label-mono text-tertiary uppercase tracking-widest px-space-xs py-0.5 rounded-full bg-tertiary-container/20">Active Node Session</span>
+<span class="font-label-mono text-label-mono text-text-tertiary">#NODE-882-AIML</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-text-primary">Good morning, Zaid</h1>
+<p class="font-body-lg text-body-lg text-text-secondary">Here's what's happening across your local academic network.</p>
+</div>
+<div class="flex items-center gap-space-md">
+<button class="px-space-md py-space-sm h-11 rounded-xl bg-surface-hover hover:bg-surface-active text-text-primary font-body-md-medium text-body-md-medium flex items-center gap-space-sm transition-all shadow-md active:scale-95" id="quick-broadcast-btn" onclick="triggerBroadcastAnimation()">
+<span class="material-symbols-outlined text-[18px] text-tertiary">sensors</span>
+<span>Broadcast Beacon</span>
+</button>
+<button class="px-space-lg py-space-sm h-11 rounded-xl bg-primary-container hover:bg-secondary-container text-canvas-deep font-body-md-medium text-body-md-medium flex items-center gap-space-sm transition-all shadow-lg shadow-glow-focus active:scale-95" onclick="toggleModal('modal-share')">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>Share Notes</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Row 1: KPI Metric Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+<!-- Card 1: Nearby Peers -->
+<div class="relative rounded-xl bg-surface-elevated p-space-lg shadow-md hover:bg-surface-hover transition-all group overflow-hidden">
+<div class="absolute -right-8 -bottom-8 w-24 h-24 rounded-full bg-tertiary/10 blur-xl group-hover:scale-150 transition-transform"></div>
+<div class="flex items-start justify-between mb-space-md">
+<div class="p-space-xs rounded-lg bg-surface-active text-tertiary">
+<span class="material-symbols-outlined text-[22px]">hub</span>
+</div>
+<span class="flex h-2 w-2 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span>
+</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-mono text-label-mono text-text-tertiary uppercase">Nearby Peers</span>
+<div class="flex items-baseline gap-space-xs mt-space-xs">
+<span class="font-headline-lg text-headline-lg text-text-primary">4</span>
+<span class="font-body-md text-body-md text-tertiary">Nodes connected</span>
+</div>
+<span class="font-body-md text-body-md text-text-secondary mt-1">2 active in lecture hall</span>
+</div>
+</div>
+<!-- Card 2: Available Files -->
+<div class="relative rounded-xl bg-surface-elevated p-space-lg shadow-md hover:bg-surface-hover transition-all group overflow-hidden">
+<div class="absolute -right-8 -bottom-8 w-24 h-24 rounded-full bg-primary-container/10 blur-xl group-hover:scale-150 transition-transform"></div>
+<div class="flex items-start justify-between mb-space-md">
+<div class="p-space-xs rounded-lg bg-surface-active text-primary-container">
+<span class="material-symbols-outlined text-[22px]">library_books</span>
+</div>
+<span class="font-label-mono text-label-mono px-2 py-0.5 rounded-full bg-primary-container/10 text-primary-fixed">P2P Mesh</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-mono text-label-mono text-text-tertiary uppercase">Available Files</span>
+<div class="flex items-baseline gap-space-xs mt-space-xs">
+<span class="font-headline-lg text-headline-lg text-text-primary">128</span>
+<span class="font-body-md text-body-md text-primary">Indexed chunks</span>
+</div>
+<span class="font-body-md text-body-md text-text-secondary mt-1">Across nearby devices</span>
+</div>
+</div>
+<!-- Card 3: Your Shared Files -->
+<div class="relative rounded-xl bg-surface-elevated p-space-lg shadow-md hover:bg-surface-hover transition-all group overflow-hidden">
+<div class="absolute -right-8 -bottom-8 w-24 h-24 rounded-full bg-secondary/10 blur-xl group-hover:scale-150 transition-transform"></div>
+<div class="flex items-start justify-between mb-space-md">
+<div class="p-space-xs rounded-lg bg-surface-active text-secondary">
+<span class="material-symbols-outlined text-[22px]">drive_folder_upload</span>
+</div>
+<span class="font-label-mono text-label-mono text-text-tertiary">Local Storage</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-mono text-label-mono text-text-tertiary uppercase">Your Shared Files</span>
+<div class="flex items-baseline gap-space-xs mt-space-xs">
+<span class="font-headline-lg text-headline-lg text-text-primary">17</span>
+<span class="font-body-md text-body-md text-text-secondary">Study docs</span>
+</div>
+<span class="font-body-md text-body-md text-text-secondary mt-1">3 accessed in last hour</span>
+</div>
+</div>
+<!-- Card 4: Active Transfers -->
+<div class="relative rounded-xl bg-surface-elevated p-space-lg shadow-md hover:bg-surface-hover transition-all group overflow-hidden">
+<div class="absolute -right-8 -bottom-8 w-24 h-24 rounded-full bg-status-warning/10 blur-xl group-hover:scale-150 transition-transform"></div>
+<div class="flex items-start justify-between mb-space-md">
+<div class="p-space-xs rounded-lg bg-surface-active text-status-warning">
+<span class="material-symbols-outlined text-[22px]">sync_alt</span>
+</div>
+<span class="flex items-center gap-1 font-label-mono text-label-mono px-2 py-0.5 rounded-full bg-status-warning/10 text-status-warning">
+<span class="h-1.5 w-1.5 rounded-full bg-status-warning animate-pulse"></span>
+          ACTIVE
+        </span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-mono text-label-mono text-text-tertiary uppercase">Active Transfers</span>
+<div class="flex items-baseline gap-space-xs mt-space-xs">
+<span class="font-headline-lg text-headline-lg text-text-primary">2</span>
+<span class="font-body-md text-body-md text-status-warning">3.4 MB/s</span>
+</div>
+<span class="font-body-md text-body-md text-text-secondary mt-1">1 download · 1 upload</span>
+</div>
+</div>
+</div>
+<!-- Row 2: Topology Visualizer (65%) and Nearby Peers List (35%) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">
+<!-- Left: Topology Interactive Map -->
+<div class="lg:col-span-8 rounded-xl bg-surface-elevated p-space-lg shadow-lg flex flex-col justify-between relative overflow-hidden">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md z-10">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-text-primary">Local Mesh Topology</span>
+<span class="px-space-xs py-0.5 rounded-full bg-tertiary-container/20 text-tertiary font-label-mono text-label-mono flex items-center gap-1">
+<span class="h-1.5 w-1.5 rounded-full bg-tertiary"></span> CONNECTED
+            </span>
+</div>
+<p class="font-body-md text-body-md text-text-secondary mt-1">
+<strong class="text-text-primary font-body-md-medium">LTCE-AIML-Network</strong> · 4 peers nearby · 128 discoverable files · Ad-hoc WiFi Direct
+          </p>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-md py-space-xs rounded-lg bg-surface-hover hover:bg-surface-active text-text-secondary hover:text-text-primary font-label-mono text-label-mono flex items-center gap-space-xs transition-all" id="scan-btn" onclick="rescanMesh()">
+<span class="material-symbols-outlined text-[16px]" id="scan-icon">refresh</span>
+<span id="scan-text">Rescan Mesh</span>
+</button>
+</div>
+</div>
+<!-- Network Canvas Canvas / SVG Container -->
+<div class="relative w-full h-[380px] my-space-md rounded-xl bg-canvas-deep flex items-center justify-center overflow-hidden">
+<!-- SVG Connecting lines & packets -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none" id="mesh-svg" preserveaspectratio="xMidYMid meet" viewbox="0 0 700 380">
+<!-- Orbital rings -->
+<circle class="text-surface-active opacity-40" cx="350" cy="190" fill="none" r="140" stroke="currentColor" stroke-dasharray="4 4" stroke-width="1"></circle>
+<circle class="text-surface-active opacity-20" cx="350" cy="190" fill="none" r="80" stroke="currentColor" stroke-width="1"></circle>
+<!-- Links to Peer 1 (Top Left) -->
+<line class="text-secondary/30" stroke="currentColor" stroke-dasharray="6 3" stroke-width="1.5" x1="350" x2="160" y1="190" y2="80"></line>
+<!-- Moving packet 1 -->
+<circle class="text-tertiary animate-pulse" cx="255" cy="135" fill="currentColor" r="3.5"></circle>
+<!-- Links to Peer 2 (Top Right) -->
+<line class="text-secondary/30" stroke="currentColor" stroke-width="1.5" x1="350" x2="540" y1="190" y2="90"></line>
+<circle class="text-primary-container animate-pulse" cx="445" cy="140" fill="currentColor" r="3"></circle>
+<!-- Links to Peer 3 (Bottom Left) -->
+<line class="text-secondary/30" stroke="currentColor" stroke-dasharray="5 5" stroke-width="1.5" x1="350" x2="170" y1="190" y2="300"></line>
+<!-- Links to Peer 4 (Bottom Right) -->
+<line class="text-secondary/30" stroke="currentColor" stroke-width="1.5" x1="350" x2="530" y1="190" y2="290"></line>
+<circle class="text-tertiary" cx="440" cy="240" fill="currentColor" r="4"></circle>
+</svg>
+<!-- Central Node: Your Device -->
+<div class="relative z-10 flex flex-col items-center cursor-pointer group" onclick="highlightNode('self')">
+<div class="relative flex items-center justify-center">
+<span class="absolute w-20 h-20 rounded-full bg-primary-container/20 animate-ping"></span>
+<div class="relative w-16 h-16 rounded-full bg-surface-elevated shadow-xl flex items-center justify-center text-primary-container group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[28px]">laptop_mac</span>
+</div>
+</div>
+<div class="mt-2 flex flex-col items-center bg-surface-elevated/90 px-space-sm py-0.5 rounded-lg shadow-md backdrop-blur-md">
+<span class="font-label-mono text-label-mono text-primary uppercase font-bold tracking-wider">HOST NODE</span>
+<span class="font-body-md-medium text-body-md-medium text-text-primary">Zaid's MacBook</span>
+</div>
+</div>
+<!-- Node 1: Aarav Shah (Top Left) -->
+<div class="absolute left-6 sm:left-14 top-8 flex flex-col items-center group cursor-pointer" onclick="openPeerModal('Aarav Shah', 'AI & ML · Sem 3', 'Aarav-Laptop', 12)">
+<div class="relative">
+<div class="w-12 h-12 rounded-full bg-surface-elevated shadow-md flex items-center justify-center text-text-primary group-hover:bg-surface-active transition-colors">
+<span class="material-symbols-outlined text-[20px] text-tertiary">person</span>
+</div>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-tertiary ring-2 ring-canvas-deep"></span>
+</div>
+<div class="mt-1 flex flex-col items-center text-center">
+<span class="font-body-md-medium text-body-md-medium text-text-primary">Aarav Shah</span>
+<span class="font-label-md text-label-md text-text-tertiary">12 files · 24ms</span>
+</div>
+</div>
+<!-- Node 2: Sara Khan (Top Right) -->
+<div class="absolute right-6 sm:right-16 top-10 flex flex-col items-center group cursor-pointer" onclick="openPeerModal('Sara Khan', 'AI & ML · Sem 3', 'Sara-PC', 14)">
+<div class="relative">
+<div class="w-12 h-12 rounded-full bg-surface-elevated shadow-md flex items-center justify-center text-text-primary group-hover:bg-surface-active transition-colors">
+<span class="material-symbols-outlined text-[20px] text-primary-container">person</span>
+</div>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-tertiary ring-2 ring-canvas-deep"></span>
+</div>
+<div class="mt-1 flex flex-col items-center text-center">
+<span class="font-body-md-medium text-body-md-medium text-text-primary">Sara Khan</span>
+<span class="font-label-md text-label-md text-text-tertiary">14 files · 18ms</span>
+</div>
+</div>
+<!-- Node 3: Rehan Mehta (Bottom Left) -->
+<div class="absolute left-8 sm:left-20 bottom-8 flex flex-col items-center group cursor-pointer" onclick="openPeerModal('Rehan Mehta', 'Comp Engg · Sem 3', 'Rehan-Laptop', 9)">
+<div class="relative">
+<div class="w-12 h-12 rounded-full bg-surface-elevated shadow-md flex items-center justify-center text-text-primary group-hover:bg-surface-active transition-colors">
+<span class="material-symbols-outlined text-[20px] text-text-secondary">computer</span>
+</div>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-status-warning ring-2 ring-canvas-deep"></span>
+</div>
+<div class="mt-1 flex flex-col items-center text-center">
+<span class="font-body-md-medium text-body-md-medium text-text-primary">Rehan Mehta</span>
+<span class="font-label-md text-label-md text-text-tertiary">9 files · Away</span>
+</div>
+</div>
+<!-- Node 4: Meera Joshi (Bottom Right) -->
+<div class="absolute right-8 sm:right-20 bottom-8 flex flex-col items-center group cursor-pointer" onclick="openPeerModal('Meera Joshi', 'AI & ML · Sem 3', 'Meera-Book', 21)">
+<div class="relative">
+<div class="w-12 h-12 rounded-full bg-surface-elevated shadow-md flex items-center justify-center text-text-primary group-hover:bg-surface-active transition-colors">
+<span class="material-symbols-outlined text-[20px] text-secondary">desktop_windows</span>
+</div>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-tertiary ring-2 ring-canvas-deep"></span>
+</div>
+<div class="mt-1 flex flex-col items-center text-center">
+<span class="font-body-md-medium text-body-md-medium text-text-primary">Meera Joshi</span>
+<span class="font-label-md text-label-md text-text-tertiary">21 files · 32ms</span>
+</div>
+</div>
+</div>
+<!-- Live Packet Stream Footer -->
+<div class="flex items-center justify-between text-text-tertiary font-label-mono text-label-mono px-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[14px] text-tertiary">wifi_channel</span>
+<span>5 GHz Ad-Hoc Direct Mesh</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span>Encryption: AES-256 P2P Handshake</span>
+<span class="text-text-primary font-body-md-medium">● Operational</span>
+</div>
+</div>
+</div>
+<!-- Right: Nearby Peers Quick List -->
+<div class="lg:col-span-4 rounded-xl bg-surface-elevated p-space-lg shadow-lg flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-text-primary">Nearby Peers</span>
+<span class="font-label-mono text-label-mono px-1.5 py-0.5 rounded bg-surface-active text-text-secondary">4</span>
+</div>
+<a class="font-label-md text-label-md text-primary hover:text-primary-container transition-colors" href="#">View all</a>
+</div>
+<!-- Peers Stack -->
+<div class="flex flex-col gap-space-sm">
+<!-- Peer 1 -->
+<div class="p-space-md rounded-xl bg-surface hover:bg-surface-active transition-all group">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="relative">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center font-body-md-medium text-text-primary">
+                    AS
+                  </div>
+<span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-tertiary ring-2 ring-surface"></span>
+</div>
+<div>
+<h4 class="font-body-md-medium text-body-md-medium text-text-primary">Aarav Shah</h4>
+<p class="font-label-md text-label-md text-text-tertiary">AI & ML · 12 shared files</p>
+</div>
+</div>
+<button class="px-space-sm py-1 rounded-lg bg-surface-elevated group-hover:bg-primary-container group-hover:text-canvas-deep text-text-secondary font-label-md text-label-md transition-colors" onclick="showFilesModal('Aarav Shah')">
+                Browse
+              </button>
+</div>
+</div>
+<!-- Peer 2 -->
+<div class="p-space-md rounded-xl bg-surface hover:bg-surface-active transition-all group">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="relative">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center font-body-md-medium text-text-primary">
+                    SK
+                  </div>
+<span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-tertiary ring-2 ring-surface"></span>
+</div>
+<div>
+<h4 class="font-body-md-medium text-body-md-medium text-text-primary">Sara Khan</h4>
+<p class="font-label-md text-label-md text-text-tertiary">AI & ML · 14 shared files</p>
+</div>
+</div>
+<button class="px-space-sm py-1 rounded-lg bg-surface-elevated group-hover:bg-primary-container group-hover:text-canvas-deep text-text-secondary font-label-md text-label-md transition-colors" onclick="showFilesModal('Sara Khan')">
+                Browse
+              </button>
+</div>
+</div>
+<!-- Peer 3 -->
+<div class="p-space-md rounded-xl bg-surface hover:bg-surface-active transition-all group">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="relative">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center font-body-md-medium text-text-primary">
+                    RM
+                  </div>
+<span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-status-warning ring-2 ring-surface"></span>
+</div>
+<div>
+<h4 class="font-body-md-medium text-body-md-medium text-text-primary">Rehan Mehta</h4>
+<p class="font-label-md text-label-md text-text-tertiary">Comp Engg · 9 shared files</p>
+</div>
+</div>
+<button class="px-space-sm py-1 rounded-lg bg-surface-elevated group-hover:bg-primary-container group-hover:text-canvas-deep text-text-secondary font-label-md text-label-md transition-colors" onclick="showFilesModal('Rehan Mehta')">
+                Browse
+              </button>
+</div>
+</div>
+<!-- Peer 4 -->
+<div class="p-space-md rounded-xl bg-surface hover:bg-surface-active transition-all group">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="relative">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center font-body-md-medium text-text-primary">
+                    MJ
+                  </div>
+<span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-tertiary ring-2 ring-surface"></span>
+</div>
+<div>
+<h4 class="font-body-md-medium text-body-md-medium text-text-primary">Meera Joshi</h4>
+<p class="font-label-md text-label-md text-text-tertiary">AI & ML · 21 shared files</p>
+</div>
+</div>
+<button class="px-space-sm py-1 rounded-lg bg-surface-elevated group-hover:bg-primary-container group-hover:text-canvas-deep text-text-secondary font-label-md text-label-md transition-colors" onclick="showFilesModal('Meera Joshi')">
+                Browse
+              </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Direct Send Dropzone teaser -->
+<div class="mt-space-md p-space-md rounded-xl bg-canvas-deep flex items-center justify-between group cursor-pointer hover:bg-surface-active transition-colors" onclick="toggleModal('modal-share')">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-primary-container">file_upload</span>
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-text-primary">Drop to broadcast</span>
+<span class="font-label-md text-label-md text-text-tertiary">Sends to 4 peer nodes</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-text-tertiary group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Row 3: Quick Actions Bar -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Action 1 -->
+<div class="p-space-lg rounded-xl bg-surface-elevated hover:bg-surface-hover transition-all cursor-pointer group shadow-sm flex items-center justify-between" onclick="toggleModal('modal-share')">
+<div class="flex items-center gap-space-md">
+<div class="p-space-sm rounded-xl bg-primary-container/10 text-primary-container group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]">upload_file</span>
+</div>
+<div>
+<h4 class="font-body-md-medium text-body-md-medium text-text-primary">Share Material</h4>
+<p class="font-label-md text-label-md text-text-tertiary">Broadcast note packets</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-[20px] text-text-disabled group-hover:text-text-primary transition-colors">chevron_right</span>
+</div>
+<!-- Action 2 -->
+<div class="p-space-lg rounded-xl bg-surface-elevated hover:bg-surface-hover transition-all cursor-pointer group shadow-sm flex items-center justify-between" onclick="filterTable('all')">
+<div class="flex items-center gap-space-md">
+<div class="p-space-sm rounded-xl bg-tertiary/10 text-tertiary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]">explore</span>
+</div>
+<div>
+<h4 class="font-body-md-medium text-body-md-medium text-text-primary">Discover Files</h4>
+<p class="font-label-md text-label-md text-text-tertiary">Scan 128 nearby units</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-[20px] text-text-disabled group-hover:text-text-primary transition-colors">chevron_right</span>
+</div>
+<!-- Action 3 -->
+<div class="p-space-lg rounded-xl bg-surface-elevated hover:bg-surface-hover transition-all cursor-pointer group shadow-sm flex items-center justify-between" onclick="toggleCommandPalette(true)">
+<div class="flex items-center gap-space-md">
+<div class="p-space-sm rounded-xl bg-secondary/10 text-secondary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]">group_search</span>
+</div>
+<div>
+<h4 class="font-body-md-medium text-body-md-medium text-text-primary">Peer Directory</h4>
+<p class="font-label-md text-label-md text-text-tertiary">Quick match & ping</p>
+</div>
+</div>
+<span class="font-label-mono text-label-mono px-2 py-0.5 rounded bg-surface-active text-text-tertiary">⌘K</span>
+</div>
+<!-- Action 4 -->
+<div class="p-space-lg rounded-xl bg-surface-elevated hover:bg-surface-hover transition-all cursor-pointer group shadow-sm flex items-center justify-between" onclick="showTransfersNotification()">
+<div class="flex items-center gap-space-md">
+<div class="p-space-sm rounded-xl bg-status-warning/10 text-status-warning group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]">swap_horizontal_circle</span>
+</div>
+<div>
+<h4 class="font-body-md-medium text-body-md-medium text-text-primary">Transfer Monitor</h4>
+<p class="font-label-md text-label-md text-text-tertiary">2 active chunks syncing</p>
+</div>
+</div>
+<span class="font-label-mono text-label-mono px-2 py-0.5 rounded-full bg-status-warning/20 text-status-warning">3.4M/s</span>
+</div>
+</div>
+<!-- Row 4: Recently Shared Material Across Peers Table -->
+<div class="rounded-xl bg-surface-elevated p-space-lg shadow-lg flex flex-col">
+<!-- Table Header & Controls -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md pb-space-lg">
+<div class="flex flex-col gap-1">
+<h3 class="font-headline-sm text-headline-sm text-text-primary">Recent Academic Files Across Peers</h3>
+<p class="font-body-md text-body-md text-text-secondary">Chunked documents ready for instantaneous peer-to-peer download without internet access.</p>
+</div>
+<!-- Filters and search -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="flex items-center bg-canvas-deep rounded-xl p-1">
+<button class="category-filter-btn active px-space-md py-1 rounded-lg font-label-md text-label-md bg-surface-active text-text-primary transition-all" onclick="filterFiles('all', this)">All</button>
+<button class="category-filter-btn px-space-md py-1 rounded-lg font-label-md text-label-md text-text-tertiary hover:text-text-primary transition-all" onclick="filterFiles('PDF', this)">PDFs</button>
+<button class="category-filter-btn px-space-md py-1 rounded-lg font-label-md text-label-md text-text-tertiary hover:text-text-primary transition-all" onclick="filterFiles('PPTX', this)">Slides</button>
+<button class="category-filter-btn px-space-md py-1 rounded-lg font-label-md text-label-md text-text-tertiary hover:text-text-primary transition-all" onclick="filterFiles('DOCX', this)">Docs</button>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[16px] text-text-tertiary">filter_list</span>
+<input class="h-9 pl-9 pr-3 rounded-xl bg-canvas-deep text-text-primary placeholder:text-text-tertiary font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary-container transition-all w-40" id="table-search" onkeyup="searchTable()" placeholder="Filter subjects..." type="text"/>
+</div>
+</div>
+</div>
+<!-- Responsive Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="text-text-tertiary font-label-mono text-label-mono uppercase tracking-wider bg-canvas-deep/40 rounded-lg">
+<th class="py-space-md px-space-md rounded-l-lg">Document Name</th>
+<th class="py-space-md px-space-md">Subject / Unit</th>
+<th class="py-space-md px-space-md">Shared By</th>
+<th class="py-space-md px-space-md">Size</th>
+<th class="py-space-md px-space-md">Discovered</th>
+<th class="py-space-md px-space-md">Status</th>
+<th class="py-space-md px-space-md text-right rounded-r-lg">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-subtle/0" id="files-table-body">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-hover transition-colors group file-row" data-title="Data Structures Module 3.pdf" data-type="PDF">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-mono text-label-mono px-2 py-0.5 rounded bg-error/10 text-status-error font-semibold">PDF</span>
+<span class="font-body-md-medium text-body-md-medium text-text-primary group-hover:text-primary transition-colors">Data Structures Module 3.pdf</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-body-md text-body-md text-text-secondary">Data Structures · Mod 3</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded-full bg-surface-active flex items-center justify-center font-label-md text-label-md text-text-primary">A</span>
+<span class="font-body-md text-body-md text-text-primary">Aarav Shah</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-label-mono text-label-mono text-text-tertiary">4.2 MB</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-body-md text-body-md text-text-tertiary">2 min ago</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 font-label-md text-label-md text-tertiary">
+<span class="h-1.5 w-1.5 rounded-full bg-tertiary"></span> Available
+              </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-1.5 rounded-lg bg-surface-active hover:bg-surface-hover text-text-secondary hover:text-text-primary transition-colors" onclick="previewFile('Data Structures Module 3.pdf', 'Aarav Shah')" title="Preview metadata">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+<button class="px-space-sm py-1 rounded-lg bg-primary-container hover:bg-secondary-container text-canvas-deep font-body-md-medium text-body-md-medium flex items-center gap-1 transition-all" onclick="startDownload(this, 'Data Structures Module 3.pdf')">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>Fetch</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-hover transition-colors group file-row" data-title="Java Inheritance & Polymorphism Notes.pdf" data-type="PDF">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-mono text-label-mono px-2 py-0.5 rounded bg-error/10 text-status-error font-semibold">PDF</span>
+<span class="font-body-md-medium text-body-md-medium text-text-primary group-hover:text-primary transition-colors">Java Inheritance & Polymorphism Notes.pdf</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-body-md text-body-md text-text-secondary">Full Stack Java · Mod II</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded-full bg-surface-active flex items-center justify-center font-label-md text-label-md text-text-primary">S</span>
+<span class="font-body-md text-body-md text-text-primary">Sara Khan</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-label-mono text-label-mono text-text-tertiary">2.1 MB</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-body-md text-body-md text-text-tertiary">8 min ago</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 font-label-md text-label-md text-tertiary">
+<span class="h-1.5 w-1.5 rounded-full bg-tertiary"></span> Available
+              </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-1.5 rounded-lg bg-surface-active hover:bg-surface-hover text-text-secondary hover:text-text-primary transition-colors" onclick="previewFile('Java Inheritance & Polymorphism Notes.pdf', 'Sara Khan')" title="Preview metadata">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+<button class="px-space-sm py-1 rounded-lg bg-primary-container hover:bg-secondary-container text-canvas-deep font-body-md-medium text-body-md-medium flex items-center gap-1 transition-all" onclick="startDownload(this, 'Java Inheritance & Polymorphism Notes.pdf')">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>Fetch</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-hover transition-colors group file-row" data-title="Computer Architecture Unit 4 Revision.pptx" data-type="PPTX">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-mono text-label-mono px-2 py-0.5 rounded bg-status-warning/10 text-status-warning font-semibold">PPTX</span>
+<span class="font-body-md-medium text-body-md-medium text-text-primary group-hover:text-primary transition-colors">Computer Architecture Unit 4 Revision.pptx</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-body-md text-body-md text-text-secondary">COA · Mod IV</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded-full bg-surface-active flex items-center justify-center font-label-md text-label-md text-text-primary">R</span>
+<span class="font-body-md text-body-md text-text-primary">Rehan Mehta</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-label-mono text-label-mono text-text-tertiary">8.4 MB</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-body-md text-body-md text-text-tertiary">16 min ago</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 font-label-md text-label-md text-status-warning">
+<span class="h-1.5 w-1.5 rounded-full bg-status-warning"></span> Relay Hop
+              </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-1.5 rounded-lg bg-surface-active hover:bg-surface-hover text-text-secondary hover:text-text-primary transition-colors" onclick="previewFile('Computer Architecture Unit 4 Revision.pptx', 'Rehan Mehta')" title="Preview metadata">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+<button class="px-space-sm py-1 rounded-lg bg-primary-container hover:bg-secondary-container text-canvas-deep font-body-md-medium text-body-md-medium flex items-center gap-1 transition-all" onclick="startDownload(this, 'Computer Architecture Unit 4 Revision.pptx')">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>Fetch</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-hover transition-colors group file-row" data-title="Spring Boot REST Controller Architecture.pdf" data-type="PDF">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-mono text-label-mono px-2 py-0.5 rounded bg-error/10 text-status-error font-semibold">PDF</span>
+<span class="font-body-md-medium text-body-md-medium text-text-primary group-hover:text-primary transition-colors">Spring Boot REST Controller Architecture.pdf</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-body-md text-body-md text-text-secondary">Full Stack Java · Mod III</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded-full bg-surface-active flex items-center justify-center font-label-md text-label-md text-text-primary">M</span>
+<span class="font-body-md text-body-md text-text-primary">Meera Joshi</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-label-mono text-label-mono text-text-tertiary">3.8 MB</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-body-md text-body-md text-text-tertiary">24 min ago</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 font-label-md text-label-md text-tertiary">
+<span class="h-1.5 w-1.5 rounded-full bg-tertiary"></span> Available
+              </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-1.5 rounded-lg bg-surface-active hover:bg-surface-hover text-text-secondary hover:text-text-primary transition-colors" onclick="previewFile('Spring Boot REST Controller Architecture.pdf', 'Meera Joshi')" title="Preview metadata">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+<button class="px-space-sm py-1 rounded-lg bg-primary-container hover:bg-secondary-container text-canvas-deep font-body-md-medium text-body-md-medium flex items-center gap-1 transition-all" onclick="startDownload(this, 'Spring Boot REST Controller Architecture.pdf')">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>Fetch</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footnote / Storage Sync State -->
+<div class="pt-space-md mt-space-md flex flex-col sm:flex-row sm:items-center justify-between text-text-tertiary font-label-md text-label-md">
+<span>Mesh indexing cached via Local SQLite on node. Direct chunk transfers bypass campus internet.</span>
+<div class="flex items-center gap-space-md mt-2 sm:mt-0">
+<span>Available storage: 14.8 GB</span>
+<a class="text-primary hover:underline" href="#">Manage local store</a>
+</div>
+</div>
+</div>
+<!-- Interactive Toast Notification Component (Fixed Bottom Right) -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-0 opacity-100 transition-all duration-300" id="live-toast">
+<div class="p-space-md rounded-xl bg-surface-elevated shadow-2xl flex items-center gap-space-md min-w-[320px]">
+<div class="p-2 rounded-lg bg-primary-container/20 text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">library_add</span>
+</div>
+<div class="flex flex-col flex-1">
+<span class="font-body-md-medium text-body-md-medium text-text-primary">Aarav shared 2 new files</span>
+<span class="font-label-md text-label-md text-text-tertiary">Data Structures · Module 3 Questions</span>
+</div>
+<button class="text-text-tertiary hover:text-text-primary p-1" onclick="dismissToast()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<!-- Modal: Upload & Share Material (Hidden by Default) -->
+<div class="fixed inset-0 z-50 hidden bg-canvas-deep/80 backdrop-blur-md flex items-center justify-center p-space-lg" id="modal-share">
+<div class="w-full max-w-lg rounded-xl bg-surface-elevated p-space-xl shadow-2xl flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[22px] text-primary-container">upload</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">Share Academic Material</h3>
+</div>
+<button class="p-1 rounded-lg text-text-tertiary hover:text-text-primary" onclick="toggleModal('modal-share')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-text-secondary">Files are broadcasted locally over WiFi-Direct chunks to all peers currently in the AIML mesh.</p>
+<!-- Dropzone -->
+<div class="h-44 rounded-xl bg-canvas-deep flex flex-col items-center justify-center p-space-md text-center cursor-pointer hover:bg-surface-active transition-all" id="drop-area">
+<span class="material-symbols-outlined text-[36px] text-primary-container mb-2">cloud_upload</span>
+<span class="font-body-md-medium text-body-md-medium text-text-primary">Drag & drop notes or assignments here</span>
+<span class="font-label-md text-label-md text-text-tertiary mt-1">Supports PDF, PPTX, DOCX, ZIP up to 500MB</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-mono text-label-mono text-text-tertiary uppercase">Subject Tag</label>
+<select class="h-10 px-3 rounded-xl bg-canvas-deep text-text-primary font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary-container">
+<option>Data Structures & Algorithms</option>
+<option>Full Stack Java Development</option>
+<option>Computer Organization & Architecture</option>
+<option>Discrete Mathematics</option>
+</select>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="px-space-md py-space-sm rounded-xl font-body-md-medium text-body-md-medium text-text-secondary hover:text-text-primary" onclick="toggleModal('modal-share')">Cancel</button>
+<button class="px-space-lg py-space-sm rounded-xl bg-primary-container hover:bg-secondary-container text-canvas-deep font-body-md-medium text-body-md-medium" onclick="confirmShare()">Seed to Network</button>
+</div>
+</div>
+</div>
+<!-- Command Palette Modal (Ctrl+K) -->
+<div class="fixed inset-0 z-50 hidden bg-canvas-deep/80 backdrop-blur-xl flex items-start justify-center pt-24 px-space-md" id="command-palette" onclick="handleBackdropClick(event)">
+<div class="w-full max-w-xl rounded-xl bg-surface-elevated p-space-md shadow-2xl flex flex-col gap-space-sm" onclick="event.stopPropagation()">
+<div class="relative flex items-center px-space-sm">
+<span class="material-symbols-outlined text-[20px] text-text-tertiary mr-space-sm">search</span>
+<input class="w-full bg-transparent text-text-primary placeholder:text-text-tertiary font-body-lg text-body-lg focus:outline-none py-2" id="palette-input" placeholder="Type a command, find a file, or jump to peer..." type="text"/>
+<span class="font-label-mono text-label-mono px-2 py-0.5 rounded bg-surface-active text-text-tertiary">ESC</span>
+</div>
+<div class="h-px w-full bg-border-subtle my-1"></div>
+<div class="flex flex-col gap-1 max-h-72 overflow-y-auto pr-1">
+<span class="font-label-mono text-label-mono text-text-tertiary uppercase px-space-sm py-1">Direct Mesh Actions</span>
+<div class="flex items-center justify-between p-space-sm rounded-lg hover:bg-surface-active cursor-pointer text-text-primary transition-colors" onclick="executePalette('share')">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">upload_file</span>
+<span class="font-body-md-medium text-body-md-medium">Seed / Share Academic File</span>
+</div>
+<span class="font-label-mono text-label-mono text-text-tertiary">⌘S</span>
+</div>
+<div class="flex items-center justify-between p-space-sm rounded-lg hover:bg-surface-active cursor-pointer text-text-primary transition-colors" onclick="executePalette('scan')">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px] text-tertiary">wifi_tethering</span>
+<span class="font-body-md-medium text-body-md-medium">Rescan Ad-hoc Wi-Fi Channels</span>
+</div>
+<span class="font-label-mono text-label-mono text-text-tertiary">⌘R</span>
+</div>
+<span class="font-label-mono text-label-mono text-text-tertiary uppercase px-space-sm py-1 mt-2">Active Students</span>
+<div class="flex items-center justify-between p-space-sm rounded-lg hover:bg-surface-active cursor-pointer text-text-primary transition-colors" onclick="executePalette('peer-aarav')">
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-body-md text-body-md">Aarav Shah (12 files · AI & ML)</span>
+</div>
+<span class="font-label-mono text-label-mono text-primary">Connect</span>
+</div>
+<div class="flex items-center justify-between p-space-sm rounded-lg hover:bg-surface-active cursor-pointer text-text-primary transition-colors" onclick="executePalette('peer-sara')">
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-body-md text-body-md">Sara Khan (14 files · AI & ML)</span>
+</div>
+<span class="font-label-mono text-label-mono text-primary">Connect</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Keyboard Shortcut for Command Palette
+  window.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      toggleCommandPalette(true);
+    }
+    if (e.key === 'Escape') {
+      toggleCommandPalette(false);
+      toggleModal('modal-share', false);
+    }
+  });
+
+  function toggleCommandPalette(show) {
+    const palette = document.getElementById('command-palette');
+    const input = document.getElementById('palette-input');
+    if (show) {
+      palette.classList.remove('hidden');
+      setTimeout(() => input.focus(), 50);
+    } else {
+      palette.classList.add('hidden');
+    }
+  }
+
+  function handleBackdropClick(e) {
+    toggleCommandPalette(false);
+  }
+
+  function toggleModal(id, forceState) {
+    const el = document.getElementById(id);
+    if (forceState !== undefined) {
+      if (forceState) el.classList.remove('hidden');
+      else el.classList.add('hidden');
+      return;
+    }
+    el.classList.toggle('hidden');
+  }
+
+  function dismissToast() {
+    const toast = document.getElementById('live-toast');
+    toast.classList.add('opacity-0', 'translate-y-4');
+    setTimeout(() => toast.remove(), 300);
+  }
+
+  function triggerBroadcastAnimation() {
+    const btn = document.getElementById('quick-broadcast-btn');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin text-tertiary">sync</span><span>Broadcasting UDP Beacon...</span>';
+    setTimeout(() => {
+      btn.innerHTML = '<span class="material-symbols-outlined text-[18px] text-tertiary">check</span><span>Mesh Beacon Emitted</span>';
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+      }, 2000);
+    }, 1200);
+  }
+
+  function rescanMesh() {
+    const icon = document.getElementById('scan-icon');
+    const text = document.getElementById('scan-text');
+    icon.classList.add('animate-spin');
+    text.innerText = 'Probing 4 Channels...';
+    
+    setTimeout(() => {
+      icon.classList.remove('animate-spin');
+      text.innerText = 'Mesh Up-to-date';
+      setTimeout(() => {
+        text.innerText = 'Rescan Mesh';
+      }, 2500);
+    }, 1500);
+  }
+
+  function startDownload(btn, filename) {
+    const origHTML = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin">progress_activity</span><span>Syncing...</span>';
+    setTimeout(() => {
+      btn.innerHTML = '<span class="material-symbols-outlined text-[16px]">done_all</span><span>Cached</span>';
+      btn.classList.remove('bg-primary-container', 'text-canvas-deep');
+      btn.classList.add('bg-tertiary/20', 'text-tertiary');
+    }, 1400);
+  }
+
+  function previewFile(name, author) {
+    alert("Previewing metadata chunks for: " + name + "\nAuthor node: " + author + "\nDirect transport stream verified (AES-256 hash valid).");
+  }
+
+  function openPeerModal(name, branch, host, fileCount) {
+    alert("Peer Node Info:\n• Name: " + name + "\n• Node Host: " + host + "\n• Class: " + branch + "\n• Shared Catalog: " + fileCount + " documents available.");
+  }
+
+  function showFilesModal(peerName) {
+    alert("Filtering catalog to inspect files hosted on " + peerName + "'s local node storage.");
+  }
+
+  function confirmShare() {
+    toggleModal('modal-share', false);
+    alert("File successfully hashed into 64KB chunks and broadcasted to the LTCE-AIML local mesh.");
+  }
+
+  function showTransfersNotification() {
+    alert("Active Transfers:\n1. Downloading: Java Lab Codes.zip (48% @ 2.1 MB/s from Sara Khan)\n2. Seeding: DSA Unit 2 Notes.pdf (Uploaded to 3 peers @ 1.3 MB/s)");
+  }
+
+  function filterFiles(type, btn) {
+    const buttons = document.querySelectorAll('.category-filter-btn');
+    buttons.forEach(b => {
+      b.classList.remove('bg-surface-active', 'text-text-primary');
+      b.classList.add('text-text-tertiary');
+    });
+    btn.classList.add('bg-surface-active', 'text-text-primary');
+    btn.classList.remove('text-text-tertiary');
+
+    const rows = document.querySelectorAll('.file-row');
+    rows.forEach(r => {
+      if (type === 'all' || r.dataset.type === type) {
+        r.style.display = '';
+      } else {
+        r.style.display = 'none';
+      }
+    });
+  }
+
+  function searchTable() {
+    const val = document.getElementById('table-search').value.toLowerCase();
+    const rows = document.querySelectorAll('.file-row');
+    rows.forEach(r => {
+      const title = r.dataset.title.toLowerCase();
+      if (title.includes(val)) {
+        r.style.display = '';
+      } else {
+        r.style.display = 'none';
+      }
+    });
+  }
+
+  function executePalette(action) {
+    toggleCommandPalette(false);
+    if (action === 'share') toggleModal('modal-share');
+    if (action === 'scan') rescanMesh();
+    if (action.startsWith('peer-')) {
+      alert("Opening direct peer-to-peer channel with student node.");
+    }
+  }
+</script></main></div></body></html>

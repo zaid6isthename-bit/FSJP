@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "secondary-fixed-dim": "#c1c7d3",
+        "on-secondary-fixed-variant": "#414751",
+        "secondary-container": "#dae0ed",
+        "inverse-primary": "#b4c5ff",
+        "surface-tint": "#0053db",
+        "tertiary": "#4f5661",
+        "on-primary-container": "#eeefff",
+        "surface-container-high": "#e8e7ef",
+        "inverse-surface": "#2e3036",
+        "on-tertiary-fixed-variant": "#404752",
+        "surface-dim": "#d9d9e1",
+        "on-primary": "#ffffff",
+        "primary": "#004ac6",
+        "surface-container-lowest": "#ffffff",
+        "on-error": "#ffffff",
+        "on-primary-fixed": "#00174b",
+        "background": "#f9f9ff",
+        "surface-container-highest": "#e2e2e9",
+        "on-background": "#1a1b21",
+        "tertiary-fixed-dim": "#c0c7d5",
+        "on-surface-variant": "#434655",
+        "surface": "#f9f9ff",
+        "secondary": "#595f69",
+        "on-error-container": "#93000a",
+        "on-primary-fixed-variant": "#003ea8",
+        "on-secondary-fixed": "#161c25",
+        "error-container": "#ffdad6",
+        "primary-fixed-dim": "#b4c5ff",
+        "primary-container": "#2563eb",
+        "on-tertiary-fixed": "#151c26",
+        "on-surface": "#1a1b21",
+        "outline-variant": "#c3c6d7",
+        "on-secondary": "#ffffff",
+        "error": "#ba1a1a",
+        "surface-container": "#ededf5",
+        "tertiary-container": "#676e7a",
+        "secondary-fixed": "#dde3ef",
+        "on-tertiary": "#ffffff",
+        "surface-variant": "#e2e2e9",
+        "surface-bright": "#f9f9ff",
+        "on-tertiary-container": "#ebf1ff",
+        "tertiary-fixed": "#dce3f1",
+        "inverse-on-surface": "#f0f0f7",
+        "outline": "#737686",
+        "surface-container-low": "#f3f3fa",
+        "on-secondary-container": "#5d636e",
+        "primary-fixed": "#dbe1ff"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "gutter-mobile": "1rem",
+        "space-xs": "0.25rem",
+        "margin-mobile": "1rem",
+        "margin": "2rem",
+        "space-xl": "2rem",
+        "gutter": "1.5rem",
+        "space-sm": "0.5rem",
+        "space-lg": "1.5rem",
+        "space-md": "1rem"
+      },
+      "fontFamily": {
+        "headline-lg": ["Inter"],
+        "headline-lg-mobile": ["Inter"],
+        "body-sm": ["Inter"],
+        "label-sm": ["Inter"],
+        "display-lg": ["Inter"],
+        "headline-md": ["Inter"],
+        "body-md": ["Inter"],
+        "label-md": ["Inter"],
+        "body-lg": ["Inter"],
+        "title-sm": ["Inter"]
+      },
+      "fontSize": {
+        "headline-lg": ["1.75rem", {"lineHeight": "2.25rem", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+        "headline-lg-mobile": ["1.5rem", {"lineHeight": "2rem", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+        "body-sm": ["0.8125rem", {"lineHeight": "1.25rem", "letterSpacing": "0.005em", "fontWeight": "400"}],
+        "label-sm": ["0.6875rem", {"lineHeight": "0.95rem", "letterSpacing": "0.04em", "fontWeight": "600"}],
+        "display-lg": ["2.25rem", {"lineHeight": "2.75rem", "letterSpacing": "-0.025em", "fontWeight": "600"}],
+        "headline-md": ["1.25rem", {"lineHeight": "1.75rem", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+        "body-md": ["0.9375rem", {"lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "400"}],
+        "label-md": ["0.8125rem", {"lineHeight": "1.125rem", "letterSpacing": "0.01em", "fontWeight": "500"}],
+        "body-lg": ["1.0625rem", {"lineHeight": "1.65rem", "letterSpacing": "-0.005em", "fontWeight": "400"}],
+        "title-sm": ["1rem", {"lineHeight": "1.5rem", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+      }
+    }
+  }
+}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-[248px] bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="h-[72px] px-space-md flex items-center gap-space-sm"><img alt="Brand logo. - Primary color: #66a3ff
+- Font: inter
+- Mode: dark
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W_5XnGvk1bbmG_cXGNrcqBZoo3Y68HISQYdaPi9Ru_OiPoOySzk18W-P7hHX7kqHAvboxJkwB-5coQyHHqCGFWeAZXevz1oGqHkLkCxHrMeqMPi7_4VwovauuQ0kLvDADODkdFM3O-FbnrLSt8dxYmwPANJ9CNOaRPu9bGoV2j3OOsSV45B_0CGXntYV0ybTPPKxjut48MzWab5beBDxM23LMOiaQn1dXC2OCRksghmhkwEZlXHachPro"/><div class="flex flex-col min-w-0"><span class="font-title-sm text-title-sm text-on-surface tracking-tight font-bold truncate leading-none">MESHNOTE</span><span class="font-label-sm text-label-sm text-secondary truncate mt-0.5">Local Academic Network</span></div></div><div class="px-space-sm py-space-xs"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-secondary">MAIN</div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-title-sm shadow-sm"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="overview-dashboard" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">dashboard</span><span>Overview</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="discover-material" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">explore</span><span>Discover</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="my-library" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">folder</span><span>My Library</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="shared-with-me" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">group</span><span>Shared With Me</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="transfers-p2p-monitor" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">sync_alt</span><span>Transfers</span></div><span class="px-1.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-secondary">2</span></a></nav></div><div class="px-space-sm py-space-xs"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-secondary">NETWORK</div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-title-sm shadow-sm"><a aria-current="page" class="flex items-center justify-between px-space-sm py-2 rounded-lg transition-all bg-primary-container text-on-primary font-title-sm shadow-sm" data-path="nearby-peers" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">hub</span><span>Nearby Peers</span></div><span class="px-1.5 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed font-semibold">4</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="network-activity" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">timeline</span><span>Network Activity</span></div></a></nav></div><div class="px-space-sm py-space-xs"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-secondary">PERSONAL</div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-title-sm shadow-sm"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="profile" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">person</span><span>Profile</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="settings" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">settings</span><span>Settings</span></div></a></nav></div></div><div class="p-space-sm flex flex-col gap-space-sm"><div class="p-space-sm rounded-xl bg-surface-container-low shadow-[0_1px_4px_rgba(0,0,0,0.03)] flex flex-col gap-1.5"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">LOCAL NETWORK</span><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container-lowest font-label-sm text-label-sm text-on-surface shadow-sm"><span class="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse"></span>Connected</span></div><span class="font-title-sm text-title-sm text-on-surface truncate font-semibold">LTCE-AIML-Network</span><span class="font-body-sm text-body-sm text-secondary">4 peers nearby</span></div><div class="flex items-center gap-space-sm p-space-xs rounded-xl bg-surface-container-lowest shadow-[0_1px_4px_rgba(0,0,0,0.03)]"><img alt="Profile" class="w-[36px] h-[36px] rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1XJR9TTf1hb_l_Zt5Cg-r5V_fhDKcvWSG3SPXeG51yfsSXa430Pm2wDScy8I5fC72FqqqtdDaDP9jzO8-wnn8Qgy-WAKOghy5_XFGkCvakVTP16qRT_3wn1Wqrsy8YpJPfdssqCQA_t3N0vLdROTeR3XepA7NQj9U0ugMkTyffQVV1hj6RB-HthgJp9dssJ3p58td6ZCdbZD_kSTX2bIypFMi6oJfKbeD6-Vt2Ix1Dg5FwwPlXtuGhOf_A"/><div class="flex flex-col min-w-0 flex-1"><span class="font-label-md text-label-md font-semibold text-on-surface truncate leading-tight">Zaid Mohammed</span><span class="font-label-sm text-label-sm text-secondary truncate">AI &amp; ML · Sem 3</span></div><span class="material-symbols-outlined text-secondary text-[18px]">unfold_more</span></div></div></aside><div class="pl-[248px]"><header class="fixed top-0 left-[248px] right-0 h-[72px] bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter"><div class="flex items-center gap-2 text-secondary font-label-md text-label-md"><span class="hover:text-on-surface cursor-pointer">Peer Mesh</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="text-on-surface font-semibold">LTCE AI-ML Node</span></div><div class="flex items-center gap-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-secondary text-[18px]">search</span><input class="w-96 pl-9 pr-4 py-2 rounded-lg bg-surface-container-lowest shadow-[0_1px_4px_rgba(0,0,0,0.02)] text-on-surface placeholder:text-secondary font-body-sm text-body-sm outline-none cursor-pointer focus:ring-2 focus:ring-primary-container" placeholder="Search notes, subjects, files or peers... (⌘K / Ctrl K)" readonly="" type="text"/></div><div class="hidden lg:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-lowest shadow-[0_1px_4px_rgba(0,0,0,0.02)] font-label-sm text-label-sm text-on-surface font-medium"><span class="w-2 h-2 rounded-full bg-[#10B981]"></span><span>LTCE-AIML-Network</span></div><div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-lg shadow-sm"><button class="flex items-center justify-center p-1 rounded bg-surface-container-lowest text-on-surface shadow-[0_1px_2px_rgba(0,0,0,0.04)]" title="Light Theme Active" type="button"><span class="material-symbols-outlined text-[18px]">light_mode</span></button><button class="flex items-center justify-center p-1 rounded text-secondary hover:text-on-surface transition-colors" title="Switch Theme" type="button"><span class="material-symbols-outlined text-[18px]">dark_mode</span></button></div><button class="relative flex items-center justify-center p-2 rounded-lg text-secondary hover:bg-surface-container-low hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface"></span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover cursor-pointer ring-1 ring-surface-container-high" src="https://lh3.googleusercontent.com/aida/AEtjO1XJR9TTf1hb_l_Zt5Cg-r5V_fhDKcvWSG3SPXeG51yfsSXa430Pm2wDScy8I5fC72FqqqtdDaDP9jzO8-wnn8Qgy-WAKOghy5_XFGkCvakVTP16qRT_3wn1Wqrsy8YpJPfdssqCQA_t3N0vLdROTeR3XepA7NQj9U0ugMkTyffQVV1hj6RB-HthgJp9dssJ3p58td6ZCdbZD_kSTX2bIypFMi6oJfKbeD6-Vt2Ix1Dg5FwwPlXtuGhOf_A"/></div></header><main class="relative pt-[72px] w-full px-gutter bg-surface min-h-screen"><div class="flex flex-col w-full pb-space-xl">
+<!-- Top Status Banner & Screen Header -->
+<div class="flex flex-col gap-space-sm pt-space-md mb-space-lg">
+<div class="flex items-center justify-between flex-wrap gap-space-sm">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low shadow-sm">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-semibold">LOCAL MESH ACTIVE</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">4 Nodes Discovered</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-secondary font-mono">subnet 192.168.43.0/24</span>
+</div>
+<!-- Controls: Toggle visibility & Refresh -->
+<div class="flex items-center gap-space-md">
+<label class="flex items-center gap-2.5 px-3 py-1.5 rounded-xl bg-surface-container-lowest shadow-sm cursor-pointer select-none">
+<div class="relative">
+<input checked="" class="sr-only peer" id="mesh-visibility-toggle" type="checkbox"/>
+<div class="w-9 h-5 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-surface-container-highest after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary-container"></div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold leading-tight">Visible to Mesh</span>
+<span class="font-label-sm text-label-sm text-secondary leading-none">Zaid's Laptop — Online</span>
+</div>
+</label>
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md shadow-sm transition-all active:scale-[0.98]" id="refresh-mesh-btn">
+<span class="material-symbols-outlined text-[18px] transition-transform duration-500" id="sync-icon">sync</span>
+<span>Refresh Network</span>
+</button>
+</div>
+</div>
+<!-- Title & Purpose -->
+<div class="flex flex-col gap-1 mt-1">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Nearby Peers</h1>
+<p class="font-body-md text-body-md text-secondary max-w-3xl">Classmates currently discovered on LTCE-AIML-Network with open p2p sync sockets.</p>
+</div>
+</div>
+<!-- Network Stats Overview Bar (4 Bento Chips) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-lg">
+<!-- Stat 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">router</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Multicast Channel</span>
+<span class="font-title-sm text-title-sm text-on-surface">Port 5353 (mDNS)</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant font-medium">Optimal</span>
+</div>
+<!-- Stat 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">speed</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Ad-Hoc Throughput</span>
+<span class="font-title-sm text-title-sm text-on-surface">342.8 Mbps max</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant font-medium">802.11ac</span>
+</div>
+<!-- Stat 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">auto_stories</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Academic Indices</span>
+<span class="font-title-sm text-title-sm text-on-surface">67 Files Ready</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant font-medium">Verified</span>
+</div>
+<!-- Stat 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">enhanced_encryption</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Encrypted Tunnel</span>
+<span class="font-title-sm text-title-sm text-on-surface">Zero-Cloud TLS 1.3</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-fixed font-label-sm text-label-sm text-on-primary-fixed font-semibold">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+        Secure
+      </span>
+</div>
+</div>
+<!-- Main Asymmetric Workspace Layout -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- Left Area: Peer Cards Grid (7 Cols on desktop) -->
+<div class="xl:col-span-7 flex flex-col gap-space-md">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<span class="font-title-sm text-title-sm text-on-surface">Discovered Mesh Nodes</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-secondary font-medium">4 Nearby</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Auto-syncing indices every 15s</span>
+</div>
+<!-- 2x2 Grid for Peer Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Peer 01: Aarav Shah (Active Selected State) -->
+<div class="peer-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between transition-all hover:shadow-md cursor-pointer ring-2 ring-primary-container" data-peer="aarav">
+<div class="flex flex-col gap-space-sm">
+<!-- Header row with latency badge -->
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="relative">
+<img class="w-11 h-11 rounded-full object-cover shadow-sm" data-alt="Portrait of Aarav Shah, male South Asian computer science student in a modern bright laboratory wearing navy shirt, soft natural indoor lighting, crisp professional headshot." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-riKuezYKWBhtrnuRxxqryPwrYt70AKBqWt6PFDH_EC38zGeo9Yf6ccLKbFkra4DB108KPGEFafnvTARYbqBgN-dzQDr86EmoMUddCZodpO56gOeqis6T_seKMcQbM5UwCMyDcxhz5_KXifqwoiGkF8hZJg2Yv2hYTBS4o3YptH0SCBAuuTydbeOVevV_geU1CavDRhOVjUKO5EPgyMrY4DCQzw1yGi5dbq_6w7Hd3vE5-lPbsD3i"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-[#10B981] ring-2 ring-surface-container-lowest" title="Connected: Online"></span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-title-sm text-title-sm text-on-surface">Aarav Shah</span>
+<span class="font-label-sm text-label-sm text-secondary font-mono">#01</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary">Aarav-Laptop · macOS</span>
+</div>
+</div>
+<div class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-low font-label-sm text-label-sm text-on-surface font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
+<span>4ms</span>
+</div>
+</div>
+<!-- Signal & Bandwidth info -->
+<div class="flex items-center justify-between text-secondary font-label-sm text-label-sm py-1 bg-surface-container-low/60 px-2 rounded-lg">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">wifi</span> Wi-Fi 5GHz
+              </span>
+<span class="font-mono text-on-surface-variant font-medium">-48 dBm signal</span>
+</div>
+<!-- Shared Libraries -->
+<div class="flex flex-col gap-1 mt-1">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-secondary">Shared Libraries (23 files)</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-medium">Data Structures</span>
+<span class="px-2 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-medium">Algorithms</span>
+<span class="px-2 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-medium">Python</span>
+</div>
+</div>
+<!-- Recent File Item -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between gap-2 mt-1">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0">description</span>
+<span class="font-label-md text-label-md text-on-surface truncate">Data Structures Module 3.pdf</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary shrink-0">12 min ago</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-2 mt-space-md pt-space-xs">
+<button class="flex-1 py-2 px-3 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold text-center hover:bg-primary transition-colors shadow-sm">
+              Browse Files (23)
+            </button>
+<button class="py-2 px-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors">
+              View Profile
+            </button>
+</div>
+</div>
+<!-- Peer 02: Sara Khan -->
+<div class="peer-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between transition-all hover:shadow-md cursor-pointer" data-peer="sara">
+<div class="flex flex-col gap-space-sm">
+<!-- Header row with latency badge -->
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="relative">
+<img class="w-11 h-11 rounded-full object-cover shadow-sm" data-alt="Portrait of Sara Khan, female university engineering student wearing spectacles in a well-lit campus library, professional and focused expression, bright modern palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAULMPvPkdo6kL2l_Ak6pZu3aURMkw3TC7EcSh6mKIjnEkhdoGXjajvAZBfAnEzWjhHTbz46RL6xaEFT7ojz24vyjy5Duz8XGeLbtyCbJv11RTiD-G_V2Iunx-IFXg3EFDND-2N0YYnzN__CCIjGKO9NXdXNnO3kpyjik79QS3FpnpmgxyZzipr1nq1NliD0isjF50B3-0eugy9AIe4-ZcQ7KyVnmbLS7lbzwwL9zmAbxQ60aMHQ42J"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-[#10B981] ring-2 ring-surface-container-lowest" title="Connected: Online"></span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-title-sm text-title-sm text-on-surface">Sara Khan</span>
+<span class="font-label-sm text-label-sm text-secondary font-mono">#02</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary">Sara-PC · Windows 11</span>
+</div>
+</div>
+<div class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-low font-label-sm text-label-sm text-on-surface font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
+<span>6ms</span>
+</div>
+</div>
+<!-- Signal & Bandwidth info -->
+<div class="flex items-center justify-between text-secondary font-label-sm text-label-sm py-1 bg-surface-container-low/60 px-2 rounded-lg">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">cable</span> LAN Dedicated
+              </span>
+<span class="font-mono text-on-surface-variant font-medium">-39 dBm signal</span>
+</div>
+<!-- Shared Libraries -->
+<div class="flex flex-col gap-1 mt-1">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-secondary">Shared Libraries (14 files)</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-medium">Full Stack Java</span>
+<span class="px-2 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-medium">DBMS</span>
+<span class="px-2 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-medium">Web Tech</span>
+</div>
+</div>
+<!-- Recent File Item -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between gap-2 mt-1">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0">description</span>
+<span class="font-label-md text-label-md text-on-surface truncate">Java Inheritance Notes.pdf</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary shrink-0">18 min ago</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-2 mt-space-md pt-space-xs">
+<button class="flex-1 py-2 px-3 rounded-lg bg-surface-container-low hover:bg-primary-container hover:text-on-primary text-on-surface font-label-md text-label-md font-semibold text-center transition-colors shadow-sm">
+              Browse Files (14)
+            </button>
+<button class="py-2 px-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors">
+              View Profile
+            </button>
+</div>
+</div>
+<!-- Peer 03: Rehan Mehta (Away state) -->
+<div class="peer-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between transition-all hover:shadow-md cursor-pointer opacity-90" data-peer="rehan">
+<div class="flex flex-col gap-space-sm">
+<!-- Header row with latency badge -->
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="relative">
+<img class="w-11 h-11 rounded-full object-cover shadow-sm grayscale-[30%]" data-alt="Portrait of Rehan Mehta, male college student with dark curly hair working on coding assignments, minimalist bright academic workspace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKBY_XEfPzSdn5-dZShahgPaWnudKkoT1wXzOAAm-3yICIB9UlDgNSiBuwMSjF4aC65RTyOVHvFEzIcXIyDwQBvAX1OMNgxpvX8552LRCsLZfPHtv5v87gdfIiSXpdpfWl-4N0N1yXgl8P5v2mFNtAhOuE84ZHsltI5lWLPNXPyKA40WsE0qTYYDQSqDb2R-9r31sQhOcN_8Lt-LUomSvpx-VjnR03gyl9k__nff7mU6boeRwepnYy"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-[#D97706] ring-2 ring-surface-container-lowest" title="Connected: Away"></span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-title-sm text-title-sm text-on-surface">Rehan Mehta</span>
+<span class="font-label-sm text-label-sm text-secondary font-mono">#03</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary">Rehan-Laptop · Linux</span>
+</div>
+</div>
+<div class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-low font-label-sm text-label-sm text-secondary font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#D97706]"></span>
+<span>8m ago</span>
+</div>
+</div>
+<!-- Signal & Bandwidth info -->
+<div class="flex items-center justify-between text-secondary font-label-sm text-label-sm py-1 bg-surface-container-low/60 px-2 rounded-lg">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">wifi</span> Wi-Fi Mesh
+              </span>
+<span class="font-mono text-on-surface-variant font-medium">-64 dBm signal</span>
+</div>
+<!-- Shared Libraries -->
+<div class="flex flex-col gap-1 mt-1">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-secondary">Shared Libraries (9 files)</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-medium">Computer Architecture</span>
+<span class="px-2 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-medium">Microprocessors</span>
+</div>
+</div>
+<!-- Recent File Item -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between gap-2 mt-1">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0">folder_zip</span>
+<span class="font-label-md text-label-md text-on-surface truncate">8086_Instruction_Set_Cheatsheet.zip</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary shrink-0">2 hrs ago</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-2 mt-space-md pt-space-xs">
+<button class="flex-1 py-2 px-3 rounded-lg bg-surface-container-low hover:bg-primary-container hover:text-on-primary text-on-surface font-label-md text-label-md font-semibold text-center transition-colors shadow-sm">
+              Browse Files (9)
+            </button>
+<button class="py-2 px-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors">
+              View Profile
+            </button>
+</div>
+</div>
+<!-- Peer 04: Meera Joshi -->
+<div class="peer-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between transition-all hover:shadow-md cursor-pointer" data-peer="meera">
+<div class="flex flex-col gap-space-sm">
+<!-- Header row with latency badge -->
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="relative">
+<img class="w-11 h-11 rounded-full object-cover shadow-sm" data-alt="Portrait of Meera Joshi, female Indian researcher student in computational linguistics, cheerful expression, natural daylight from modern laboratory window." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2hNiLDAzoHw7JFzB8QIRlhKDR5WMCt_a4lcvWXNule9nh5Lnw8_2K89ev28GXaRfbLeH6JhKOlVkGgbtpXABxrLK2WDmgrF1lz06PUdc0QJkh1OjWgkpPn_c8Maov3Dcaq30c70fNpOc67Cg3n6jsOLkPW1JiNW7hGjZWveJK_hZyTMplWPo4D5uY8XtNaE4Z-waa6-l1J_PQxATUeef6uwGIU52flhSEOiaFogIZ9FCOqaafAanW"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-[#10B981] ring-2 ring-surface-container-lowest" title="Connected: Online"></span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-title-sm text-title-sm text-on-surface">Meera Joshi</span>
+<span class="font-label-sm text-label-sm text-secondary font-mono">#04</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary">Meera-Book · macOS</span>
+</div>
+</div>
+<div class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-low font-label-sm text-label-sm text-on-surface font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
+<span>3ms</span>
+</div>
+</div>
+<!-- Signal & Bandwidth info -->
+<div class="flex items-center justify-between text-secondary font-label-sm text-label-sm py-1 bg-surface-container-low/60 px-2 rounded-lg">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">wifi</span> Wi-Fi 5GHz
+              </span>
+<span class="font-mono text-on-surface-variant font-medium">-42 dBm signal</span>
+</div>
+<!-- Shared Libraries -->
+<div class="flex flex-col gap-1 mt-1">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-secondary">Shared Libraries (21 files)</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-medium">Full Stack Java</span>
+<span class="px-2 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-medium">Discrete Math</span>
+<span class="px-2 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-medium">AI Ethics</span>
+</div>
+</div>
+<!-- Recent File Item -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between gap-2 mt-1">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0">description</span>
+<span class="font-label-md text-label-md text-on-surface truncate">Spring Boot REST Controller.pdf</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary shrink-0">24 min ago</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-2 mt-space-md pt-space-xs">
+<button class="flex-1 py-2 px-3 rounded-lg bg-surface-container-low hover:bg-primary-container hover:text-on-primary text-on-surface font-label-md text-label-md font-semibold text-center transition-colors shadow-sm">
+              Browse Files (21)
+            </button>
+<button class="py-2 px-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors">
+              View Profile
+            </button>
+</div>
+</div>
+</div>
+<!-- Academic Mesh Boundary Privacy Note -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-start gap-3 mt-1">
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Academic Mesh Boundary Verified</span>
+<p class="font-body-sm text-body-sm text-secondary leading-relaxed">
+            Only files placed in the student's MESHNOTE Shared Library are visible. No private folders, user identities, or cloud tracking. Zero Logs · Local IP Direct · BitTorrent Core
+          </p>
+</div>
+</div>
+</div>
+<!-- Right Area: Aarav Shah - Direct Peer Drawer / Shared Library Panel (5 Cols on desktop) -->
+<div class="xl:col-span-5 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md sticky top-[92px]">
+<!-- Header of Drawer -->
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">MESH PEER NODE · DIRECT SOCKET OPEN</span>
+</div>
+<button class="p-1 rounded-lg hover:bg-surface-container-low text-secondary hover:text-on-surface transition-colors" title="Close Panel">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Peer Mini-Profile Banner -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-3 min-w-0">
+<img class="w-12 h-12 rounded-full object-cover shadow-sm shrink-0" data-alt="Aarav Shah profile avatar close-up, computer science student in university research setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfD57R1adqWaucq-viAl12zJxc7HqtYpFKKBaCCp43os8e3SgMb243L5MDP_ULhcb4P282uLU-gOw4bkSYA-WV5Kl2DKWz6dV60u-jv3eIuaEbBKMEHucORJSFSLeLU-o91NK_oq1A1in7z0d6Sig_Ia2r0jQnM6gP_PvYjW4__ToNrt5BAbQvmkJtbxTRdsX9s06LsHX8rXydbwHYlR-gtF-3_fs2n1dHrOABwCWDlL1F5YfhIotr"/>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Aarav Shah</span>
+<span class="font-label-sm text-label-sm text-secondary truncate">AI &amp; ML · Semester 3</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">Aarav-Laptop</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary font-bold">
+<span class="material-symbols-outlined text-[14px]">bolt</span> ~4ms latency
+          </span>
+<span class="font-label-sm text-label-sm text-secondary">100% Signal</span>
+</div>
+</div>
+<!-- Filter bar & Download All Row -->
+<div class="flex items-center gap-2">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-secondary text-[18px]">search</span>
+<input class="w-full pl-9 pr-3 py-2 rounded-lg bg-surface-container-low text-on-surface placeholder:text-secondary font-body-sm text-body-sm outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container transition-all" id="file-filter-input" placeholder="Filter Aarav's shared files..." type="text"/>
+</div>
+<button class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md font-semibold shrink-0 shadow-sm transition-colors" id="download-all-btn">
+<span class="material-symbols-outlined text-[16px]">download_for_offline</span>
+<span>Download All</span>
+</button>
+</div>
+<!-- Active Shared Items Header -->
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Active Shared Items (23 files available)</span>
+<span class="font-label-sm text-label-sm text-secondary">Sorted by recency</span>
+</div>
+<!-- File List -->
+<div class="flex flex-col gap-2 max-h-[460px] overflow-y-auto pr-1" id="peer-files-list">
+<!-- File 1 -->
+<div class="file-item p-space-sm rounded-lg bg-surface-container-low/70 hover:bg-surface-container-low transition-colors flex items-center justify-between gap-3">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-9 h-9 rounded-lg bg-error-container text-on-error-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-medium truncate" title="Data Structures Module 3 - Trees &amp; Graphs.pdf">Data Structures Module 3 - Trees &amp; Graphs.pdf</span>
+<span class="font-label-sm text-label-sm text-secondary font-mono">8.4 MB · 12 min ago · Seeders: 3</span>
+</div>
+</div>
+<button class="fetch-btn px-3 py-1 rounded-md bg-surface-container-lowest hover:bg-primary-container hover:text-on-primary text-primary font-label-sm text-label-sm font-semibold transition-colors shadow-sm shrink-0">
+            Fetch
+          </button>
+</div>
+<!-- File 2 -->
+<div class="file-item p-space-sm rounded-lg bg-surface-container-low/70 hover:bg-surface-container-low transition-colors flex items-center justify-between gap-3">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">code</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-medium truncate" title="AVL_Tree_Implementation_Lab3.py">AVL_Tree_Implementation_Lab3.py</span>
+<span class="font-label-sm text-label-sm text-secondary font-mono">14.2 KB · 35 min ago · Verified Hash</span>
+</div>
+</div>
+<button class="fetch-btn px-3 py-1 rounded-md bg-surface-container-lowest hover:bg-primary-container hover:text-on-primary text-primary font-label-sm text-label-sm font-semibold transition-colors shadow-sm shrink-0">
+            Fetch
+          </button>
+</div>
+<!-- File 3 -->
+<div class="file-item p-space-sm rounded-lg bg-surface-container-low/70 hover:bg-surface-container-low transition-colors flex items-center justify-between gap-3">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">folder_zip</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-medium truncate" title="Algorithms_Assignment_Solutions_Sem3.zip">Algorithms_Assignment_Solutions_Sem3.zip</span>
+<span class="font-label-sm text-label-sm text-secondary font-mono">32.1 MB · 1 hr ago · 4 chunks</span>
+</div>
+</div>
+<button class="fetch-btn px-3 py-1 rounded-md bg-surface-container-lowest hover:bg-primary-container hover:text-on-primary text-primary font-label-sm text-label-sm font-semibold transition-colors shadow-sm shrink-0">
+            Fetch
+          </button>
+</div>
+<!-- File 4 -->
+<div class="file-item p-space-sm rounded-lg bg-surface-container-low/70 hover:bg-surface-container-low transition-colors flex items-center justify-between gap-3">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-9 h-9 rounded-lg bg-error-container text-on-error-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-medium truncate" title="Python_Advanced_Decorators_Notes.pdf">Python_Advanced_Decorators_Notes.pdf</span>
+<span class="font-label-sm text-label-sm text-secondary font-mono">3.7 MB · 2 hrs ago · Seeders: 2</span>
+</div>
+</div>
+<button class="fetch-btn px-3 py-1 rounded-md bg-surface-container-lowest hover:bg-primary-container hover:text-on-primary text-primary font-label-sm text-label-sm font-semibold transition-colors shadow-sm shrink-0">
+            Fetch
+          </button>
+</div>
+<!-- File 5 -->
+<div class="file-item p-space-sm rounded-lg bg-surface-container-low/70 hover:bg-surface-container-low transition-colors flex items-center justify-between gap-3">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">article</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-medium truncate" title="Syllabus_Breakdown_AIML_UnitTests.docx">Syllabus_Breakdown_AIML_UnitTests.docx</span>
+<span class="font-label-sm text-label-sm text-secondary font-mono">840 KB · Yesterday · Direct</span>
+</div>
+</div>
+<button class="fetch-btn px-3 py-1 rounded-md bg-surface-container-lowest hover:bg-primary-container hover:text-on-primary text-primary font-label-sm text-label-sm font-semibold transition-colors shadow-sm shrink-0">
+            Fetch
+          </button>
+</div>
+</div>
+<!-- Bottom Socket Status Indicator -->
+<div class="pt-space-sm mt-auto">
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low text-secondary font-label-sm text-label-sm">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-[#10B981]"></span>
+<span class="font-medium text-on-surface">P2P Socket TLS</span>
+</div>
+<span class="font-mono text-secondary">Peer ID: 0x4B38..F091</span>
+<span class="text-on-surface-variant font-medium">Zero Cloud Middleman</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Filter functionality for Aarav's Shared Items
+  const filterInput = document.getElementById('file-filter-input');
+  const fileItems = document.querySelectorAll('.file-item');
+
+  if (filterInput) {
+    filterInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      fileItems.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        if (text.includes(query)) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  }
+
+  // Refresh network spin animation
+  const refreshBtn = document.getElementById('refresh-mesh-btn');
+  const syncIcon = document.getElementById('sync-icon');
+
+  if (refreshBtn && syncIcon) {
+    refreshBtn.addEventListener('click', () => {
+      syncIcon.classList.add('rotate-180');
+      setTimeout(() => {
+        syncIcon.classList.remove('rotate-180');
+      }, 500);
+    });
+  }
+
+  // Fetch button micro-state interaction
+  document.querySelectorAll('.fetch-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      this.textContent = 'Syncing...';
+      this.classList.add('bg-primary-container', 'text-on-primary');
+      setTimeout(() => {
+        this.textContent = 'Cached';
+        this.classList.remove('text-primary');
+        this.classList.add('text-[#10B981]');
+      }, 800);
+    });
+  });
+
+  // Download all trigger
+  const downloadAllBtn = document.getElementById('download-all-btn');
+  if (downloadAllBtn) {
+    downloadAllBtn.addEventListener('click', () => {
+      document.querySelectorAll('.fetch-btn').forEach((btn, idx) => {
+        setTimeout(() => {
+          btn.textContent = 'Cached';
+          btn.classList.add('bg-surface-container-low', 'text-[#10B981]');
+        }, idx * 150);
+      });
+    });
+  }
+</script></main></div></body></html>

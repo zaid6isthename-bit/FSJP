@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "secondary-fixed-dim": "#c1c7d3",
+        "on-secondary-fixed-variant": "#414751",
+        "secondary-container": "#dae0ed",
+        "inverse-primary": "#b4c5ff",
+        "surface-tint": "#0053db",
+        "tertiary": "#4f5661",
+        "on-primary-container": "#eeefff",
+        "surface-container-high": "#e8e7ef",
+        "inverse-surface": "#2e3036",
+        "on-tertiary-fixed-variant": "#404752",
+        "surface-dim": "#d9d9e1",
+        "on-primary": "#ffffff",
+        "primary": "#004ac6",
+        "surface-container-lowest": "#ffffff",
+        "on-error": "#ffffff",
+        "on-primary-fixed": "#00174b",
+        "background": "#f9f9ff",
+        "surface-container-highest": "#e2e2e9",
+        "on-background": "#1a1b21",
+        "tertiary-fixed-dim": "#c0c7d5",
+        "on-surface-variant": "#434655",
+        "surface": "#f9f9ff",
+        "secondary": "#595f69",
+        "on-error-container": "#93000a",
+        "on-primary-fixed-variant": "#003ea8",
+        "on-secondary-fixed": "#161c25",
+        "error-container": "#ffdad6",
+        "primary-fixed-dim": "#b4c5ff",
+        "primary-container": "#2563eb",
+        "on-tertiary-fixed": "#151c26",
+        "on-surface": "#1a1b21",
+        "outline-variant": "#c3c6d7",
+        "on-secondary": "#ffffff",
+        "error": "#ba1a1a",
+        "surface-container": "#ededf5",
+        "tertiary-container": "#676e7a",
+        "secondary-fixed": "#dde3ef",
+        "on-tertiary": "#ffffff",
+        "surface-variant": "#e2e2e9",
+        "surface-bright": "#f9f9ff",
+        "on-tertiary-container": "#ebf1ff",
+        "tertiary-fixed": "#dce3f1",
+        "inverse-on-surface": "#f0f0f7",
+        "outline": "#737686",
+        "surface-container-low": "#f3f3fa",
+        "on-secondary-container": "#5d636e",
+        "primary-fixed": "#dbe1ff"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "gutter-mobile": "1rem",
+        "space-xs": "0.25rem",
+        "margin-mobile": "1rem",
+        "margin": "2rem",
+        "space-xl": "2rem",
+        "gutter": "1.5rem",
+        "space-sm": "0.5rem",
+        "space-lg": "1.5rem",
+        "space-md": "1rem"
+      },
+      "fontFamily": {
+        "headline-lg": ["Inter"],
+        "headline-lg-mobile": ["Inter"],
+        "body-sm": ["Inter"],
+        "label-sm": ["Inter"],
+        "display-lg": ["Inter"],
+        "headline-md": ["Inter"],
+        "body-md": ["Inter"],
+        "label-md": ["Inter"],
+        "body-lg": ["Inter"],
+        "title-sm": ["Inter"]
+      },
+      "fontSize": {
+        "headline-lg": ["1.75rem", {"lineHeight": "2.25rem", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+        "headline-lg-mobile": ["1.5rem", {"lineHeight": "2rem", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+        "body-sm": ["0.8125rem", {"lineHeight": "1.25rem", "letterSpacing": "0.005em", "fontWeight": "400"}],
+        "label-sm": ["0.6875rem", {"lineHeight": "0.95rem", "letterSpacing": "0.04em", "fontWeight": "600"}],
+        "display-lg": ["2.25rem", {"lineHeight": "2.75rem", "letterSpacing": "-0.025em", "fontWeight": "600"}],
+        "headline-md": ["1.25rem", {"lineHeight": "1.75rem", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+        "body-md": ["0.9375rem", {"lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "400"}],
+        "label-md": ["0.8125rem", {"lineHeight": "1.125rem", "letterSpacing": "0.01em", "fontWeight": "500"}],
+        "body-lg": ["1.0625rem", {"lineHeight": "1.65rem", "letterSpacing": "-0.005em", "fontWeight": "400"}],
+        "title-sm": ["1rem", {"lineHeight": "1.5rem", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+      }
+    }
+  }
+}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-[248px] bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="h-[72px] px-space-md flex items-center gap-space-sm"><img alt="Brand logo. - Primary color: #66a3ff
+- Font: inter
+- Mode: dark
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W_5XnGvk1bbmG_cXGNrcqBZoo3Y68HISQYdaPi9Ru_OiPoOySzk18W-P7hHX7kqHAvboxJkwB-5coQyHHqCGFWeAZXevz1oGqHkLkCxHrMeqMPi7_4VwovauuQ0kLvDADODkdFM3O-FbnrLSt8dxYmwPANJ9CNOaRPu9bGoV2j3OOsSV45B_0CGXntYV0ybTPPKxjut48MzWab5beBDxM23LMOiaQn1dXC2OCRksghmhkwEZlXHachPro"/><div class="flex flex-col min-w-0"><span class="font-title-sm text-title-sm text-on-surface tracking-tight font-bold truncate leading-none">MESHNOTE</span><span class="font-label-sm text-label-sm text-secondary truncate mt-0.5">Local Academic Network</span></div></div><div class="px-space-sm py-space-xs"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-secondary">MAIN</div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-title-sm shadow-sm"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="overview-dashboard" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">dashboard</span><span>Overview</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="discover-material" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">explore</span><span>Discover</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="my-library" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">folder</span><span>My Library</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="shared-with-me" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">group</span><span>Shared With Me</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="transfers-p2p-monitor" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">sync_alt</span><span>Transfers</span></div><span class="px-1.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-secondary">2</span></a></nav></div><div class="px-space-sm py-space-xs"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-secondary">NETWORK</div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-title-sm shadow-sm"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="nearby-peers" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">hub</span><span>Nearby Peers</span></div><span class="px-1.5 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed font-semibold">4</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="network-activity" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">timeline</span><span>Network Activity</span></div></a></nav></div><div class="px-space-sm py-space-xs"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-secondary">PERSONAL</div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-title-sm shadow-sm"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="profile" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">person</span><span>Profile</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="settings" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">settings</span><span>Settings</span></div></a></nav></div></div><div class="p-space-sm flex flex-col gap-space-sm"><div class="p-space-sm rounded-xl bg-surface-container-low shadow-[0_1px_4px_rgba(0,0,0,0.03)] flex flex-col gap-1.5"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">LOCAL NETWORK</span><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container-lowest font-label-sm text-label-sm text-on-surface shadow-sm"><span class="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse"></span>Connected</span></div><span class="font-title-sm text-title-sm text-on-surface truncate font-semibold">LTCE-AIML-Network</span><span class="font-body-sm text-body-sm text-secondary">4 peers nearby</span></div><div class="flex items-center gap-space-sm p-space-xs rounded-xl bg-surface-container-lowest shadow-[0_1px_4px_rgba(0,0,0,0.03)]"><img alt="Profile" class="w-[36px] h-[36px] rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1XJR9TTf1hb_l_Zt5Cg-r5V_fhDKcvWSG3SPXeG51yfsSXa430Pm2wDScy8I5fC72FqqqtdDaDP9jzO8-wnn8Qgy-WAKOghy5_XFGkCvakVTP16qRT_3wn1Wqrsy8YpJPfdssqCQA_t3N0vLdROTeR3XepA7NQj9U0ugMkTyffQVV1hj6RB-HthgJp9dssJ3p58td6ZCdbZD_kSTX2bIypFMi6oJfKbeD6-Vt2Ix1Dg5FwwPlXtuGhOf_A"/><div class="flex flex-col min-w-0 flex-1"><span class="font-label-md text-label-md font-semibold text-on-surface truncate leading-tight">Zaid Mohammed</span><span class="font-label-sm text-label-sm text-secondary truncate">AI &amp; ML · Sem 3</span></div><span class="material-symbols-outlined text-secondary text-[18px]">unfold_more</span></div></div></aside><div class="pl-[248px]"><header class="fixed top-0 left-[248px] right-0 h-[72px] bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter"><div class="flex items-center gap-2 text-secondary font-label-md text-label-md"><span class="hover:text-on-surface cursor-pointer">Peer Mesh</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="text-on-surface font-semibold">LTCE AI-ML Node</span></div><div class="flex items-center gap-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-secondary text-[18px]">search</span><input class="w-96 pl-9 pr-4 py-2 rounded-lg bg-surface-container-lowest shadow-[0_1px_4px_rgba(0,0,0,0.02)] text-on-surface placeholder:text-secondary font-body-sm text-body-sm outline-none cursor-pointer focus:ring-2 focus:ring-primary-container" placeholder="Search notes, subjects, files or peers... (⌘K / Ctrl K)" readonly="" type="text"/></div><div class="hidden lg:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-lowest shadow-[0_1px_4px_rgba(0,0,0,0.02)] font-label-sm text-label-sm text-on-surface font-medium"><span class="w-2 h-2 rounded-full bg-[#10B981]"></span><span>LTCE-AIML-Network</span></div><div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-lg shadow-sm"><button class="flex items-center justify-center p-1 rounded bg-surface-container-lowest text-on-surface shadow-[0_1px_2px_rgba(0,0,0,0.04)]" title="Light Theme Active" type="button"><span class="material-symbols-outlined text-[18px]">light_mode</span></button><button class="flex items-center justify-center p-1 rounded text-secondary hover:text-on-surface transition-colors" title="Switch Theme" type="button"><span class="material-symbols-outlined text-[18px]">dark_mode</span></button></div><button class="relative flex items-center justify-center p-2 rounded-lg text-secondary hover:bg-surface-container-low hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface"></span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover cursor-pointer ring-1 ring-surface-container-high" src="https://lh3.googleusercontent.com/aida/AEtjO1XJR9TTf1hb_l_Zt5Cg-r5V_fhDKcvWSG3SPXeG51yfsSXa430Pm2wDScy8I5fC72FqqqtdDaDP9jzO8-wnn8Qgy-WAKOghy5_XFGkCvakVTP16qRT_3wn1Wqrsy8YpJPfdssqCQA_t3N0vLdROTeR3XepA7NQj9U0ugMkTyffQVV1hj6RB-HthgJp9dssJ3p58td6ZCdbZD_kSTX2bIypFMi6oJfKbeD6-Vt2Ix1Dg5FwwPlXtuGhOf_A"/></div></header><main class="relative pt-[72px] w-full px-gutter bg-surface min-h-screen"><div class="flex flex-col w-full pb-space-xl">
+<!-- Top Level Status & Title Bar -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md py-space-md">
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container-low shadow-sm font-label-sm text-label-sm text-on-surface">
+<span class="w-2 h-2 rounded-full bg-[#10B981] animate-ping"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-[#10B981] -ml-2.5"></span>
+<span class="font-semibold tracking-wide">DIRECT P2P LAN MESH ACTIVE</span>
+</span>
+<span class="font-label-sm text-label-sm text-secondary">Local Socket Interface</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Transfers &amp; P2P Monitor</h1>
+<p class="font-body-md text-body-md text-secondary">Live peer-to-peer data streaming across high-speed local network sockets without internet reliance.</p>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">tune</span>
+<span>Socket Config</span>
+</button>
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">share</span>
+<span>+ Share Academic Notes</span>
+</button>
+</div>
+</div>
+<!-- Live Metrics Row -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md mt-space-sm">
+<!-- Metric 1 -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Active Swarm Streams</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-display-lg text-display-lg text-on-surface">2</span>
+<span class="font-label-md text-label-md text-primary-container font-semibold">Inbound TCP Direct</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[22px] group-hover:rotate-180 transition-transform duration-500">sync</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between font-body-sm text-body-sm text-secondary">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-[#10B981]">verified</span>
+          BLAKE3 Integrity Check
+        </span>
+<span class="font-label-sm text-label-sm text-on-surface bg-surface-container-low px-2 py-0.5 rounded">64 KB slices</span>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Aggregated Throughput</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-display-lg text-display-lg text-on-surface">4.8</span>
+<span class="font-title-sm text-title-sm text-secondary">MB/s</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[22px]">speed</span>
+</div>
+</div>
+<div class="mt-space-md flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-secondary">Aarav-MBP</span>
+<span class="font-semibold text-on-surface">2.4 MB/s</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-low overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 55%"></div>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm mt-0.5">
+<span class="text-secondary">Meera-Air</span>
+<span class="font-semibold text-on-surface">1.8 MB/s</span>
+</div>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Air-Gap Security</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-display-lg text-display-lg text-on-surface">0</span>
+<span class="font-title-sm text-title-sm text-secondary">KB Cloud Bandwidth</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-[#10B981]">
+<span class="material-symbols-outlined text-[22px]">format_image_left</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between font-body-sm text-body-sm text-secondary">
+<span class="text-on-surface font-medium flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-[#10B981]"></span>
+          100% Campus LAN Only
+        </span>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-low px-2 py-0.5 rounded">No WAN egress</span>
+</div>
+</div>
+</div>
+<!-- Tab Bar & Broadcast Metadata -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm mt-space-xl pb-space-xs">
+<div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-xl">
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-title-sm text-label-md shadow-sm flex items-center gap-2" type="button">
+<span>Active</span>
+<span class="px-1.5 py-0.2 rounded-full text-label-sm font-semibold bg-primary-container text-on-primary">2</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-lg text-secondary hover:text-on-surface font-label-md text-label-md flex items-center gap-2 transition-colors" type="button">
+<span>Completed</span>
+<span class="px-1.5 py-0.2 rounded-full text-label-sm font-medium bg-surface-container text-secondary">8</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-lg text-secondary hover:text-on-surface font-label-md text-label-md flex items-center gap-2 transition-colors" type="button">
+<span>Failed</span>
+<span class="px-1.5 py-0.2 rounded-full text-label-sm font-medium bg-error-container text-error">1</span>
+</button>
+</div>
+<div class="flex items-center gap-2 text-secondary font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary-container">sensors</span>
+        mDNS Broadcast (:5353)
+      </span>
+<span>•</span>
+<span class="text-on-surface font-medium">Auto-Heal Swarm Enabled</span>
+</div>
+</div>
+<!-- SECTION 1: LIVE DIRECT SOCKETS -->
+<div class="mt-space-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-md text-headline-md text-on-surface">Active Downloads</h2>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container-low text-secondary font-medium">Streaming · Chunk Size: 64 KB</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Socket Keep-Alive: 120ms</span>
+</div>
+<!-- Active Card 1 -->
+<div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md min-w-0">
+<div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center shrink-0 text-primary-container">
+<span class="material-symbols-outlined text-[28px]">picture_as_pdf</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-title-sm text-title-sm text-on-surface font-bold truncate">Data Structures Module 3 — Trees &amp; Graphs.pdf</span>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-secondary">6.3 MB</span>
+</div>
+<div class="flex items-center gap-2 mt-1 text-secondary font-body-sm text-body-sm flex-wrap">
+<span class="text-on-surface font-medium">From Aarav Shah</span>
+<span>•</span>
+<span class="font-mono text-label-sm bg-surface-container-low px-1.5 py-0.5 rounded text-on-surface-variant">Aarav-Laptop</span>
+<span>•</span>
+<span class="font-mono text-label-sm text-secondary">192.168.1.42:8080</span>
+</div>
+</div>
+</div>
+<!-- Controls -->
+<div class="flex items-center gap-space-sm self-end lg:self-center shrink-0">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">pause</span>
+<span>Pause</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-error-container text-secondary hover:text-error font-label-md text-label-md flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+<span>Cancel</span>
+</button>
+</div>
+</div>
+<!-- Progress Section -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span class="font-bold text-primary-container">67% Streamed</span>
+<span class="text-secondary">(4.2 MB / 6.3 MB)</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-semibold text-on-surface font-mono">2.4 MB/s</span>
+<span class="text-secondary">~12s remaining</span>
+</div>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-low overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary-container to-[#10B981] rounded-full transition-all duration-300" style="width: 67%"></div>
+</div>
+</div>
+<!-- Visual Packet Track -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col md:flex-row md:items-center justify-between gap-space-sm font-label-sm text-label-sm">
+<div class="flex items-center gap-3 flex-1 min-w-0">
+<div class="flex items-center gap-1 shrink-0 font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary-container">laptop_mac</span>
+<span>Aarav S.</span>
+</div>
+<div class="flex items-center gap-1 flex-1 px-2 overflow-hidden">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container shrink-0"></span>
+<span class="h-0.5 flex-1 bg-primary-container/30 relative overflow-hidden">
+<span class="absolute top-0 left-0 w-8 h-full bg-primary-container animate-[pulse_1s_infinite]"></span>
+</span>
+<span class="w-2 h-2 rounded-full bg-[#10B981] shrink-0 animate-ping"></span>
+<span class="h-0.5 flex-1 bg-primary-container/30"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container shrink-0"></span>
+</div>
+<div class="flex items-center gap-1 shrink-0 font-semibold text-on-surface">
+<span>Zaid (Local)</span>
+<span class="material-symbols-outlined text-[16px] text-[#10B981]">computer</span>
+</div>
+</div>
+<div class="flex items-center gap-2 text-secondary shrink-0">
+<span class="inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
+            TCP Socket: Established
+          </span>
+<span>•</span>
+<span>0 Dropouts</span>
+</div>
+</div>
+</div>
+<!-- Active Card 2 -->
+<div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md min-w-0">
+<div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center shrink-0 text-primary-container">
+<span class="material-symbols-outlined text-[28px]">code</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-title-sm text-title-sm text-on-surface font-bold truncate">Spring Boot REST Controller Architecture.pdf</span>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-secondary">3.8 MB</span>
+</div>
+<div class="flex items-center gap-2 mt-1 text-secondary font-body-sm text-body-sm flex-wrap">
+<span class="text-on-surface font-medium">From Meera Joshi</span>
+<span>•</span>
+<span class="font-mono text-label-sm bg-surface-container-low px-1.5 py-0.5 rounded text-on-surface-variant">Meera-Book</span>
+<span>•</span>
+<span class="font-mono text-label-sm text-secondary">192.168.1.77:8080</span>
+</div>
+</div>
+</div>
+<!-- Controls -->
+<div class="flex items-center gap-space-sm self-end lg:self-center shrink-0">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">pause</span>
+<span>Pause</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-error-container text-secondary hover:text-error font-label-md text-label-md flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+<span>Cancel</span>
+</button>
+</div>
+</div>
+<!-- Progress Section -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span class="font-bold text-primary-container">24% Streamed</span>
+<span class="text-secondary">(0.9 MB / 3.8 MB)</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-semibold text-on-surface font-mono">1.8 MB/s</span>
+<span class="text-secondary">~18s remaining</span>
+</div>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-low overflow-hidden">
+<div class="h-full bg-primary-container rounded-full transition-all duration-300" style="width: 24%"></div>
+</div>
+</div>
+<!-- Visual Packet Track -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col md:flex-row md:items-center justify-between gap-space-sm font-label-sm text-label-sm">
+<div class="flex items-center gap-3 flex-1 min-w-0">
+<div class="flex items-center gap-1 shrink-0 font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary-container">laptop_mac</span>
+<span>Meera J.</span>
+</div>
+<div class="flex items-center gap-1 flex-1 px-2 overflow-hidden">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container shrink-0"></span>
+<span class="h-0.5 flex-1 bg-primary-container/30 relative overflow-hidden">
+<span class="absolute top-0 left-0 w-8 h-full bg-primary-container animate-[pulse_1.5s_infinite]"></span>
+</span>
+<span class="w-2 h-2 rounded-full bg-primary-container shrink-0 animate-ping"></span>
+<span class="h-0.5 flex-1 bg-primary-container/30"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container shrink-0"></span>
+</div>
+<div class="flex items-center gap-1 shrink-0 font-semibold text-on-surface">
+<span>Zaid (Local)</span>
+<span class="material-symbols-outlined text-[16px] text-[#10B981]">computer</span>
+</div>
+</div>
+<div class="flex items-center gap-2 text-secondary shrink-0">
+<span class="inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
+            WiFi-Direct Mesh
+          </span>
+<span>•</span>
+<span>Chunk 14 / 60</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 2: COMPLETED DOWNLOADS -->
+<div class="mt-space-xl flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-md text-headline-md text-on-surface">Completed Downloads</h2>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container-low text-secondary font-medium">Stored on NVMe / Offline</span>
+</div>
+<button class="font-label-sm text-label-sm text-secondary hover:text-on-surface font-semibold tracking-wider uppercase transition-colors" type="button">
+        CLEAR FINISHED LOGS
+      </button>
+</div>
+<!-- Completed Rows Container -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm overflow-hidden divide-y divide-surface-container-high/40">
+<!-- Item 1 -->
+<div class="p-space-md flex flex-col sm:flex-row sm:items-center justify-between gap-space-md hover:bg-surface-container-low/60 transition-colors">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-lg bg-[#10B981]/10 flex items-center justify-center shrink-0 text-[#10B981]">
+<span class="material-symbols-outlined text-[22px]">check_circle</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold truncate">Java Inheritance &amp; Polymorphism Master Notes.pdf</span>
+<div class="flex items-center gap-2 text-secondary font-body-sm text-body-sm mt-0.5 flex-wrap">
+<span class="font-semibold text-on-surface">2.1 MB</span>
+<span>•</span>
+<span>From Sara Khan</span>
+<span>•</span>
+<span>Completed today at 11:42 AM</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 self-end sm:self-center">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary-container">visibility</span>
+<span>Open File</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" title="Show in Folder" type="button">
+<span class="material-symbols-outlined text-[18px]">folder_open</span>
+</button>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="p-space-md flex flex-col sm:flex-row sm:items-center justify-between gap-space-md hover:bg-surface-container-low/60 transition-colors">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-lg bg-[#10B981]/10 flex items-center justify-center shrink-0 text-[#10B981]">
+<span class="material-symbols-outlined text-[22px]">check_circle</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold truncate">Discrete Mathematics Unit 2 Problem Set.pdf</span>
+<div class="flex items-center gap-2 text-secondary font-body-sm text-body-sm mt-0.5 flex-wrap">
+<span class="font-semibold text-on-surface">3.4 MB</span>
+<span>•</span>
+<span>From Aarav Shah</span>
+<span>•</span>
+<span>Completed today at 10:15 AM</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 self-end sm:self-center">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary-container">visibility</span>
+<span>Open File</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" title="Show in Folder" type="button">
+<span class="material-symbols-outlined text-[18px]">folder_open</span>
+</button>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="p-space-md flex flex-col sm:flex-row sm:items-center justify-between gap-space-md hover:bg-surface-container-low/60 transition-colors">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-lg bg-[#10B981]/10 flex items-center justify-center shrink-0 text-[#10B981]">
+<span class="material-symbols-outlined text-[22px]">check_circle</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold truncate">Computer Networks Lab Manual Solution.pdf</span>
+<div class="flex items-center gap-2 text-secondary font-body-sm text-body-sm mt-0.5 flex-wrap">
+<span class="font-semibold text-on-surface">5.8 MB</span>
+<span>•</span>
+<span>From Rehan Mehta</span>
+<span>•</span>
+<span>Completed yesterday</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 self-end sm:self-center">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary-container">visibility</span>
+<span>Open File</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" title="Show in Folder" type="button">
+<span class="material-symbols-outlined text-[18px]">folder_open</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 3: INTERRUPT & DISCONNECT RECOVERY -->
+<div class="mt-space-xl flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-md text-headline-md text-on-surface">Interrupt &amp; Disconnect Recovery</h2>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-error-container text-error font-medium">Socket RST Received</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Checksum Preservation: Valid</span>
+</div>
+<div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md min-w-0">
+<div class="w-12 h-12 rounded-xl bg-error-container flex items-center justify-center shrink-0 text-error">
+<span class="material-symbols-outlined text-[26px]">wifi_off</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-title-sm text-title-sm text-on-surface font-bold">COA Important Questions &amp; Past Solutions.pdf</span>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-error-container text-error font-semibold">Transfer Failed (42%)</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-1">
+            Peer disconnected — Aarav's laptop went to sleep or left the local Wi-Fi. 1.8 MB of 4.2 MB safely preserved in cache.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 self-end md:self-center flex-wrap">
+<button class="px-3.5 py-2 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md flex items-center gap-1.5 transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">refresh</span>
+<span>Retry Transfer</span>
+</button>
+<button class="px-3 py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">travel_explore</span>
+<span>Search Alternate Peers</span>
+</button>
+<button class="px-2.5 py-2 rounded-lg text-secondary hover:text-on-surface transition-colors" title="Dismiss Alert" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+</div>
+<!-- SECTION 4: COLLAPSIBLE TECHNICAL DETAILS -->
+<div class="mt-space-xl flex flex-col rounded-2xl bg-surface-container-lowest shadow-sm overflow-hidden">
+<div class="p-space-lg flex items-center justify-between cursor-pointer hover:bg-surface-container-low/40 transition-colors" id="toggle-tech-specs">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">developer_board</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-title-sm text-title-sm text-on-surface font-bold">Technical Details (For advanced users)</span>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-[#10B981]/15 text-[#059669] font-semibold">All Ports Operational</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary">Underlying socket pipelines, chunking protocols, and zero-leakage enforcement.</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[24px] transition-transform duration-300" id="tech-specs-chevron">expand_more</span>
+</div>
+<!-- 4-Column Spec Grid -->
+<div class="p-space-lg pt-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md" id="tech-specs-content">
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Discovery Layer</span>
+<span class="font-title-sm text-title-sm font-mono text-on-surface font-semibold">UDP :5353</span>
+<span class="font-body-sm text-body-sm text-secondary">mDNS multicast beacon with node heartbeat broadcast every 4s.</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Direct Socket</span>
+<span class="font-title-sm text-title-sm font-mono text-on-surface font-semibold">TCP :8080</span>
+<span class="font-body-sm text-body-sm text-secondary">Direct byte streaming with zero NAT punching or external TURN servers.</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Swarm Slicing</span>
+<span class="font-title-sm text-title-sm font-mono text-on-surface font-semibold">64 KB Block</span>
+<span class="font-body-sm text-body-sm text-secondary">Parallel pipeline chunking with Merkle DAG cryptographic root validation.</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Internet Leakage</span>
+<span class="font-title-sm text-title-sm font-mono text-on-surface font-semibold">0 Bytes WAN</span>
+<span class="font-body-sm text-body-sm text-secondary">Strict OS hardware firewall rules isolate traffic to 192.168.0.0/16 subnet.</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple collapsible interaction for advanced specs
+  const toggleBtn = document.getElementById('toggle-tech-specs');
+  const content = document.getElementById('tech-specs-content');
+  const chevron = document.getElementById('tech-specs-chevron');
+
+  if (toggleBtn && content && chevron) {
+    toggleBtn.addEventListener('click', () => {
+      content.classList.toggle('hidden');
+      chevron.classList.toggle('rotate-180');
+    });
+  }
+</script></main></div></body></html>

@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-active":"#202630","inverse-surface":"#e1e2e9","on-primary-container":"#003871","on-tertiary-fixed":"#002113","border-subtle":"rgba(255, 255, 255, 0.08)","secondary":"#aec6ff","surface-dim":"#101319","primary-container":"#66a3ff","error-container":"#93000a","tertiary-fixed":"#74fbbb","on-surface":"#e1e2e9","primary":"#a9c7ff","on-tertiary":"#003823","text-tertiary":"#707985","surface-elevated":"#151920","outline":"#8c919d","status-error":"#FF6F7D","on-primary":"#003062","text-secondary":"#A9B0BA","secondary-fixed":"#d8e2ff","secondary-container":"#0163d6","tertiary-container":"#20b87e","canvas-deep":"#07090C","surface-container-lowest":"#0b0e13","primary-fixed-dim":"#a9c7ff","glow-focus":"rgba(102, 163, 255, 0.20)","on-error-container":"#ffdad6","surface-variant":"#32353a","text-primary":"#F5F7FA","background":"#101319","secondary-fixed-dim":"#aec6ff","surface-container-low":"#191c21","surface-tint":"#a9c7ff","canvas-base":"#0B0D10","on-secondary-fixed-variant":"#004396","on-error":"#690005","on-secondary":"#002e6a","border-strong":"rgba(255, 255, 255, 0.14)","surface-container":"#1d2025","surface-container-high":"#272a2f","text-disabled":"#4F5660","surface":"#101319","surface-hover":"#1A1F27","tertiary":"#55dea1","on-surface-variant":"#c2c6d4","status-warning":"#FFCC66","accent-soft":"rgba(102, 163, 255, 0.14)","on-primary-fixed":"#001b3d","surface-bright":"#36393f","error":"#ffb4ab","on-background":"#e1e2e9","on-secondary-fixed":"#001a42","inverse-primary":"#025db5","on-primary-fixed-variant":"#00468b","primary-fixed":"#d6e3ff","on-tertiary-fixed-variant":"#005235","surface-container-highest":"#32353a","on-tertiary-container":"#00422a","inverse-on-surface":"#2e3036","outline-variant":"#424752","tertiary-fixed-dim":"#55dea1","on-secondary-container":"#e0e8ff"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"margin-desktop":"2.5rem","space-md":"0.75rem","margin-wide":"3.5rem","space-lg":"1rem","space-sm":"0.5rem","margin":"1rem","space-xl":"1.5rem","space-xs":"0.25rem","gutter":"1rem","margin-tablet":"1.5rem","gutter-desktop":"1.5rem"},fontFamily:{"label-md":["Inter"],"display":["Inter"],"headline-lg":["Inter"],"headline-lg-mobile":["Inter"],"body-md":["Inter"],"body-md-medium":["Inter"],"display-mobile":["Inter"],"headline-md":["Inter"],"label-mono":["Inter"],"body-lg":["Inter"],"headline-sm":["Inter"]},fontSize:{"label-md":["11px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"500"}],"display":["48px",{"lineHeight":"56px","letterSpacing":"-0.04em","fontWeight":"600"}],"headline-lg":["32px",{"lineHeight":"38px","letterSpacing":"-0.03em","fontWeight":"600"}],"headline-lg-mobile":["26px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-md":["13px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"400"}],"body-md-medium":["13px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"500"}],"display-mobile":["36px",{"lineHeight":"42px","letterSpacing":"-0.03em","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"30px","letterSpacing":"-0.02em","fontWeight":"600"}],"label-mono":["11px",{"lineHeight":"16px","letterSpacing":"0.06em","fontWeight":"500"}],"body-lg":["15px",{"lineHeight":"22px","letterSpacing":"0em","fontWeight":"400"}],"headline-sm":["18px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}]}}}};</script></head><body class="bg-canvas-deep text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><aside class="fixed left-0 top-0 h-screen w-[248px] bg-[#101318] z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="h-[72px] px-space-lg flex items-center gap-space-md"><img alt="MESHNOTE Emblem" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W_5XnGvk1bbmG_cXGNrcqBZoo3Y68HISQYdaPi9Ru_OiPoOySzk18W-P7hHX7kqHAvboxJkwB-5coQyHHqCGFWeAZXevz1oGqHkLkCxHrMeqMPi7_4VwovauuQ0kLvDADODkdFM3O-FbnrLSt8dxYmwPANJ9CNOaRPu9bGoV2j3OOsSV45B_0CGXntYV0ybTPPKxjut48MzWab5beBDxM23LMOiaQn1dXC2OCRksghmhkwEZlXHachPro"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-text-primary tracking-tight leading-none">MESHNOTE</span><span class="font-label-md text-label-md text-text-tertiary mt-space-xs">Local Academic Network</span></div></div><div class="px-space-md py-space-sm"><div class="mb-space-lg"><div class="px-space-sm mb-space-xs font-label-mono text-label-mono text-text-tertiary uppercase tracking-wider">Main</div><nav class="space-y-space-xs" data-active-classes="bg-surface-active text-primary-fixed-dim"><a class="flex items-center justify-between px-space-sm py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-hover hover:text-on-surface transition-all" data-path="overview" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">grid_view</span><span class="font-body-md-medium text-body-md-medium">Overview</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-hover hover:text-on-surface transition-all" data-path="discover" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">explore</span><span class="font-body-md-medium text-body-md-medium">Discover</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-hover hover:text-on-surface transition-all" data-path="my-library" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span class="font-body-md-medium text-body-md-medium">My Library</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-hover hover:text-on-surface transition-all" data-path="shared-with-me" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">drive_file_move</span><span class="font-body-md-medium text-body-md-medium">Shared With Me</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-hover hover:text-on-surface transition-all" data-path="transfers" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">sync_alt</span><span class="font-body-md-medium text-body-md-medium">Transfers</span></div><span class="font-label-mono text-label-mono px-space-xs py-0.5 rounded-full bg-accent-soft text-primary-fixed">2</span></a></nav></div><div class="mb-space-lg"><div class="px-space-sm mb-space-xs font-label-mono text-label-mono text-text-tertiary uppercase tracking-wider">Network</div><nav class="space-y-space-xs" data-active-classes="bg-surface-active text-primary-fixed-dim"><a aria-current="page" class="flex items-center justify-between px-space-sm py-space-sm rounded-xl transition-all bg-surface-active text-primary-fixed-dim" data-path="nearby-peers" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">group</span><span class="font-body-md-medium text-body-md-medium">Nearby Peers</span></div><span class="font-label-mono text-label-mono px-space-xs py-0.5 rounded-full bg-tertiary-container/20 text-tertiary">4</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-hover hover:text-on-surface transition-all" data-path="network-activity" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">ssid_chart</span><span class="font-body-md-medium text-body-md-medium">Network Activity</span></div></a></nav></div><div class="mb-space-md"><div class="px-space-sm mb-space-xs font-label-mono text-label-mono text-text-tertiary uppercase tracking-wider">Personal</div><nav class="space-y-space-xs" data-active-classes="bg-surface-active text-primary-fixed-dim"><a class="flex items-center justify-between px-space-sm py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-hover hover:text-on-surface transition-all" data-path="profile" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">account_circle</span><span class="font-body-md-medium text-body-md-medium">Profile</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-hover hover:text-on-surface transition-all" data-path="settings" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">tune</span><span class="font-body-md-medium text-body-md-medium">Settings</span></div></a></nav></div></div></div><div class="p-space-sm space-y-space-sm"><div class="p-space-md rounded-xl bg-surface-elevated flex flex-col gap-space-xs shadow-[0_10px_30px_rgba(0,0,0,0.22)]"><div class="flex items-center justify-between"><span class="font-label-mono text-label-mono text-text-tertiary uppercase">LOCAL NETWORK</span><span class="material-symbols-outlined text-tertiary text-[16px]">wifi_tethering</span></div><div class="flex items-center gap-space-xs mt-space-xs"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span></span><span class="font-body-md-medium text-body-md-medium text-text-primary">Connected</span></div><div class="flex items-center justify-between pt-space-xs"><span class="font-body-md text-body-md text-text-secondary truncate max-w-[130px]">LTCE-AIML-Network</span><span class="font-label-mono text-label-mono text-text-tertiary">4 peers</span></div></div><div class="p-space-sm rounded-xl bg-surface-elevated flex items-center justify-between hover:bg-surface-hover transition-colors"><div class="flex items-center gap-space-sm min-w-0"><div class="relative flex-shrink-0"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-yegZcaMYdV5szHyK61G0A3xRyAnuwLSYDM5RWtwVkzBgI10HLK5X0_gitS8w8eghBSu9YZqGNzFbjI8sK8Tr2gWQ1vRDvOag56HyQ4gpmuClNYLJzuSoIgRgSCHMxlUCRGvMaMJm_tseqLoa-cm1hw4TlEVNvNaH74cAM06AwPNMA4DrQn5PnLjk8E7ICuZrRGhx2kNTZJXcJOTp6KMnzWh9yzptKZsy5vfasWZLG6TNg2AoaijB"/><span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-tertiary ring-2 ring-[#101318]"></span></div><div class="flex flex-col min-w-0"><span class="font-body-md-medium text-body-md-medium text-text-primary truncate">Zaid Mohammed</span><span class="font-label-md text-label-md text-text-tertiary truncate">AI & ML · Sem 3</span></div></div><span class="material-symbols-outlined text-text-disabled text-[18px]">more_vert</span></div></div></aside><div class="pl-[248px] min-h-screen bg-canvas-deep flex flex-col"><header class="fixed top-0 left-[248px] right-0 h-[72px] z-40 bg-canvas-deep/80 backdrop-blur-xl flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm text-text-tertiary"><span class="material-symbols-outlined text-[16px]">hub</span><span class="font-body-md text-body-md text-text-secondary">Peer Mesh</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="font-body-md-medium text-body-md-medium text-text-primary">LTCE AI-ML Node</span></div></div><div class="flex items-center gap-space-lg"><div class="relative w-[340px]"><span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-text-tertiary text-[18px]">search</span><input class="w-full h-11 pl-10 pr-space-md rounded-xl bg-[#101318] text-text-primary placeholder:text-text-tertiary font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container focus:bg-surface-elevated transition-all" placeholder="Search notes, subjects, files or peers... (⌘K / Ctrl K)" type="text"/></div><div class="flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-accent-soft"><span class="h-1.5 w-1.5 rounded-full bg-tertiary"></span><span class="font-label-md text-label-md text-primary-fixed">LTCE-AIML-Network</span></div><button class="relative p-space-sm rounded-xl text-text-secondary hover:text-text-primary hover:bg-surface-elevated transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-1.5 h-1.5 rounded-full bg-primary-container"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-border-strong cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-yegZcaMYdV5szHyK61G0A3xRyAnuwLSYDM5RWtwVkzBgI10HLK5X0_gitS8w8eghBSu9YZqGNzFbjI8sK8Tr2gWQ1vRDvOag56HyQ4gpmuClNYLJzuSoIgRgSCHMxlUCRGvMaMJm_tseqLoa-cm1hw4TlEVNvNaH74cAM06AwPNMA4DrQn5PnLjk8E7ICuZrRGhx2kNTZJXcJOTp6KMnzWh9yzptKZsy5vfasWZLG6TNg2AoaijB"/></div></div></header><main class="w-full pt-[72px] px-space-xl pb-space-xl flex-1"><div class="flex flex-col w-full">
+<div class="flex flex-col gap-space-xl pb-space-xl">
+<!-- Top Action & Diagnostic Header -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg bg-surface-container-low p-space-xl rounded-xl shadow-xl relative overflow-hidden">
+<!-- Subtle ambient visual field -->
+<div class="absolute -right-20 -top-24 w-80 h-80 rounded-full bg-secondary-container/10 blur-3xl pointer-events-none"></div>
+<div class="flex flex-col gap-space-xs z-10">
+<div class="flex items-center gap-space-sm">
+<div class="inline-flex items-center gap-space-xs px-space-md py-1 rounded-full bg-surface-container-highest text-tertiary">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span>
+</span>
+<span class="font-label-mono text-label-mono uppercase tracking-wider text-text-primary">Local Mesh Active</span>
+</div>
+<span class="font-label-mono text-label-mono text-text-tertiary">● 4 Nodes Discovered</span>
+<span class="font-label-mono text-label-mono text-text-tertiary">| subnet 192.168.43.0/24</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight mt-1">Nearby Peers</h1>
+<p class="font-body-md text-body-md text-text-secondary">Classmates currently discovered on <span class="text-primary-fixed-dim font-body-md-medium">LTCE-AIML-Network</span> with open p2p sync sockets.</p>
+</div>
+<!-- Controls Group -->
+<div class="flex flex-wrap items-center gap-space-md z-10">
+<!-- Discoverability Switch -->
+<div class="flex items-center gap-space-md bg-surface-elevated px-space-lg py-space-sm rounded-xl shadow-md">
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-text-primary">Visible to Mesh</span>
+<span class="font-label-md text-label-md text-text-tertiary">Zaid's Laptop — Online</span>
+</div>
+<button class="w-12 h-6 rounded-full bg-primary-container p-0.5 flex items-center transition-colors" id="visibilityToggle" onclick="toggleVisibility()">
+<div class="bg-canvas-deep w-5 h-5 rounded-full transform translate-x-6 transition-transform shadow" id="toggleBall"></div>
+</button>
+</div>
+<!-- Refresh Button -->
+<button class="h-11 px-space-lg rounded-xl bg-primary-container text-on-primary-container font-body-md-medium text-body-md-medium flex items-center gap-space-sm shadow-md hover:bg-primary transition-all" id="refreshBtn" onclick="triggerDiscoveryPulse()">
+<span class="material-symbols-outlined text-[18px]" id="refreshIcon">sync</span>
+<span>Refresh Network</span>
+</button>
+</div>
+</div>
+<!-- Network Radar & Signal Matrix Summary Bar -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-md">
+<div class="bg-surface-container-low p-space-md rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-surface-elevated flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">wifi_channel</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-mono text-label-mono text-text-tertiary uppercase">Multicast Channel</span>
+<span class="font-body-md-medium text-body-md-medium text-text-primary">Port 5353 (mDNS)</span>
+</div>
+</div>
+<span class="font-label-mono text-label-md text-tertiary bg-surface-elevated px-2 py-0.5 rounded">Optimal</span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-surface-elevated flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">speed</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-mono text-label-mono text-text-tertiary uppercase">Ad-Hoc Throughput</span>
+<span class="font-body-md-medium text-body-md-medium text-text-primary">342.8 Mbps max</span>
+</div>
+</div>
+<span class="font-label-mono text-label-md text-primary-fixed bg-surface-elevated px-2 py-0.5 rounded">802.11ac</span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-surface-elevated flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[22px]">folder_shared</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-mono text-label-mono text-text-tertiary uppercase">Academic Indices</span>
+<span class="font-body-md-medium text-body-md-medium text-text-primary">67 Files Ready</span>
+</div>
+</div>
+<span class="font-label-mono text-label-md text-text-secondary bg-surface-elevated px-2 py-0.5 rounded">Verified</span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-surface-elevated flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[22px]">security</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-mono text-label-mono text-text-tertiary uppercase">Encrypted Tunnel</span>
+<span class="font-body-md-medium text-body-md-medium text-text-primary">Zero-Cloud TLS 1.3</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[18px]">verified_user</span>
+</div>
+</div>
+<!-- Peers Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
+<!-- Card 1: Aarav Shah -->
+<div class="bg-surface-container-low hover:bg-surface-container transition-all duration-200 rounded-xl p-space-xl flex flex-col justify-between shadow-lg relative group">
+<div>
+<!-- Header info -->
+<div class="flex items-start justify-between gap-space-md mb-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="relative">
+<img class="w-14 h-14 rounded-full object-cover shadow" data-alt="Close-up portrait of Aarav Shah, a male South Asian university student wearing dark spectacles and navy hoodie in a subtle technology lab background with soft teal light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD541eM5XD4qQzvH8cpJ_PNvDVTJwqOu8IvR-faj5PtH9rDBBnLyWUU2keUaivupfeat6bMPw1HkP4xW5rX0cVEBOetV_wn2Robw11z29m6dWpQP9cvxP5Y8-LidgyYx6lgR8mn1F8aKxdoeHSbzMsJ0s6dJoWgvHp7fUxo1m3baTOoPEpwDyUDkslp_Ithd24WuW_ERvp2xgrUgBqJokfctMwVnXleasUhWpdcHDDPUzpMyXxZpGlE"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-tertiary ring-2 ring-surface-container-low"></span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-text-primary">Aarav Shah</span>
+<span class="px-space-xs py-0.5 rounded font-label-mono text-label-md bg-secondary-container/20 text-secondary-fixed">Peer #01</span>
+</div>
+<span class="font-body-md text-body-md text-text-secondary">AI & ML · Semester 3</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<div class="flex items-center gap-space-xs text-tertiary font-label-mono text-label-md">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>Online</span>
+</div>
+<span class="font-label-mono text-label-md text-text-tertiary mt-0.5">Ping: 4ms</span>
+</div>
+</div>
+<!-- Hardware & Spec Pills -->
+<div class="flex flex-wrap items-center gap-space-sm mb-space-lg text-text-secondary">
+<div class="flex items-center gap-1.5 px-space-md py-1 rounded-lg bg-surface-elevated font-body-md text-body-md">
+<span class="material-symbols-outlined text-[16px] text-text-tertiary">laptop_mac</span>
+<span>Aarav-Laptop</span>
+</div>
+<div class="flex items-center gap-1.5 px-space-md py-1 rounded-lg bg-surface-elevated font-body-md text-body-md">
+<span class="material-symbols-outlined text-[16px] text-text-tertiary">wifi</span>
+<span>macOS · Wi-Fi 5GHz</span>
+</div>
+<div class="flex items-center gap-1 px-space-md py-1 rounded-lg bg-surface-elevated font-label-mono text-label-md text-tertiary">
+<span class="material-symbols-outlined text-[14px]">signal_cellular_alt</span>
+<span>-48 dBm</span>
+</div>
+</div>
+<!-- Academic Content Tags & Recent Upload Card -->
+<div class="bg-surface-elevated rounded-xl p-space-md mb-space-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-label-mono text-text-tertiary uppercase">Shared Libraries (23 Files)</span>
+<div class="flex items-center gap-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-label-mono text-label-md text-primary">Data Structures</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-label-mono text-label-md text-primary">Algorithms</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-label-mono text-label-md text-primary">Python</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-status-warning text-[20px]">picture_as_pdf</span>
+<span class="font-body-md-medium text-body-md-medium text-text-primary truncate">Data Structures Module 3.pdf</span>
+</div>
+<span class="font-label-mono text-label-md text-text-tertiary whitespace-nowrap">12 min ago</span>
+</div>
+</div>
+</div>
+<!-- Action Row -->
+<div class="flex items-center gap-space-md pt-space-sm">
+<button class="flex-1 h-11 rounded-xl bg-primary-container text-on-primary-container font-body-md-medium text-body-md-medium flex items-center justify-center gap-space-sm hover:bg-primary transition-colors" onclick="openDrawer('Aarav Shah', 'Aarav-Laptop', '23', 'AI & ML · Semester 3')">
+<span class="material-symbols-outlined text-[18px]">folder_open</span>
+<span>Browse Files (23)</span>
+</button>
+<button class="h-11 px-space-lg rounded-xl bg-surface-elevated text-text-primary hover:bg-surface-hover font-body-md-medium text-body-md-medium flex items-center justify-center transition-colors">
+            View Profile
+          </button>
+</div>
+</div>
+<!-- Card 2: Sara Khan -->
+<div class="bg-surface-container-low hover:bg-surface-container transition-all duration-200 rounded-xl p-space-xl flex flex-col justify-between shadow-lg relative group">
+<div>
+<!-- Header info -->
+<div class="flex items-start justify-between gap-space-md mb-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="relative">
+<img class="w-14 h-14 rounded-full object-cover shadow" data-alt="Portrait of Sara Khan, an Indian female engineering student with hair pulled back in a tidy bun, focused expression in a library workstation with subtle warm glow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3TBIVEkqHSu68VK_0hdSsUvwQ3lA-wQovTlo4zywj7TpQNb2WC7ennMrld6cBQybL30QZUkBKsVvtevZaotHjWv2r10frHLyUVKEYftSKq_d8KappBvhesEn3k60Ea2ILH67IVncsZebw7NwXejCsDB8vH5drs7a05aCI_LbUPeu7xvh2ZcxvjLhfvk4YSbSqP3DlmiVmVUU4Q3_mQWcMWO8FwOYHFgMZvDe0tgXJAqS5d3Ir2ug4"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-tertiary ring-2 ring-surface-container-low"></span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-text-primary">Sara Khan</span>
+<span class="px-space-xs py-0.5 rounded font-label-mono text-label-md bg-secondary-container/20 text-secondary-fixed">Peer #02</span>
+</div>
+<span class="font-body-md text-body-md text-text-secondary">AI & ML · Semester 3</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<div class="flex items-center gap-space-xs text-tertiary font-label-mono text-label-md">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>Online</span>
+</div>
+<span class="font-label-mono text-label-md text-text-tertiary mt-0.5">Ping: 6ms</span>
+</div>
+</div>
+<!-- Hardware & Spec Pills -->
+<div class="flex flex-wrap items-center gap-space-sm mb-space-lg text-text-secondary">
+<div class="flex items-center gap-1.5 px-space-md py-1 rounded-lg bg-surface-elevated font-body-md text-body-md">
+<span class="material-symbols-outlined text-[16px] text-text-tertiary">desktop_windows</span>
+<span>Sara-PC</span>
+</div>
+<div class="flex items-center gap-1.5 px-space-md py-1 rounded-lg bg-surface-elevated font-body-md text-body-md">
+<span class="material-symbols-outlined text-[16px] text-text-tertiary">lan</span>
+<span>Windows 11 · LAN</span>
+</div>
+<div class="flex items-center gap-1 px-space-md py-1 rounded-lg bg-surface-elevated font-label-mono text-label-md text-tertiary">
+<span class="material-symbols-outlined text-[14px]">signal_cellular_alt</span>
+<span>-39 dBm</span>
+</div>
+</div>
+<!-- Academic Content Tags & Recent Upload Card -->
+<div class="bg-surface-elevated rounded-xl p-space-md mb-space-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-label-mono text-text-tertiary uppercase">Shared Libraries (14 Files)</span>
+<div class="flex items-center gap-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-label-mono text-label-md text-secondary">Full Stack Java</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-label-mono text-label-md text-secondary">DBMS</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-label-mono text-label-md text-secondary">Web Tech</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-status-warning text-[20px]">picture_as_pdf</span>
+<span class="font-body-md-medium text-body-md-medium text-text-primary truncate">Java Inheritance Notes.pdf</span>
+</div>
+<span class="font-label-mono text-label-md text-text-tertiary whitespace-nowrap">18 min ago</span>
+</div>
+</div>
+</div>
+<!-- Action Row -->
+<div class="flex items-center gap-space-md pt-space-sm">
+<button class="flex-1 h-11 rounded-xl bg-surface-elevated hover:bg-surface-hover text-text-primary font-body-md-medium text-body-md-medium flex items-center justify-center gap-space-sm transition-colors" onclick="openDrawer('Sara Khan', 'Sara-PC', '14', 'AI & ML · Semester 3')">
+<span class="material-symbols-outlined text-[18px]">folder_open</span>
+<span>Browse Files (14)</span>
+</button>
+<button class="h-11 px-space-lg rounded-xl bg-surface-elevated text-text-primary hover:bg-surface-hover font-body-md-medium text-body-md-medium flex items-center justify-center transition-colors">
+            View Profile
+          </button>
+</div>
+</div>
+<!-- Card 3: Rehan Mehta -->
+<div class="bg-surface-container-low hover:bg-surface-container transition-all duration-200 rounded-xl p-space-xl flex flex-col justify-between shadow-lg relative group opacity-90">
+<div>
+<!-- Header info -->
+<div class="flex items-start justify-between gap-space-md mb-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="relative">
+<img class="w-14 h-14 rounded-full object-cover grayscale-[30%] shadow" data-alt="Portrait of Rehan Mehta, an Indian engineering student with rolled-up sleeves and earphones resting on his neck sitting in an academic workspace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY6d41ZI4i0f-XVUn2zAEzNb2t71NhVYVWfePxWsEJPaSxdpAmd6bQRoLhmtbguKDIhyGHFnPzz75IHv_VsfLwEmyV-ysUDPGPSU1HGDkRyGrJzMTJ_QyawtizFJkkFb0nz9ooShwJK3tqhlmCAfwRiWlqpXfIaTzsMSFve-ZQkFpRyhQh5Eu20XpW1VUYS70yNsYB_K_t_TbfmhmbD_1RbNbWu78-84uFbshtwXlxTQuW-Qq9hYmE"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-status-warning ring-2 ring-surface-container-low"></span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-text-primary">Rehan Mehta</span>
+<span class="px-space-xs py-0.5 rounded font-label-mono text-label-md bg-surface-container-highest text-text-tertiary">Peer #03</span>
+</div>
+<span class="font-body-md text-body-md text-text-secondary">Computer Engineering · Semester 3</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<div class="flex items-center gap-space-xs text-status-warning font-label-mono text-label-md">
+<span class="w-2 h-2 rounded-full bg-status-warning"></span>
+<span>Away</span>
+</div>
+<span class="font-label-mono text-label-md text-text-tertiary mt-0.5">8 min ago</span>
+</div>
+</div>
+<!-- Hardware & Spec Pills -->
+<div class="flex flex-wrap items-center gap-space-sm mb-space-lg text-text-secondary">
+<div class="flex items-center gap-1.5 px-space-md py-1 rounded-lg bg-surface-elevated font-body-md text-body-md">
+<span class="material-symbols-outlined text-[16px] text-text-tertiary">terminal</span>
+<span>Rehan-Laptop</span>
+</div>
+<div class="flex items-center gap-1.5 px-space-md py-1 rounded-lg bg-surface-elevated font-body-md text-body-md">
+<span class="material-symbols-outlined text-[16px] text-text-tertiary">wifi</span>
+<span>Linux · Wi-Fi</span>
+</div>
+<div class="flex items-center gap-1 px-space-md py-1 rounded-lg bg-surface-elevated font-label-mono text-label-md text-text-tertiary">
+<span class="material-symbols-outlined text-[14px]">signal_cellular_alt</span>
+<span>-64 dBm</span>
+</div>
+</div>
+<!-- Academic Content Tags & Recent Upload Card -->
+<div class="bg-surface-elevated rounded-xl p-space-md mb-space-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-label-mono text-text-tertiary uppercase">Shared Libraries (9 Files)</span>
+<div class="flex items-center gap-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-label-mono text-label-md text-text-secondary">Computer Architecture</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-label-mono text-label-md text-text-secondary">Microprocessors</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-secondary text-[20px]">archive</span>
+<span class="font-body-md-medium text-body-md-medium text-text-primary truncate">8086_Instruction_Set_Cheatsheet.zip</span>
+</div>
+<span class="font-label-mono text-label-md text-text-tertiary whitespace-nowrap">2 hrs ago</span>
+</div>
+</div>
+</div>
+<!-- Action Row -->
+<div class="flex items-center gap-space-md pt-space-sm">
+<button class="flex-1 h-11 rounded-xl bg-surface-elevated hover:bg-surface-hover text-text-primary font-body-md-medium text-body-md-medium flex items-center justify-center gap-space-sm transition-colors" onclick="openDrawer('Rehan Mehta', 'Rehan-Laptop', '9', 'Computer Engineering · Semester 3')">
+<span class="material-symbols-outlined text-[18px]">folder_open</span>
+<span>Browse Files (9)</span>
+</button>
+<button class="h-11 px-space-lg rounded-xl bg-surface-elevated text-text-primary hover:bg-surface-hover font-body-md-medium text-body-md-medium flex items-center justify-center transition-colors">
+            View Profile
+          </button>
+</div>
+</div>
+<!-- Card 4: Meera Joshi -->
+<div class="bg-surface-container-low hover:bg-surface-container transition-all duration-200 rounded-xl p-space-xl flex flex-col justify-between shadow-lg relative group">
+<div>
+<!-- Header info -->
+<div class="flex items-start justify-between gap-space-md mb-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="relative">
+<img class="w-14 h-14 rounded-full object-cover shadow" data-alt="Portrait of Meera Joshi, an Indian female student with a light smile, wearing a dark olive jacket and studying with textbooks visible in background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3Ob5SpSObxNmV415bUKnMpKB7PQTLLFmSItb1JqIxZcZQacfbszvhHUMmrFTktb-RWLmWcyzkp4zVKa9qL0oq38xhce7hCspPgB_neZfFrCKDSYUoV22QK9tArDj1QG2LCacdgUsl9GPROC2MaNz81KBVdor1gIs2hGxjkUGyECsYUcqTMRUQFPexVZPUgjxd3zaVbSwtarjx2BmWZVetfhYsOJNUHXT9W2yl649pX-5ybtMUR2Dr"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-tertiary ring-2 ring-surface-container-low"></span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-text-primary">Meera Joshi</span>
+<span class="px-space-xs py-0.5 rounded font-label-mono text-label-md bg-secondary-container/20 text-secondary-fixed">Peer #04</span>
+</div>
+<span class="font-body-md text-body-md text-text-secondary">AI & ML · Semester 3</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<div class="flex items-center gap-space-xs text-tertiary font-label-mono text-label-md">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>Online</span>
+</div>
+<span class="font-label-mono text-label-md text-text-tertiary mt-0.5">Ping: 3ms</span>
+</div>
+</div>
+<!-- Hardware & Spec Pills -->
+<div class="flex flex-wrap items-center gap-space-sm mb-space-lg text-text-secondary">
+<div class="flex items-center gap-1.5 px-space-md py-1 rounded-lg bg-surface-elevated font-body-md text-body-md">
+<span class="material-symbols-outlined text-[16px] text-text-tertiary">laptop_mac</span>
+<span>Meera-Book</span>
+</div>
+<div class="flex items-center gap-1.5 px-space-md py-1 rounded-lg bg-surface-elevated font-body-md text-body-md">
+<span class="material-symbols-outlined text-[16px] text-text-tertiary">wifi</span>
+<span>macOS · Wi-Fi</span>
+</div>
+<div class="flex items-center gap-1 px-space-md py-1 rounded-lg bg-surface-elevated font-label-mono text-label-md text-tertiary">
+<span class="material-symbols-outlined text-[14px]">signal_cellular_alt</span>
+<span>-42 dBm</span>
+</div>
+</div>
+<!-- Academic Content Tags & Recent Upload Card -->
+<div class="bg-surface-elevated rounded-xl p-space-md mb-space-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-label-mono text-text-tertiary uppercase">Shared Libraries (21 Files)</span>
+<div class="flex items-center gap-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-label-mono text-label-md text-tertiary">Full Stack Java</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-label-mono text-label-md text-tertiary">Discrete Math</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-label-mono text-label-md text-tertiary">AI Ethics</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-status-warning text-[20px]">picture_as_pdf</span>
+<span class="font-body-md-medium text-body-md-medium text-text-primary truncate">Spring Boot REST Controller.pdf</span>
+</div>
+<span class="font-label-mono text-label-md text-text-tertiary whitespace-nowrap">24 min ago</span>
+</div>
+</div>
+</div>
+<!-- Action Row -->
+<div class="flex items-center gap-space-md pt-space-sm">
+<button class="flex-1 h-11 rounded-xl bg-surface-elevated hover:bg-surface-hover text-text-primary font-body-md-medium text-body-md-medium flex items-center justify-center gap-space-sm transition-colors" onclick="openDrawer('Meera Joshi', 'Meera-Book', '21', 'AI & ML · Semester 3')">
+<span class="material-symbols-outlined text-[18px]">folder_open</span>
+<span>Browse Files (21)</span>
+</button>
+<button class="h-11 px-space-lg rounded-xl bg-surface-elevated text-text-primary hover:bg-surface-hover font-body-md-medium text-body-md-medium flex items-center justify-center transition-colors">
+            View Profile
+          </button>
+</div>
+</div>
+</div>
+<!-- Academic Privacy and Protocol Assurance Footer -->
+<div class="mt-space-lg bg-surface-container-lowest p-space-lg rounded-xl flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-8 h-8 rounded-full bg-surface-elevated flex items-center justify-center text-tertiary shrink-0">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+</div>
+<p class="font-body-md text-body-md text-text-secondary">
+<strong class="text-text-primary font-body-md-medium">Academic Mesh Boundary:</strong> Only files placed in the student's MESHNOTE Shared Library are visible. No private folders, user identities, or cloud tracking.
+        </p>
+</div>
+<div class="flex items-center gap-space-md shrink-0 font-label-mono text-label-mono text-text-tertiary">
+<span>Zero Logs</span>
+<span>•</span>
+<span>Local IP Direct</span>
+<span>•</span>
+<span>BitTorrent Core</span>
+</div>
+</div>
+</div>
+<!-- Interactive Slide-Out Peer Modal / Drawer -->
+<div class="fixed inset-0 bg-canvas-deep/60 backdrop-blur-sm z-50 transition-opacity opacity-0 pointer-events-none duration-300" id="drawerOverlay" onclick="closeDrawer()"></div>
+<div class="fixed top-0 right-0 h-screen w-full max-w-xl bg-surface-dim z-50 shadow-2xl flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-out" id="peerDrawer">
+<!-- Drawer Header -->
+<div class="p-space-xl bg-surface-container-low flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm text-text-tertiary font-label-mono text-label-mono uppercase">
+<span class="material-symbols-outlined text-[16px] text-tertiary">hub</span>
+<span>Mesh Peer Node</span>
+<span>•</span>
+<span class="text-tertiary">Direct Socket Open</span>
+</div>
+<button class="w-8 h-8 rounded-lg bg-surface-elevated flex items-center justify-center text-text-secondary hover:text-text-primary hover:bg-surface-hover transition-colors" onclick="closeDrawer()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-space-md">
+<div class="relative">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Close-up portrait of Aarav Shah, a male South Asian university student wearing dark spectacles and navy hoodie in a subtle technology lab background with soft teal light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnCNqJYtf53mP0qIbbE9ipf5J42bznLBNKyfp90mwQZNto3t-fiWSWqUfcqGBTjYNVcynrnzfqFtHOzD8ZWjXCXjeiafSngHiQ8fcgDY-d2p99xjFi63JjtHjRbhfJ-Nb343xUIjTzLG__4BQJFhTZdFMR7QdywhQq3epV2pgQHVsVKt_Znk91BSYFUsOWuyLbOB_gtzRbxfZPcKvlMuff5sn2X7HnwFv47FZgXBimqbA9QV-oiRwS"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-tertiary ring-2 ring-surface-container-low"></span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-text-primary" id="drawerPeerName">Aarav Shah</span>
+<span class="font-body-md text-body-md text-text-secondary" id="drawerPeerSub">AI & ML · Semester 3</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-mono text-label-md text-tertiary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> ~4ms latency
+          </span>
+<span class="font-label-mono text-label-md text-text-tertiary" id="drawerDeviceName">Aarav-Laptop</span>
+</div>
+</div>
+<!-- Quick Action Controls & Search inside Drawer -->
+<div class="flex items-center gap-space-sm pt-space-xs">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-text-tertiary text-[18px]">search</span>
+<input class="w-full h-10 pl-9 pr-space-md rounded-xl bg-surface-elevated text-text-primary placeholder:text-text-tertiary font-body-md text-body-md focus:outline-none focus:bg-surface-hover transition-all" placeholder="Filter Aarav's shared files..." type="text"/>
+</div>
+<button class="h-10 px-space-md rounded-xl bg-primary-container text-on-primary-container font-body-md-medium text-body-md-medium flex items-center gap-space-xs hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">download_for_offline</span>
+<span>Download All</span>
+</button>
+</div>
+</div>
+<!-- Drawer File List Scroll Container -->
+<div class="flex-1 overflow-y-auto p-space-xl space-y-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-mono text-label-mono text-text-tertiary uppercase">Active Shared Items (23 files available)</span>
+<span class="font-label-mono text-label-md text-primary-fixed-dim">Sorted by recency</span>
+</div>
+<!-- File Item 1 -->
+<div class="bg-surface-elevated hover:bg-surface-hover p-space-md rounded-xl flex items-center justify-between transition-colors group">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-status-warning shrink-0">
+<span class="material-symbols-outlined text-[22px]">picture_as_pdf</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium text-text-primary truncate">Data Structures Module 3 - Trees & Graphs.pdf</span>
+<div class="flex items-center gap-space-sm text-text-tertiary font-label-mono text-label-md">
+<span>8.4 MB</span>
+<span>•</span>
+<span>12 min ago</span>
+<span>•</span>
+<span class="text-tertiary">Seeders: 3</span>
+</div>
+</div>
+</div>
+<button class="h-9 px-space-md rounded-lg bg-surface-container hover:bg-primary-container hover:text-on-primary-container text-text-primary font-body-md-medium text-body-md transition-all flex items-center gap-1 shrink-0">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>Fetch</span>
+</button>
+</div>
+<!-- File Item 2 -->
+<div class="bg-surface-elevated hover:bg-surface-hover p-space-md rounded-xl flex items-center justify-between transition-colors group">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">code</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium text-text-primary truncate">AVL_Tree_Implementation_Lab3.py</span>
+<div class="flex items-center gap-space-sm text-text-tertiary font-label-mono text-label-md">
+<span>14.2 KB</span>
+<span>•</span>
+<span>35 min ago</span>
+<span>•</span>
+<span class="text-tertiary">Verified Hash</span>
+</div>
+</div>
+</div>
+<button class="h-9 px-space-md rounded-lg bg-surface-container hover:bg-primary-container hover:text-on-primary-container text-text-primary font-body-md-medium text-body-md transition-all flex items-center gap-1 shrink-0">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>Fetch</span>
+</button>
+</div>
+<!-- File Item 3 -->
+<div class="bg-surface-elevated hover:bg-surface-hover p-space-md rounded-xl flex items-center justify-between transition-colors group">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[22px]">folder_zip</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium text-text-primary truncate">Algorithms_Assignment_Solutions_Sem3.zip</span>
+<div class="flex items-center gap-space-sm text-text-tertiary font-label-mono text-label-md">
+<span>32.1 MB</span>
+<span>•</span>
+<span>1 hr ago</span>
+<span>•</span>
+<span class="text-tertiary">4 chunks</span>
+</div>
+</div>
+</div>
+<button class="h-9 px-space-md rounded-lg bg-surface-container hover:bg-primary-container hover:text-on-primary-container text-text-primary font-body-md-medium text-body-md transition-all flex items-center gap-1 shrink-0">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>Fetch</span>
+</button>
+</div>
+<!-- File Item 4 -->
+<div class="bg-surface-elevated hover:bg-surface-hover p-space-md rounded-xl flex items-center justify-between transition-colors group">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-status-warning shrink-0">
+<span class="material-symbols-outlined text-[22px]">picture_as_pdf</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium text-text-primary truncate">Python_Advanced_Decorators_Notes.pdf</span>
+<div class="flex items-center gap-space-sm text-text-tertiary font-label-mono text-label-md">
+<span>3.7 MB</span>
+<span>•</span>
+<span>2 hrs ago</span>
+<span>•</span>
+<span class="text-tertiary">Seeders: 2</span>
+</div>
+</div>
+</div>
+<button class="h-9 px-space-md rounded-lg bg-surface-container hover:bg-primary-container hover:text-on-primary-container text-text-primary font-body-md-medium text-body-md transition-all flex items-center gap-1 shrink-0">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>Fetch</span>
+</button>
+</div>
+<!-- File Item 5 -->
+<div class="bg-surface-elevated hover:bg-surface-hover p-space-md rounded-xl flex items-center justify-between transition-colors group">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-tertiary shrink-0">
+<span class="material-symbols-outlined text-[22px]">description</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium text-text-primary truncate">Syllabus_Breakdown_AIML_UnitTests.docx</span>
+<div class="flex items-center gap-space-sm text-text-tertiary font-label-mono text-label-md">
+<span>840 KB</span>
+<span>•</span>
+<span>Yesterday</span>
+<span>•</span>
+<span class="text-tertiary">Direct</span>
+</div>
+</div>
+</div>
+<button class="h-9 px-space-md rounded-lg bg-surface-container hover:bg-primary-container hover:text-on-primary-container text-text-primary font-body-md-medium text-body-md transition-all flex items-center gap-1 shrink-0">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>Fetch</span>
+</button>
+</div>
+</div>
+<!-- Drawer Footer System Telemetry -->
+<div class="p-space-lg bg-surface-container-lowest flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-label-mono text-label-md text-text-secondary">P2P Socket TLS · Peer ID: 0x4B38..F091</span>
+</div>
+<span class="font-label-mono text-label-md text-text-tertiary">Zero Cloud Middleman</span>
+</div>
+</div>
+<!-- Interactive Inline Script for Drawer and Discovery Refresh Simulation -->
+<script>
+    let isDiscoverable = true;
+
+    function toggleVisibility() {
+      const ball = document.getElementById('toggleBall');
+      const toggle = document.getElementById('visibilityToggle');
+      isDiscoverable = !isDiscoverable;
+      if (isDiscoverable) {
+        ball.classList.remove('translate-x-0');
+        ball.classList.add('translate-x-6');
+        toggle.classList.remove('bg-surface-variant');
+        toggle.classList.add('bg-primary-container');
+      } else {
+        ball.classList.remove('translate-x-6');
+        ball.classList.add('translate-x-0');
+        toggle.classList.remove('bg-primary-container');
+        toggle.classList.add('bg-surface-variant');
+      }
+    }
+
+    function triggerDiscoveryPulse() {
+      const icon = document.getElementById('refreshIcon');
+      const btn = document.getElementById('refreshBtn');
+      icon.classList.add('animate-spin');
+      btn.classList.add('opacity-80');
+      
+      setTimeout(() => {
+        icon.classList.remove('animate-spin');
+        btn.classList.remove('opacity-80');
+      }, 1200);
+    }
+
+    function openDrawer(name, device, count, branch) {
+      document.getElementById('drawerPeerName').innerText = name;
+      document.getElementById('drawerPeerSub').innerText = branch;
+      document.getElementById('drawerDeviceName').innerText = device;
+      
+      const drawer = document.getElementById('peerDrawer');
+      const overlay = document.getElementById('drawerOverlay');
+
+      overlay.classList.remove('opacity-0', 'pointer-events-none');
+      overlay.classList.add('opacity-100', 'pointer-events-auto');
+      drawer.classList.remove('translate-x-full');
+      drawer.classList.add('translate-x-0');
+    }
+
+    function closeDrawer() {
+      const drawer = document.getElementById('peerDrawer');
+      const overlay = document.getElementById('drawerOverlay');
+
+      overlay.classList.remove('opacity-100', 'pointer-events-auto');
+      overlay.classList.add('opacity-0', 'pointer-events-none');
+      drawer.classList.remove('translate-x-0');
+      drawer.classList.add('translate-x-full');
+    }
+  </script>
+</div></main></div></body></html>

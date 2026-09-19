@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+  <defs>
+    <linearGradient id="meshGrad" x1="6" y1="6" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#66A3FF"/>
+      <stop offset="100%" stop-color="#3D82F6"/>
+    </linearGradient>
+    <filter id="nodeGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  <!-- Abstract open academic book / 3-node decentralized mesh network -->
+  <path d="M24 14 L12 20 L12 34 L24 28 L36 34 L36 20 Z" stroke="url(#meshGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="rgba(102, 163, 255, 0.08)"/>
+  <path d="M24 14 L24 28" stroke="url(#meshGrad)" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 3"/>
+  <!-- Network Peer Nodes -->
+  <circle cx="24" cy="14" r="3.5" fill="#66A3FF" filter="url(#nodeGlow)"/>
+  <circle cx="12" cy="20" r="3" fill="#5EE6A8"/>
+  <circle cx="36" cy="20" r="3" fill="#66A3FF"/>
+  <circle cx="24" cy="28" r="3" fill="#3D82F6"/>
+  <circle cx="12" cy="34" r="2.5" fill="#66A3FF" fill-opacity="0.7"/>
+  <circle cx="36" cy="34" r="2.5" fill="#66A3FF" fill-opacity="0.7"/>
+  <!-- Local pulse rings -->
+  <circle cx="24" cy="14" r="6" stroke="#66A3FF" stroke-width="0.8" stroke-opacity="0.4" stroke-dasharray="1.5 2"/>
+</svg>
