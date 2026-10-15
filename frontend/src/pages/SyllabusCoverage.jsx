@@ -110,23 +110,23 @@ export default function SyllabusCoverage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#070A0F] text-slate-100 pb-20">
+    <div className="min-h-screen bg-[#FAFAF8] text-[#101418] pb-20">
       {/* Header */}
-      <div className="border-b border-canvas-border bg-slate-950/40">
+      <div className="border-b border-[#E6E4DC] bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="flex items-center gap-2 mb-3">
-            <Link to="/syllabus" className="text-xs font-mono text-slate-400 hover:text-white flex items-center gap-1">
+            <Link to="/syllabus" className="text-xs font-mono text-[#5C6672] hover:text-[#101418] flex items-center gap-1 font-semibold">
               <span className="material-symbols-outlined text-sm">arrow_back</span>
               Syllabus Lab
             </Link>
-            <span className="text-slate-600">/</span>
-            <span className="text-xs font-mono text-brand-cyan">Academic Alignment Matrix</span>
+            <span className="text-[#8C96A2]">/</span>
+            <span className="text-xs font-mono text-[#0E6E5C] font-bold">Academic Alignment Matrix</span>
           </div>
 
-          <h1 className="text-3xl font-extrabold tracking-tight text-white">
+          <h1 className="text-3xl font-black tracking-tight text-[#101418] font-display">
             How JVM VISION Covers Your Syllabus
           </h1>
-          <p className="text-sm text-slate-400 mt-2 max-w-3xl leading-relaxed">
+          <p className="text-sm text-[#5C6672] mt-2 max-w-3xl leading-relaxed">
             A comprehensive mapping between the Mumbai University Semester III Full Stack Java Programming practical syllabus and the implemented JVM VISION software architecture.
           </p>
         </div>
@@ -134,11 +134,11 @@ export default function SyllabusCoverage() {
 
       {/* Coverage Matrix Table */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-        <div className="p-6 rounded-2xl bg-canvas-card border border-canvas-border overflow-hidden">
+        <div className="p-6 rounded-2xl bg-white border border-[#E6E4DC] overflow-hidden shadow-card">
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
               <thead>
-                <tr className="border-b border-canvas-border text-slate-400 font-mono">
+                <tr className="border-b border-[#E6E4DC] text-[#5C6672] font-display uppercase tracking-wider font-bold">
                   <th className="py-3 px-4">Syllabus Practical Area</th>
                   <th className="py-3 px-4">Technology</th>
                   <th className="py-3 px-4">JVM VISION Project Module</th>
@@ -146,20 +146,20 @@ export default function SyllabusCoverage() {
                   <th className="py-3 px-4 text-right">Demo Link</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-800 font-mono">
+              <tbody className="divide-y divide-[#EFEEE8] font-mono">
                 {coverageMatrix.map((item, idx) => (
-                  <tr key={idx} className="hover:bg-slate-900/40 transition-colors">
+                  <tr key={idx} className="hover:bg-[#FAFAF8] transition-colors">
                     <td className="py-3 px-4">
-                      <div className="font-bold text-white font-sans">{item.experiment}</div>
-                      <div className="text-[11px] text-slate-400 font-sans">{item.syllabusTopic}</div>
+                      <div className="font-bold text-[#101418] font-display text-sm">{item.experiment}</div>
+                      <div className="text-[11px] text-[#5C6672] font-sans mt-0.5">{item.syllabusTopic}</div>
                     </td>
-                    <td className="py-3 px-4 text-brand-cyan">{item.tech}</td>
-                    <td className="py-3 px-4 text-slate-300 font-sans">{item.jvmVisionComponent}</td>
-                    <td className="py-3 px-4 text-slate-400 text-[11px] font-sans">{item.evidence}</td>
+                    <td className="py-3 px-4 text-[#0E6E5C] font-semibold">{item.tech}</td>
+                    <td className="py-3 px-4 text-[#101418] font-sans font-medium">{item.jvmVisionComponent}</td>
+                    <td className="py-3 px-4 text-[#5C6672] text-[11px] font-sans leading-relaxed">{item.evidence}</td>
                     <td className="py-3 px-4 text-right">
                       <Link
                         to={item.link}
-                        className="px-2.5 py-1 rounded-lg bg-blue-600/20 text-blue-400 border border-blue-500/30 hover:bg-blue-600/30 text-[11px] font-bold"
+                        className="px-3 py-1.5 rounded-lg bg-[#FAFAF8] hover:bg-[#101418] text-[#101418] hover:text-white border border-[#E6E4DC] text-[11px] font-bold transition-all shadow-subtle inline-block"
                       >
                         Inspect →
                       </Link>

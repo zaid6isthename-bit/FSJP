@@ -41,15 +41,15 @@ export default function Exp05Demo() {
 
   return (
     <div className="space-y-6">
-      <div className="border-b border-canvas-border pb-4">
-        <h3 className="text-base font-semibold text-white">JSP + Servlet + JDBC MVC Authentication Architecture</h3>
-        <p className="text-xs text-slate-400">
+      <div className="border-b border-[#E6E4DC] pb-4">
+        <h3 className="text-base font-bold text-[#101418] font-display">JSP + Servlet + JDBC MVC Authentication Architecture</h3>
+        <p className="text-xs text-[#5C6672]">
           Trace how JSP forms submit data to a Servlet controller, which invokes JDBC PreparedStatements against the database
         </p>
       </div>
 
       {/* Internal Tabs */}
-      <div className="flex gap-2 border-b border-canvas-border pb-3">
+      <div className="flex gap-2 border-b border-[#E6E4DC] pb-3 overflow-x-auto">
         {[
           { id: 'demo', label: 'Live Demo' },
           { id: 'flow', label: 'MVC Architecture Flow' },
@@ -58,10 +58,10 @@ export default function Exp05Demo() {
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all ${
+            className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold transition-all cursor-pointer border ${
               activeTab === tab.id
-                ? 'bg-blue-600/20 text-blue-400 border border-blue-500/30 font-semibold'
-                : 'text-slate-400 hover:text-white'
+                ? 'bg-[#101418] text-white border-[#101418] shadow-subtle'
+                : 'bg-white text-[#5C6672] hover:text-[#101418] border-[#E6E4DC]'
             }`}
           >
             {tab.label}
@@ -72,44 +72,44 @@ export default function Exp05Demo() {
       {activeTab === 'demo' && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* JSP Login Form Card */}
-          <div className="p-6 rounded-2xl bg-canvas-card border border-canvas-border space-y-4">
-            <div className="flex items-center justify-between pb-2 border-b border-canvas-border">
-              <span className="text-xs font-mono text-cyan-400">login.jsp (View)</span>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-500/10 text-blue-300">
+          <div className="p-6 rounded-2xl bg-[#FAFAF8] border border-[#E6E4DC] space-y-4">
+            <div className="flex items-center justify-between pb-2 border-b border-[#E6E4DC]">
+              <span className="text-xs font-mono font-bold text-[#0E6E5C]">login.jsp (View)</span>
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-white text-[#101418] border border-[#E6E4DC] font-semibold">
                 POST /LoginServlet
               </span>
             </div>
 
             <form onSubmit={handleLogin} className="space-y-3">
               <div>
-                <label className="block text-xs font-medium text-slate-300 mb-1">Student Email</label>
+                <label className="block text-xs font-bold text-[#101418] mb-1">Student Email</label>
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full px-3 py-2 text-xs rounded-xl bg-slate-900 border border-canvas-border text-white"
+                  className="w-full px-3 py-2 text-xs rounded-xl bg-white border border-[#E6E4DC] text-[#101418] focus:border-[#0E6E5C] focus:outline-none shadow-subtle font-medium"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-slate-300 mb-1">Password</label>
+                <label className="block text-xs font-bold text-[#101418] mb-1">Password</label>
                 <input
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="w-full px-3 py-2 text-xs rounded-xl bg-slate-900 border border-canvas-border text-white"
+                  className="w-full px-3 py-2 text-xs rounded-xl bg-white border border-[#E6E4DC] text-[#101418] focus:border-[#0E6E5C] focus:outline-none shadow-subtle font-medium"
                 />
               </div>
 
-              <div className="text-[11px] text-slate-500">
-                Demo Account: <code className="text-slate-400">zaid@college.edu</code> / <code className="text-slate-400">password123</code>
+              <div className="text-[11px] text-[#5C6672] font-mono">
+                Demo Account: <code className="text-[#101418] font-bold">zaid@college.edu</code> / <code className="text-[#101418] font-bold">password123</code>
               </div>
 
               <button
                 type="submit"
-                className="w-full py-2.5 rounded-xl font-semibold text-xs bg-blue-600 hover:bg-blue-500 text-white shadow-glow-sm transition-all"
+                className="w-full py-2.5 rounded-xl font-bold text-xs bg-[#0E6E5C] hover:bg-[#0A4A3F] text-white shadow-subtle transition-all cursor-pointer"
               >
                 Submit Form to LoginServlet
               </button>
@@ -117,9 +117,9 @@ export default function Exp05Demo() {
           </div>
 
           {/* Execution Pipeline Steps */}
-          <div className="p-6 rounded-2xl bg-canvas-card border border-canvas-border space-y-3 font-mono text-xs">
-            <h4 className="text-xs font-mono uppercase tracking-wider text-slate-400 flex items-center gap-2">
-              <span className="material-symbols-outlined text-sm text-brand-cyan">timeline</span>
+          <div className="p-6 rounded-2xl bg-[#FAFAF8] border border-[#E6E4DC] space-y-3 font-mono text-xs">
+            <h4 className="text-xs font-mono uppercase tracking-wider text-[#5C6672] flex items-center gap-2 font-bold font-display">
+              <span className="material-symbols-outlined text-sm text-[#0E6E5C]">timeline</span>
               MVC Execution Pipeline
             </h4>
 
@@ -134,28 +134,28 @@ export default function Exp05Demo() {
                   key={item.step}
                   className={`p-2.5 rounded-xl border transition-all ${
                     flowStep === item.step
-                      ? 'bg-blue-500/20 border-blue-500/40 text-blue-300 shadow-glow-sm'
+                      ? 'bg-[#EFF5F2] border-2 border-[#0E6E5C] text-[#0A4A3F] shadow-subtle'
                       : flowStep > item.step
-                      ? 'bg-emerald-950/20 border-emerald-500/30 text-emerald-300'
-                      : 'bg-slate-900/60 border-slate-800 text-slate-500'
+                      ? 'bg-white border-[#CFE0D8] text-[#101418]'
+                      : 'bg-white border-[#E6E4DC] text-[#8C96A2]'
                   }`}
                 >
                   <div className="font-bold flex justify-between">
                     <span>{item.name}</span>
-                    {flowStep === item.step && <span className="text-[10px] text-blue-400">EXECUTING</span>}
-                    {flowStep > item.step && <span className="text-[10px] text-emerald-400">✓</span>}
+                    {flowStep === item.step && <span className="text-[10px] text-[#0E6E5C]">EXECUTING</span>}
+                    {flowStep > item.step && <span className="text-[10px] text-[#0E6E5C]">✓</span>}
                   </div>
-                  <div className="text-[11px] text-slate-400 font-sans mt-0.5">{item.detail}</div>
+                  <div className="text-[11px] text-[#5C6672] font-sans mt-0.5">{item.detail}</div>
                 </div>
               ))}
             </div>
 
             {authStatus && (
               <div
-                className={`mt-3 p-3 rounded-xl border ${
+                className={`mt-3 p-3.5 rounded-xl border shadow-subtle ${
                   authStatus.success
-                    ? 'bg-emerald-950/30 text-emerald-300 border-emerald-500/30'
-                    : 'bg-rose-950/30 text-rose-300 border-rose-500/30'
+                    ? 'bg-[#EFF5F2] text-[#0A4A3F] border-[#CFE0D8]'
+                    : 'bg-[#FAF0EC] text-[#A93226] border-[#E4C4B2]'
                 }`}
               >
                 <div className="font-bold">{authStatus.success ? '✓ Welcome, ' + authStatus.user : '✕ Login Failed'}</div>
@@ -167,9 +167,9 @@ export default function Exp05Demo() {
       )}
 
       {activeTab === 'flow' && (
-        <div className="p-6 rounded-2xl bg-canvas-card border border-canvas-border font-mono text-xs text-slate-300 space-y-4">
-          <h4 className="text-sm font-bold text-white">Classic J2EE Model-View-Controller Flow</h4>
-          <pre className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-cyan-300 overflow-x-auto whitespace-pre">
+        <div className="p-6 rounded-2xl bg-[#FAFAF8] border border-[#E6E4DC] font-mono text-xs text-[#101418] space-y-4">
+          <h4 className="text-sm font-bold text-[#101418] font-display">Classic J2EE Model-View-Controller Flow</h4>
+          <pre className="p-4 rounded-xl bg-white border border-[#E6E4DC] text-[#0E6E5C] overflow-x-auto whitespace-pre font-bold leading-relaxed shadow-subtle">
 {`Browser (Client)
       │
       │ 1. HTTP POST (email, password)
@@ -196,30 +196,30 @@ dashboard.jsp (View Response)`}
       )}
 
       {activeTab === 'db' && (
-        <div className="p-6 rounded-2xl bg-canvas-card border border-canvas-border font-mono text-xs space-y-4">
-          <h4 className="text-sm font-bold text-white">Database Table: students</h4>
-          <div className="overflow-x-auto">
+        <div className="p-6 rounded-2xl bg-[#FAFAF8] border border-[#E6E4DC] font-mono text-xs space-y-4">
+          <h4 className="text-sm font-bold text-[#101418] font-display">Database Table: students</h4>
+          <div className="overflow-x-auto bg-white rounded-xl border border-[#E6E4DC] shadow-subtle">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="border-b border-canvas-border text-slate-400">
-                  <th className="py-2 px-3">id</th>
-                  <th className="py-2 px-3">name</th>
-                  <th className="py-2 px-3">email</th>
-                  <th className="py-2 px-3">role</th>
+                <tr className="border-b border-[#E6E4DC] text-[#5C6672] font-bold">
+                  <th className="py-2.5 px-3">id</th>
+                  <th className="py-2.5 px-3">name</th>
+                  <th className="py-2.5 px-3">email</th>
+                  <th className="py-2.5 px-3">role</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-800">
+              <tbody className="divide-y divide-[#EFEEE8]">
                 <tr>
-                  <td className="py-2 px-3 text-cyan-400">1</td>
-                  <td className="py-2 px-3 text-white">Zaid Mohammed</td>
-                  <td className="py-2 px-3 text-slate-300">zaid@college.edu</td>
-                  <td className="py-2 px-3 text-emerald-400">Student</td>
+                  <td className="py-2.5 px-3 text-[#0E6E5C] font-bold">1</td>
+                  <td className="py-2.5 px-3 text-[#101418] font-bold">Zaid Mohammed</td>
+                  <td className="py-2.5 px-3 text-[#5C6672]">zaid@college.edu</td>
+                  <td className="py-2.5 px-3 text-[#0E6E5C] font-semibold">Student</td>
                 </tr>
                 <tr>
-                  <td className="py-2 px-3 text-cyan-400">2</td>
-                  <td className="py-2 px-3 text-white">Rahul Sharma</td>
-                  <td className="py-2 px-3 text-slate-300">rahul@college.edu</td>
-                  <td className="py-2 px-3 text-emerald-400">Student</td>
+                  <td className="py-2.5 px-3 text-[#0E6E5C] font-bold">2</td>
+                  <td className="py-2.5 px-3 text-[#101418] font-bold">Rahul Sharma</td>
+                  <td className="py-2.5 px-3 text-[#5C6672]">rahul@college.edu</td>
+                  <td className="py-2.5 px-3 text-[#0E6E5C] font-semibold">Student</td>
                 </tr>
               </tbody>
             </table>

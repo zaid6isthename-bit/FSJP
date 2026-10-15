@@ -15,7 +15,7 @@ import DemoPage from './pages/DemoPage';
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-[#070A0F] text-slate-100 flex flex-col font-sans selection:bg-blue-600/30 selection:text-sky-300">
+      <div className="min-h-screen bg-[#FAFAF8] text-[#101418] flex flex-col font-sans selection:bg-[#0E6E5C]/15 selection:text-[#0A4A3F]">
         <Navbar />
         <main className="flex-1">
           <Routes>

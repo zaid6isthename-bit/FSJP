@@ -23,18 +23,18 @@ export default function Examples() {
     : examples.filter((e) => e.category?.toLowerCase() === selectedCategory.toLowerCase());
 
   return (
-    <div className="min-h-screen bg-[#070A0F] text-slate-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#FAFAF8] text-[#101418] py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-brand-cyan text-xs font-semibold mb-3">
-            <span className="material-symbols-outlined text-sm">collections_bookmark</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-[#E6E4DC] text-[#5C6672] text-xs font-mono font-semibold mb-3 shadow-subtle">
+            <span className="material-symbols-outlined text-sm text-[#0E6E5C]">collections_bookmark</span>
             <span>Educational Catalog</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-black text-white tracking-tight mb-3">
+          <h1 className="text-3xl sm:text-4xl font-black text-[#101418] tracking-tight mb-3 font-display">
             Curated Example Programs
           </h1>
-          <p className="text-sm text-slate-400">
+          <p className="text-sm text-[#5C6672]">
             Explore carefully crafted Java programs demonstrating object creation, loop journeys, stack frames, and intentional runtime failure forensics.
           </p>
         </div>
@@ -45,10 +45,10 @@ export default function Examples() {
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all ${
+              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                 selectedCategory === cat
-                  ? 'bg-blue-600 text-white shadow-glow-sm'
-                  : 'bg-[#101624] text-slate-400 hover:text-white border border-canvas-border'
+                  ? 'bg-[#101418] text-white shadow-subtle'
+                  : 'bg-white text-[#5C6672] hover:text-[#101418] border border-[#E6E4DC] hover:border-[#101418]'
               }`}
             >
               {cat}
@@ -64,39 +64,39 @@ export default function Examples() {
             return (
               <div
                 key={ex.id}
-                className="bg-[#0D121D] rounded-2xl border border-canvas-border hover:border-slate-600 p-5 flex flex-col justify-between transition-all shadow-xl group"
+                className="bg-white rounded-2xl border border-[#E6E4DC] hover:border-[#101418] p-5 flex flex-col justify-between transition-all shadow-card group"
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-3">
                     <span
                       className={`text-[10px] font-mono uppercase px-2 py-0.5 rounded font-bold border ${
                         isCrash
-                          ? 'bg-red-500/20 text-red-300 border-red-500/30'
-                          : 'bg-blue-500/20 text-sky-300 border-blue-500/30'
+                          ? 'bg-[#FAF0EC] text-[#A93226] border-[#E4C4B2]'
+                          : 'bg-[#EFF5F2] text-[#0A4A3F] border-[#CFE0D8]'
                       }`}
                     >
                       {ex.category}
                     </span>
-                    <span className="text-[11px] font-mono text-slate-500">{ex.difficulty}</span>
+                    <span className="text-[11px] font-mono text-[#8C96A2]">{ex.difficulty}</span>
                   </div>
 
-                  <h3 className="text-base font-bold text-white tracking-tight mb-2 group-hover:text-sky-300 transition-colors">
+                  <h3 className="text-base font-bold text-[#101418] tracking-tight mb-2 group-hover:text-[#0E6E5C] transition-colors font-display">
                     {ex.title}
                   </h3>
-                  <p className="text-xs text-slate-400 leading-relaxed mb-4">
+                  <p className="text-xs text-[#5C6672] leading-relaxed mb-4">
                     {ex.description}
                   </p>
 
                   {/* Code Snippet Preview */}
-                  <div className="bg-[#070A0F] p-3 rounded-xl border border-white/[0.04] font-mono text-[11px] text-slate-300 mb-4 max-h-36 overflow-hidden relative">
+                  <div className="bg-[#FAFAF8] p-3 rounded-xl border border-[#E6E4DC] font-mono text-[11px] text-[#101418] mb-4 max-h-36 overflow-hidden relative">
                     <pre className="whitespace-pre-wrap">{ex.code.slice(0, 180)}...</pre>
-                    <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-[#070A0F] to-transparent pointer-events-none" />
+                    <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-[#FAFAF8] to-transparent pointer-events-none" />
                   </div>
                 </div>
 
                 <Link
                   to={`/visualizer?example=${ex.id}`}
-                  className="flex items-center justify-center gap-1.5 w-full py-2 rounded-xl text-xs font-semibold text-white bg-[#152033] hover:bg-blue-600 transition-all border border-canvas-border"
+                  className="flex items-center justify-center gap-1.5 w-full py-2.5 rounded-xl text-xs font-bold text-[#101418] bg-[#FAFAF8] hover:bg-[#101418] hover:text-white transition-all border border-[#E6E4DC]"
                 >
                   <span className="material-symbols-outlined text-sm">play_arrow</span>
                   Load in Visualizer

@@ -2,15 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --paper: #FAFAF8;
+  --card: #FFFFFF;
+  --surface-subtle: #F5F4EF;
+  --ink: #101418;
+  --muted: #5C6672;
+  --subtle: #8C96A2;
+  --line: #E6E4DC;
+  --line-soft: #EFEEE8;
+  --signal: #0E6E5C;
+  --signal-ink: #0A4A3F;
+  --signal-soft: #EFF5F2;
+  --amber: #B7791F;
+  --amber-soft: #FEF7EC;
+  --danger: #A93226;
+  --danger-soft: #FAF0EC;
+  --radius: 12px;
+  --font-d: "Space Grotesk", Inter, system-ui, sans-serif;
+  --font-b: Inter, system-ui, sans-serif;
+  --font-m: "JetBrains Mono", ui-monospace, monospace;
+}
+
 @layer base {
   html, body {
     margin: 0;
     padding: 0;
-    background-color: #070A0F;
-    color: #E2E8F0;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-b);
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-d);
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+}
+
+/* Material Symbols Outlined Fallback and Proper Rendering */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined' !important;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+  -webkit-font-smoothing: antialiased;
+  vertical-align: middle;
+  user-select: none;
 }
 
 /* Custom Clean Scrollbar */
@@ -24,39 +74,41 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.12);
+  background: #D9D7CE;
   border-radius: 999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.24);
+  background: #BAB6A9;
 }
 
-/* Glassmorphism */
+/* Crisp Clean Panel Styles */
 .glass-panel {
-  background: rgba(17, 24, 39, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  box-shadow: 0 2px 10px rgba(16, 20, 24, 0.04);
 }
 
 .glass-panel-elevated {
-  background: rgba(22, 32, 50, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 48px rgba(16, 20, 24, 0.08);
 }
 
 /* Code Execution Highlight */
 .executing-line {
-  background: linear-gradient(90deg, rgba(56, 189, 248, 0.18) 0%, rgba(37, 99, 235, 0.04) 100%);
-  border-left: 3px solid #38BDF8;
+  background: #EFF5F2;
+  border-left: 3px solid var(--signal);
+  color: var(--ink);
+  font-weight: 600;
   transition: all 0.15s ease-out;
 }
 
 .error-line {
-  background: linear-gradient(90deg, rgba(239, 68, 68, 0.24) 0%, rgba(239, 68, 68, 0.05) 100%);
-  border-left: 3px solid #EF4444;
+  background: #FAF0EC;
+  border-left: 3px solid var(--danger);
+  color: var(--danger);
+  font-weight: 600;
   transition: all 0.15s ease-out;
 }
 

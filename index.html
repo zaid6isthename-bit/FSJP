@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JVM VISION — See what your Java program actually does</title>
+<meta name="description" content="JVM VISION — a restrained, professional Java runtime visualization prototype.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* OD-LAYOUT-PRIMITIVES v1 — structure only */
+@layer od-layout {
+  :where(.od-stack,.od-row,.od-row-top,.od-cluster,.od-grid,.od-field,.od-stat,.od-cell,.od-tile) > :where(*) { min-width: 0; }
+  .od-stack { display:flex;flex-direction:column;gap:var(--od-gap,8px); }
+  .od-row { display:flex;align-items:center;gap:var(--od-gap,8px); }
+  .od-row-top { display:flex;align-items:flex-start;gap:var(--od-gap,8px); }
+  .od-cluster { display:flex;flex-wrap:wrap;align-items:center;gap:var(--od-gap,8px); }
+  .od-fill { flex:1 1 0;min-width:0; }
+  .od-fixed { flex:none; }
+  .od-grid { display:grid;gap:var(--od-gap,12px);grid-template-columns:repeat(var(--od-cols,3),minmax(0,1fr)); }
+  .od-stat,.od-field,.od-cell { display:grid;gap:var(--od-gap,2px); }
+  :where(.od-stat,.od-field,.od-cell) > :where(*) { display:block; }
+  .od-tile { display:grid;grid-template-rows:auto 1fr; }
+  :where(.od-tile) > :where(*) { display:block; }
+  .od-media { display:block;width:100%;height:auto;aspect-ratio:var(--od-ratio,auto); }
+  .od-media-cover { object-fit:cover; }
+  .od-truncate { display:block;max-width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis; }
+  .od-clamp-2,.od-clamp-3 { display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere; }
+  .od-clamp-2 { -webkit-line-clamp:2; } .od-clamp-3 { -webkit-line-clamp:3; }
+  .od-lines-2 { min-height:calc(2 * 1.4em); }
+  .od-nowrap { white-space:nowrap; }
+  .od-keep { word-break:keep-all;overflow-wrap:anywhere; }
+  .od-screen { display:grid;grid-template-rows:auto minmax(0,1fr) auto;height:100%; }
+  .od-scroll { overflow-y:auto;overscroll-behavior:contain;min-height:0; }
+  .od-rail { display:flex;gap:var(--od-gap,8px);overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:none;padding-inline:var(--od-rail-pad,16px);scroll-padding-inline:var(--od-rail-pad,16px); }
+  .od-rail::-webkit-scrollbar { display:none; }
+  :where(.od-rail) > :where(*) { flex:none;scroll-snap-align:start; }
+  :where(.od-rail) > :where(:last-child) { margin-inline-end:var(--od-rail-pad,16px); }
+  .od-spacer { flex:none;visibility:hidden;pointer-events:none; }
+  .od-touch { min-width:44px;min-height:44px; }
+}
+/* /OD-LAYOUT-PRIMITIVES v1 */
+:root{
+  --paper:#FAFAF8; --card:#FFFFFF; --ink:#101418; --muted:#5C6672;
+  --line:#E6E4DC; --line-soft:#EFEEE8; --signal:#0E6E5C; --signal-ink:#0A4A3F;
+  --amber:#B7791F; --danger:#A93226; --radius:12px;
+  --font-d:"Space Grotesk",Inter,system-ui,sans-serif; --font-b:Inter,system-ui,sans-serif; --font-m:"JetBrains Mono",ui-monospace,monospace;
+  --sh:0 18px 48px rgba(16,20,24,.08); --sh-sm:0 2px 10px rgba(16,20,24,.07);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-b);font-size:16px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,rgba(16,20,24,.025),transparent 320px);}
+h1,h2,h3{font-family:var(--font-d);line-height:1.06;margin:0;letter-spacing:-.025em;font-weight:600}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px;position:relative;z-index:1}
+#progress{position:fixed;top:0;left:0;height:2px;width:100%;z-index:60;transform-origin:0 50%;transform:scaleX(0);background:var(--ink)}
+#glow{display:none}
+.nav{position:sticky;top:16px;z-index:50;margin-top:16px}
+.nav-in{background:rgba(250,250,248,.88);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:14px;display:flex;align-items:center;gap:12px;padding:10px 12px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;color:#fff;font-family:var(--font-d);font-weight:700;font-size:15px;background:var(--ink);letter-spacing:-.02em}
+.brand b{display:block;font-size:14px;letter-spacing:.06em}
+.brand small{display:block;font-family:var(--font-m);font-size:10px;color:var(--muted);letter-spacing:.14em}
+.tabs{display:flex;gap:2px;margin-left:auto}
+.tab{border:0;background:transparent;padding:10px 16px;border-radius:8px;font-weight:600;font-size:14px;color:var(--muted);min-height:44px}
+.tab[aria-selected="true"]{background:var(--ink);color:#fff}
+.cta{border:1px solid var(--ink);border-radius:10px;padding:12px 18px;min-height:44px;font-weight:600;background:var(--ink);color:#fff;transition:opacity .2s ease}
+.cta:hover{opacity:.88}
+.view{display:none}
+.view.active{display:block;animation:viewIn .4s cubic-bezier(.16,1,.3,1)}
+@keyframes viewIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.hero{padding:88px 0 12px;text-align:left;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:end}
+@media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:56px}}
+.pill{display:inline-flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-family:var(--font-m);font-size:11px;letter-spacing:.12em;color:var(--muted)}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--signal)}
+.hero h1{font-size:clamp(44px,6vw,76px);margin:20px 0 0;max-width:14ch;font-weight:600}
+.hero h1 em{font-style:normal;border-bottom:3px solid var(--ink)}
+.sub{color:var(--muted);max-width:52ch;margin:18px 0 0;font-size:17px}
+.hero-meta{border-top:1px solid var(--line);margin-top:28px;padding-top:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:700px){.hero-meta{grid-template-columns:1fr}}
+.hero-meta b{display:block;font-family:var(--font-d);font-size:22px}
+.hero-meta span{display:block;font-size:13px;color:var(--muted)}
+.hero-btns{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+.btn-primary{background:var(--signal);border:1px solid var(--signal-ink);color:#fff;border-radius:10px;padding:14px 22px;font-weight:600;min-height:48px;transition:transform .2s ease,opacity .2s ease}
+.btn-primary:hover{transform:translateY(-1px);opacity:.94}
+.btn-ghost{background:transparent;border:1px solid var(--line);border-radius:10px;padding:14px 22px;font-weight:600;min-height:48px;color:var(--ink);transition:border-color .2s ease}
+.btn-ghost:hover{border-color:var(--ink)}
+.float-chips{display:flex;gap:8px;margin-top:22px;flex-wrap:wrap}
+.fchip{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-family:var(--font-m);font-size:11px;color:var(--muted);letter-spacing:.02em}
+.ticker{margin:40px 0 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap}
+.ticker-in{display:inline-block;padding:11px 0;font-family:var(--font-m);font-size:12px;color:var(--muted);letter-spacing:.04em;animation:tick 30s linear infinite}
+@keyframes tick{to{transform:translateX(-50%)}}
+.lab{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--sh);overflow:hidden;margin:28px 0 8px}
+.lab-bar{display:flex;align-items:center;gap:12px;padding:14px 18px;background:var(--card);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.traffic{display:flex;gap:6px} .traffic i{width:10px;height:10px;border-radius:50%;display:block;background:var(--line)}
+.lab-grid{display:grid;grid-template-columns:1.05fr .95fr;min-height:380px}
+@media(max-width:860px){.lab-grid{grid-template-columns:1fr}}
+.codepane{padding:22px;font-family:var(--font-m);font-size:13px;background:var(--card)}
+.codeline{display:flex;gap:12px;align-items:center;padding:11px 12px;border-radius:8px;border:1px solid transparent;color:var(--muted);width:100%;background:transparent;text-align:left;border-left:2px solid transparent}
+.codeline .n{width:28px;color:#A7A29A;flex:none}
+.codeline.live{background:#EFF5F2;border:1px solid #CFE0D8;border-left:2px solid var(--signal);color:var(--ink);font-weight:600}
+.codeline.err{background:#FAF0EC;border-color:#E4C4B2;border-left:2px solid var(--danger);color:var(--ink);font-weight:600}
+.beam{height:2px;border-radius:99px;background:var(--line-soft);overflow:hidden;margin:16px 2px 4px}
+.beam i{display:block;height:100%;width:30%;background:var(--ink);transition:width .35s ease}
+.mempane{padding:22px;background:#F5F4EF;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:12px}
+.frame{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px;font-family:var(--font-m);font-size:12px;display:flex;justify-content:space-between;gap:8px;align-items:center;animation:dropIn .28s cubic-bezier(.16,1,.3,1)}
+@keyframes dropIn{from{opacity:0;transform:translateY(-8px)}}
+.heap{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;font-family:var(--font-m);font-size:12px;animation:dropIn .28s ease}
+.kv{display:flex;justify-content:space-between;border-top:1px solid var(--line-soft);padding:7px 0}
+.mut{background:#EDE9DA;border-radius:4px;padding:0 6px}
+.term{background:var(--ink);color:#EDEBE2;border-radius:10px;padding:12px;font-family:var(--font-m);font-size:12px;display:flex;gap:8px;align-items:center}
+.controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.iconbtn{min-width:44px;min-height:44px;border-radius:10px;border:1px solid var(--line);background:var(--card);font-weight:600}
+.play{background:var(--ink);color:#fff;border:1px solid var(--ink);border-radius:10px;padding:12px 16px;min-height:44px;font-weight:600}
+input[type=range]{accent-color:var(--signal);min-height:44px}
+.sec{padding:72px 0}
+.sec-head{max-width:720px;margin:0 auto 28px;text-align:left;border-top:1px solid var(--ink);padding-top:18px}
+.kicker{font-family:var(--font-m);font-size:11px;letter-spacing:.18em;color:var(--muted);font-weight:600}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+@media(max-width:860px){.cards{grid-template-columns:1fr}}
+.card{background:var(--card);padding:32px;position:relative;transition:background .25s ease}
+.card:hover{background:#F5F4EF}
+.num{font-family:var(--font-m);font-size:12px;color:var(--muted);letter-spacing:.12em;display:block;margin-bottom:14px}
+.demo{margin-top:16px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px;font-family:var(--font-m);font-size:12px;color:var(--muted)}
+.reveal{opacity:0;transform:translateY(16px)}
+.reveal.on{opacity:1;transform:none;transition:opacity .45s ease,transform .45s cubic-bezier(.16,1,.3,1)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:10px 16px;min-height:44px;font-weight:600;font-size:13px;color:var(--muted)}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.search{max-width:640px;display:flex;gap:8px}
+.search input{flex:1;border:1px solid var(--line);border-radius:10px;padding:13px 14px;min-height:48px;font:inherit;background:var(--card)}
+.syl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px}
+@media(max-width:960px){.syl{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.syl{grid-template-columns:1fr}}
+.syl article{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px;display:flex;flex-direction:column;gap:10px;transition:transform .2s ease,box-shadow .2s ease}
+.syl article:hover{transform:translateY(-3px);box-shadow:var(--sh-sm)}
+.tag{font-family:var(--font-m);font-size:11px;font-weight:600;letter-spacing:.06em;border-radius:999px;padding:4px 10px;background:var(--line-soft);color:var(--muted);display:inline-block}
+.openbtn{margin-top:auto;border:1px solid var(--ink);background:transparent;color:var(--ink);border-radius:10px;padding:12px;min-height:44px;font-weight:600;transition:all .2s ease}
+.openbtn:hover{background:var(--ink);color:#fff}
+.modal{position:fixed;inset:0;display:none;place-items:center;z-index:70;padding:18px}
+.modal.open{display:grid}
+.scrim{position:absolute;inset:0;background:rgba(16,20,24,.42)}
+.sheet{position:relative;background:var(--card);border:1px solid var(--line);border-radius:16px;max-width:620px;width:100%;padding:32px;box-shadow:var(--sh);animation:sheetIn .3s cubic-bezier(.16,1,.3,1);max-height:84vh;overflow:auto}
+@keyframes sheetIn{from{opacity:0;transform:translateY(14px)}}
+#wipe{position:fixed;inset:0;z-index:80;pointer-events:none;background:var(--ink);opacity:0}
+#wipe.go{animation:wipe .4s ease}
+@keyframes wipe{0%{opacity:.14}100%{opacity:0}}
+#toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(12px);background:var(--ink);color:#fff;border-radius:999px;padding:11px 18px;opacity:0;z-index:90;font-size:14px}
+#toast.show{opacity:1;transform:translateX(-50%);transition:all .25s ease}
+footer{border-top:1px solid var(--line);padding:28px 0 44px;color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="progress" aria-hidden="true"></div>
+<div id="glow" aria-hidden="true"></div>
+<div id="wipe" aria-hidden="true"></div>
+<header class="nav wrap" role="banner">
+  <div class="nav-in" style="width:100%">
+    <a class="brand" href="#/home" data-nav="home" aria-label="JVM Vision home">
+      <span class="logo" aria-hidden="true">J—V</span>
+      <span><b>JVM VISION</b><small>RUNTIME LAB — 02</small></span>
+    </a>
+    <nav class="tabs" role="tablist" aria-label="Primary">
+      <button class="tab" role="tab" data-nav="home" aria-selected="true">Overview</button>
+      <button class="tab" role="tab" data-nav="visualizer" aria-selected="false">Visualizer</button>
+      <button class="tab" role="tab" data-nav="syllabus" aria-selected="false">Syllabus</button>
+    </nav>
+    <button class="cta" data-nav="visualizer" style="margin-left:8px">Run code</button>
+  </div>
+</header>
+<main class="wrap" id="main">
+<section class="view active" id="view-home" role="tabpanel" aria-label="Home">
+  <div class="hero">
+    <div>
+      <span class="pill"><span class="dot"></span> JAVA RUNTIME SIMULATOR · MU SYLLABUS</span>
+      <h1>See what your <em>Java program</em> actually does.</h1>
+      <p class="sub">Write Java. Run it. Watch the call stack, the heap, and the failure — presented with the restraint of a professional instrument.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" data-nav="visualizer">Start visualizing</button>
+        <button class="btn-ghost" data-nav="syllabus">Explore 13 practicals</button>
+      </div>
+    </div>
+    <div class="hero-meta" aria-label="Key facts">
+      <div><b>04</b><span>Steps in the guided hero trace</span></div>
+      <div><b>13</b><span>Syllabus practicals, fully interactive</span></div>
+      <div><b>O(1)</b><span>Time-travel snapshot restore</span></div>
+    </div>
+  </div>
+  <div style="margin-top:28px"><div class="float-chips" aria-hidden="true">
+    <span class="fchip">main() → study()</span><span class="fchip">heap · Object #1</span><span class="fchip">scrub · step 12 → 4</span><span class="fchip">NPE · isolated at line 8</span>
+  </div></div>
+  <div class="ticker" aria-hidden="true"><span class="ticker-in" id="ticker">new Student("Zaid") — heap Object #1 &nbsp;&nbsp;·&nbsp;&nbsp; s.study() — marks 0 → 10 &nbsp;&nbsp;·&nbsp;&nbsp; println(s.marks) — "10" &nbsp;&nbsp;·&nbsp;&nbsp; scrub back to step 1 &nbsp;&nbsp;·&nbsp;&nbsp; NPE isolated at line 8 &nbsp;&nbsp;·&nbsp;&nbsp;</span></div>
+  <div class="lab" aria-label="Interactive runtime simulator">
+    <div class="lab-bar">
+      <div class="traffic" aria-hidden="true"><i></i><i></i><i></i></div>
+      <strong style="font-family:var(--font-m);font-size:12px;font-weight:600">Main.java — select a line or press play</strong>
+      <div class="controls" style="margin-left:auto">
+        <button class="iconbtn" id="hBack" aria-label="Step backward">←</button>
+        <button class="play" id="hPlay" aria-label="Auto play steps">Play</button>
+        <button class="iconbtn" id="hFwd" aria-label="Step forward">→</button>
+        <span class="tag" id="hStep">STEP 1 / 4</span>
+      </div>
+    </div>
+    <div class="lab-grid">
+      <div class="codepane" id="hCode" role="listbox" aria-label="Source code steps"></div>
+      <div class="mempane">
+        <div class="beam" aria-hidden="true"><i id="hBeam"></i></div>
+        <div class="od-stack" id="hStack" aria-live="polite"></div>
+        <div class="heap" id="hHeap"></div>
+        <div class="term"><span aria-hidden="true">❯</span><span id="hLog" class="od-truncate"></span></div>
+      </div>
+    </div>
+  </div>
+  <div class="sec">
+    <div class="sec-head reveal"><p class="kicker">01 — PRINCIPLES</p><h2 style="font-size:clamp(30px,4vw,46px)">Built for real understanding.</h2><p class="sub">Four quiet mechanisms make execution fully observable.</p></div>
+    <div class="cards">
+      <div class="card reveal"><span class="num">01</span><h3>Code → runtime sync</h3><p style="color:var(--muted)">Source lines and memory move together. Each evaluated statement lands visibly in the live frame.</p><div class="demo">int x = 10; — local 'x' appears in the frame</div></div>
+      <div class="card reveal"><span class="num">02</span><h3>Stack and heap, clarified</h3><p style="color:var(--muted)">Primitives on the stack. Objects on the heap with stable identities and traceable mutation.</p><div class="demo">student ────► Object #1 (Student)</div></div>
+      <div class="card reveal"><span class="num">03</span><h3>Time-travel scrubbing</h3><p style="color:var(--muted)">Immutable snapshots per step. Drag backwards for instant, exact reconstruction.</p><div class="demo">Step 12 · marks = 10 — scrub to step 4</div></div>
+      <div class="card reveal"><span class="num">04</span><h3>Failure forensics</h3><p style="color:var(--muted)">Nulls and zero-divisors isolated to the exact line, reference, and remedy.</p><div class="demo">NullPointerException · line 8 · 'student' is null</div></div>
+    </div>
+  </div>
+</section>
+<section class="view" id="view-visualizer" role="tabpanel" aria-label="Visualizer">
+  <div class="sec" style="padding-top:40px">
+    <div class="sec-head"><p class="kicker">02 — VISUALIZER</p>
+    <h2 style="font-size:clamp(32px,4.5vw,54px)">Run it. Scrub it. Break it safely.</h2>
+    <p class="sub">Choose a scenario, then step, play, or drag the timeline. Every control is live.</p></div>
+    <div class="od-rail" id="scnRail" style="--od-rail-pad:4px;margin:18px -4px" role="listbox" aria-label="Scenarios"></div>
+    <div class="lab">
+      <div class="lab-bar">
+        <strong style="font-family:var(--font-m);font-size:12px" id="vTitle">Scenario</strong>
+        <div class="controls" style="margin-left:auto">
+          <button class="iconbtn" id="vBack" aria-label="Previous step">←</button>
+          <button class="play" id="vPlay">Play</button>
+          <button class="iconbtn" id="vFwd" aria-label="Next step">→</button>
+        </div>
+      </div>
+      <div class="lab-grid">
+        <div class="codepane"><div id="vCode"></div><div class="beam"><i id="vBeam"></i></div>
+          <label for="vScrub" style="font-family:var(--font-m);font-size:11px;letter-spacing:.12em;color:var(--muted);font-weight:600">TIMELINE</label>
+          <input type="range" id="vScrub" min="0" value="0" step="1" style="width:100%" aria-label="Scrub execution timeline">
+        </div>
+        <div class="mempane"><div class="od-stack" id="vStack"></div><div class="heap" id="vHeap"></div><div class="term"><span>❯</span><span id="vLog" class="od-truncate"></span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="view" id="view-syllabus" role="tabpanel" aria-label="Syllabus lab">
+  <div class="sec" style="padding-top:40px">
+    <div class="sec-head"><p class="kicker">03 — SYLLABUS · 13 PRACTICALS</p><h2 style="font-size:clamp(32px,4.5vw,54px)">The Syllabus Lab.</h2><p class="sub">Search, filter, and open a practical. Each card launches a guided runtime story.</p></div>
+    <div class="search"><input id="q" type="search" placeholder="Search inheritance, servlet, hooks…" aria-label="Search practicals"><button class="btn-primary" id="surprise">Surprise me</button></div>
+    <div class="filters" id="filters" role="group" aria-label="Filter by topic"></div>
+    <div class="syl od-grid" id="sylGrid" style="--od-cols:3"></div>
+  </div>
+</section>
+</main>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Practical detail">
+  <div class="scrim" data-close></div>
+  <div class="sheet"><div id="sheetBody"></div><button class="btn-ghost" data-close style="margin-top:16px;width:100%">Close</button></div>
+</div>
+<div id="toast" role="status"></div>
+<footer><div class="wrap od-row"><span class="od-fill"><b>JVM VISION</b> · professional light prototype · single file</span><span class="od-fixed" style="font-family:var(--font-m);font-size:11px;letter-spacing:.1em">PORCELAIN · INK · TEAL</span></div></footer>
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const toast=m=>{const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(t._x);t._x=setTimeout(()=>t.classList.remove('show'),1800)};
+const views={home:$('#view-home'),visualizer:$('#view-visualizer'),syllabus:$('#view-syllabus')};
+function go(name,ev){if(ev){const w=$('#wipe');w.classList.remove('go');void w.offsetWidth;w.classList.add('go')}
+  Object.entries(views).forEach(([k,el])=>el.classList.toggle('active',k===name));
+  $$('.tab').forEach(b=>b.setAttribute('aria-selected',b.dataset.nav===name?'true':'false'));
+  location.hash='/'+name;}
+document.addEventListener('click',e=>{const n=e.target.closest('[data-nav]');if(n){go(n.dataset.nav,e)}});
+addEventListener('scroll',()=>{const h=document.documentElement,p=h.scrollTop/(h.scrollHeight-h.clientHeight||1);$('#progress').style.transform=`scaleX(${p})`},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(x=>x.isIntersecting&&x.target.classList.add('on')),{threshold:.15});
+$$('.reveal').forEach(el=>io.observe(el));
+const tk=$('#ticker');tk.textContent=(tk.textContent.repeat(3));
+function stepper(o){let i=0,timer=null;
+  function render(){const s=o.steps[i];o.code.innerHTML=o.steps.map((x,j)=>`<button class="codeline ${j===i?'live':''} ${x.err&&j===i?'err':''}" data-i="${j}" role="option" aria-selected="${j===i}"><span class="n">${j+1}</span><span class="od-truncate">${x.code}</span></button>`).join('');
+    o.beam.style.width=((i+1)/o.steps.length*100)+'%';o.stepTag&&(o.stepTag.textContent=`STEP ${i+1} / ${o.steps.length}`);
+    o.stack.innerHTML='<span style="font-family:var(--font-m);font-size:11px;color:var(--muted);font-weight:600;letter-spacing:.1em">CALL STACK · '+s.stack.length+' FRAME(S)</span>'+s.stack.map(f=>`<div class="frame"><span><b>${f[0]}</b> <span style="color:var(--muted)">line ${f[1]}</span></span><span style="color:var(--muted)">${f[2]}</span></div>`).join('');
+    o.heap.innerHTML='<div style="font-family:var(--font-m);font-size:11px;color:var(--muted);font-weight:600;letter-spacing:.1em">HEAP MEMORY</div>'+s.heap.map(h=>`<div><div class="od-row"><b>${h.id}</b><span class="tag">${h.cls}</span></div>${h.fields.map(f=>`<div class="kv"><span>${f[0]}</span><b class="${f[2]?'mut':''}">${f[1]}</b></div>`).join('')}</div>`).join('');
+    o.log.textContent=s.log;}
+  function step(d){i=(i+d+o.steps.length)%o.steps.length;render()}
+  o.code.addEventListener('click',e=>{const b=e.target.closest('[data-i]');if(b){i=+b.dataset.i;render()}});
+  o.back.onclick=()=>step(-1);o.fwd.onclick=()=>step(1);
+  o.play.onclick=()=>{if(timer){clearInterval(timer);timer=null;o.play.textContent='Play'}else{o.play.textContent='Pause';timer=setInterval(()=>step(1),1200)}};
+  if(o.scrub){o.scrub.max=o.steps.length-1;o.scrub.oninput=e=>{i=+e.target.value;render()};const _r=render;render=function(){_r();o.scrub.value=i}}
+  render();return{render,go:x=>{i=x;render()}};}
+const heroSteps=[
+ {code:'Student s = new Student("Zaid");',stack:[['main()',1,'s: allocating']],heap:[{id:'Object #1',cls:'class Student',fields:[['name','"Zaid"',0],['marks','0',0]]}],log:'Object #1 allocated for Student.'},
+ {code:'s.study();',stack:[['study()',7,'this → #1'],['main()',2,'s → #1']],heap:[{id:'Object #1',cls:'class Student',fields:[['name','"Zaid"',0],['marks','10',1]]}],log:'study() ran — marks 0 → 10.'},
+ {code:'System.out.println(s.marks);',stack:[['main()',3,'s → #1']],heap:[{id:'Object #1',cls:'class Student',fields:[['name','"Zaid"',0],['marks','10',0]]}],log:'stdout → "10". Clean return.'},
+ {code:'s = null; // eligible for GC',stack:[['main()',4,'s → null']],heap:[{id:'Object #1',cls:'class Student · GC?',fields:[['name','"Zaid"',0],['marks','10',0]]}],log:'Reference dropped — #1 GC-eligible.',err:0}];
+stepper({steps:heroSteps,code:$('#hCode'),stack:$('#hStack'),heap:$('#hHeap'),log:$('#hLog'),beam:$('#hBeam'),back:$('#hBack'),fwd:$('#hFwd'),play:$('#hPlay'),stepTag:$('#hStep')});
+const SCN=[
+ {name:'Objects 101',title:'Student.java — allocation',steps:[
+  {code:'Student s = new Student("Ava");',stack:[['main()',1,'s: new']],heap:[{id:'Object #1',cls:'Student',fields:[['name','"Ava"',0],['cgpa','0.0',0]]}],log:'Allocated Object #1.'},
+  {code:'s.enroll("CS-201");',stack:[['enroll()',9,'this → #1'],['main()',2,'s → #1']],heap:[{id:'Object #1',cls:'Student',fields:[['name','"Ava"',0],['cgpa','9.1',1]]}],log:'Enrolled — cgpa 0.0 → 9.1.'},
+  {code:'System.out.println(s.cgpa);',stack:[['main()',3,'s → #1']],heap:[{id:'Object #1',cls:'Student',fields:[['name','"Ava"',0],['cgpa','9.1',0]]}],log:'stdout → "9.1".'}]},
+ {name:'Inheritance',title:'Inheritance.java — dispatch',steps:[
+  {code:'Animal a = new Dog();',stack:[['main()',1,'a: new Dog']],heap:[{id:'Object #2',cls:'Dog → Animal',fields:[['sound','"bark"',0],['legs','4',0]]}],log:'Dog() chained through super().'},
+  {code:'a.speak(); // dynamic dispatch',stack:[['Dog.speak()',6,'this → #2'],['main()',2,'a → #2']],heap:[{id:'Object #2',cls:'Dog → Animal',fields:[['sound','"WOOF"',1],['legs','4',0]]}],log:'Dispatch resolves to Dog.speak().' }]},
+ {name:'NPE Forensics',title:'Crash.java — null analysis',steps:[
+  {code:'Student s = find("Zaid");',stack:[['main()',4,'s → null?']],heap:[],log:'find() returned null.'},
+  {code:'System.out.println(s.marks);',stack:[['main()',8,'s = null']],heap:[],log:'NullPointerException at line 8 — s is null. Remedy: guard with if (s != null).',err:1}]}];
+const rail=$('#scnRail');
+function loadScn(k){const s=SCN[k];$('#vTitle').textContent=s.title;
+  rail.innerHTML=SCN.map((x,j)=>`<button class="chip" data-k="${j}" role="option" aria-selected="${j===k}" style="${j===k?'background:var(--ink);color:#fff;border-color:var(--ink)':''}">${x.name}</button>`).join('');
+  stepper({steps:s.steps,code:$('#vCode'),stack:$('#vStack'),heap:$('#vHeap'),log:$('#vLog'),beam:$('#vBeam'),back:$('#vBack'),fwd:$('#vFwd'),play:$('#vPlay'),scrub:$('#vScrub')});
+  toast('Loaded: '+s.name);}
+rail.addEventListener('click',e=>{const b=e.target.closest('[data-k]');if(b)loadScn(+b.dataset.k)});
+loadScn(0);
+const DATA=[['Classes & Objects','OOP','new Student() on the heap'],['Overloading','OOP','same name, new signature'],['Inheritance + Exceptions','OOP','extends with try and catch'],['Generic Servlet','Servlets','doGet lifecycle'],['HttpServlet','Servlets','GET versus POST'],['JDBC Login','JSP','authentication against Derby'],['JSP Implicit Objects','JSP','request, session, out'],['HTML · CSS · JS','Web','first interactive page'],['Email Validation','JS','a forgiving regex'],['DOM Background Timer','JS','interval-driven refinement'],['React Hooks Colors','React','state-driven palette'],['React SPA','React','routes without reloads'],['Spring Monolith','Spring','a single deployable'],['Spring REST','Spring','a concise microservice']];
+const cats=['All',...new Set(DATA.map(d=>d[1]))];
+let cat='All';const fg=$('#filters'),grid=$('#sylGrid');
+function drawFilters(){fg.innerHTML=cats.map(c=>`<button class="chip" data-c="${c}" aria-pressed="${c===cat}">${c}</button>`).join('')}
+function drawGrid(){const q=($('#q').value||'').toLowerCase();
+  const list=DATA.map((d,i)=>({t:d[0],c:d[1],s:d[2],i})).filter(d=>(cat==='All'||d.c===cat)&&(!q||(d.t+d.c+d.s).toLowerCase().includes(q)));
+  grid.innerHTML=list.length?list.map(d=>`<article><div class="od-row"><span class="tag">${d.c}</span><span class="od-fill"></span><span class="tag">${String(d.i+1).padStart(2,'0')}</span></div><h3>${d.t}</h3><p style="color:var(--muted);font-size:14px;margin:0" class="od-clamp-2">${d.s}</p><button class="openbtn" data-open="${d.i}">Open runtime story</button></article>`).join(''):'<p style="color:var(--muted)">No matches — try "servlet" or "hooks".</p>'}
+fg.addEventListener('click',e=>{const b=e.target.closest('[data-c]');if(b){cat=b.dataset.c;drawFilters();drawGrid()}});
+$('#q').addEventListener('input',drawGrid);
+$('#surprise').onclick=()=>{const i=Math.floor(Math.random()*DATA.length);openSheet(i)};
+grid.addEventListener('click',e=>{const b=e.target.closest('[data-open]');if(b)openSheet(+b.dataset.open)});
+function openSheet(i){const d=DATA[i];$('#sheetBody').innerHTML=`<p class="kicker">${d[1]} · PRACTICAL ${i+1} / 13</p><h2 style="font-size:30px;margin:8px 0">${d[0]}</h2><p style="color:var(--muted)">${d[2]}. Each step pairs source, stack, heap, and log output in one composed view.</p><div class="demo">4 steps · Object #${i+1} · stdout verified · null-guard included</div><button class="btn-primary" id="goViz" style="margin-top:16px;width:100%">Launch in visualizer</button>`;
+  $('#modal').classList.add('open');$('#goViz').onclick=()=>{$('#modal').classList.remove('open');go('visualizer');loadScn(i%SCN.length)}}
+$('#modal').addEventListener('click',e=>{if(e.target.closest('[data-close]'))$('#modal').classList.remove('open')});
+addEventListener('keydown',e=>{if(e.key==='Escape')$('#modal').classList.remove('open')});
+drawFilters();drawGrid();
+</script>
+</body>
+</html>

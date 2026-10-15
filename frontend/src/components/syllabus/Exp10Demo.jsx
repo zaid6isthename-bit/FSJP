@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 
 export default function Exp10Demo() {
-  const [selectedColor, setSelectedColor] = useState('BLUE');
+  const [selectedColor, setSelectedColor] = useState('PINE');
   const [renderCount, setRenderCount] = useState(1);
   const [lastAction, setLastAction] = useState('Initial Mount');
 
   const colorMap = {
-    RED: { hex: '#ef4444', text: 'text-rose-400', bg: 'bg-rose-500/20', border: 'border-rose-500/40' },
-    BLUE: { hex: '#3b82f6', text: 'text-blue-400', bg: 'bg-blue-500/20', border: 'border-blue-500/40' },
-    GREEN: { hex: '#10b981', text: 'text-emerald-400', bg: 'bg-emerald-500/20', border: 'border-emerald-500/40' },
-    YELLOW: { hex: '#f59e0b', text: 'text-amber-400', bg: 'bg-amber-500/20', border: 'border-amber-500/40' },
+    PINE: { hex: '#0E6E5C', text: 'text-[#0A4A3F]', bg: 'bg-[#EFF5F2]', border: 'border-[#CFE0D8]' },
+    OCHRE: { hex: '#B7791F', text: 'text-[#7B4A12]', bg: 'bg-[#FEF7EC]', border: 'border-[#F6E0B5]' },
+    CRIMSON: { hex: '#A93226', text: 'text-[#A93226]', bg: 'bg-[#FAF0EC]', border: 'border-[#E4C4B2]' },
+    INK: { hex: '#101418', text: 'text-[#101418]', bg: 'bg-[#FAFAF8]', border: 'border-[#E6E4DC]' },
   };
 
   const handleSelect = (color) => {
@@ -23,26 +23,26 @@ export default function Exp10Demo() {
 
   return (
     <div className="space-y-6">
-      <div className="border-b border-canvas-border pb-4">
-        <h3 className="text-base font-semibold text-white">React State Management: useState Hook</h3>
-        <p className="text-xs text-slate-400">
+      <div className="border-b border-[#E6E4DC] pb-4">
+        <h3 className="text-base font-bold text-[#101418] font-display">React State Management: useState Hook</h3>
+        <p className="text-xs text-[#5C6672]">
           Understand how functional React components manage local reactive state and trigger reconciliation re-renders
         </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Interactive Color Picker */}
-        <div className="p-6 rounded-2xl bg-canvas-card border border-canvas-border space-y-5">
-          <h4 className="text-xs font-mono uppercase tracking-wider text-slate-400">Interactive Component View</h4>
+        <div className="p-6 rounded-2xl bg-[#FAFAF8] border border-[#E6E4DC] space-y-5">
+          <h4 className="text-xs font-mono uppercase tracking-wider text-[#5C6672] font-bold font-display">Interactive Component View</h4>
 
           {/* Color Display Canvas */}
           <div
-            className={`p-8 rounded-2xl border transition-all duration-300 text-center ${active.bg} ${active.border}`}
+            className={`p-8 rounded-2xl border transition-all duration-300 text-center ${active.bg} ${active.border} shadow-subtle`}
           >
-            <h3 className="text-2xl font-bold text-white tracking-tight">
+            <h3 className="text-2xl font-black text-[#101418] tracking-tight font-display">
               You selected <span className={active.text}>{selectedColor}</span>
             </h3>
-            <p className="text-xs text-slate-300 mt-1 font-mono">
+            <p className="text-xs text-[#5C6672] mt-1 font-mono font-semibold">
               Hex Token: {active.hex}
             </p>
           </div>
@@ -56,10 +56,10 @@ export default function Exp10Demo() {
                 <button
                   key={color}
                   onClick={() => handleSelect(color)}
-                  className={`py-3 rounded-xl font-mono text-xs font-bold transition-all ${
+                  className={`py-3 rounded-xl font-mono text-xs font-bold transition-all cursor-pointer border ${
                     isSelected
-                      ? 'bg-white text-slate-900 shadow-glow-sm scale-105'
-                      : 'bg-slate-900 text-slate-300 hover:text-white border border-canvas-border hover:border-slate-600'
+                      ? 'bg-[#101418] text-white border-[#101418] shadow-subtle scale-105'
+                      : 'bg-white text-[#5C6672] hover:text-[#101418] border-[#E6E4DC]'
                   }`}
                 >
                   <div className="flex items-center justify-center gap-1.5">
@@ -76,32 +76,32 @@ export default function Exp10Demo() {
         </div>
 
         {/* React State Flow Pipeline */}
-        <div className="p-6 rounded-2xl bg-canvas-card border border-canvas-border space-y-4">
-          <h4 className="text-xs font-mono uppercase tracking-wider text-slate-400 flex items-center gap-2">
-            <span className="material-symbols-outlined text-sm text-brand-cyan">cycle</span>
+        <div className="p-6 rounded-2xl bg-[#FAFAF8] border border-[#E6E4DC] space-y-4">
+          <h4 className="text-xs font-mono uppercase tracking-wider text-[#5C6672] flex items-center gap-2 font-bold font-display">
+            <span className="material-symbols-outlined text-sm text-[#0E6E5C]">cycle</span>
             useState Reconciliation Cycle
           </h4>
 
           <div className="space-y-2 font-mono text-xs">
-            <div className="p-3 rounded-xl bg-slate-900 border border-canvas-border space-y-1">
-              <div className="text-slate-400">1. Hook Declaration:</div>
-              <div className="text-cyan-400">const [selectedColor, setSelectedColor] = useState('BLUE');</div>
+            <div className="p-3 rounded-xl bg-white border border-[#E6E4DC] space-y-1 shadow-subtle">
+              <div className="text-[#5C6672] font-semibold">1. Hook Declaration:</div>
+              <div className="text-[#0E6E5C] font-bold">const [selectedColor, setSelectedColor] = useState('PINE');</div>
             </div>
 
-            <div className="p-3 rounded-xl bg-slate-900 border border-canvas-border space-y-1">
-              <div className="text-slate-400">2. Current State Snapshot:</div>
-              <div className="text-emerald-400 font-bold">selectedColor = "{selectedColor}"</div>
-              <div className="text-slate-500 text-[11px]">Component Re-render Count: {renderCount}</div>
+            <div className="p-3 rounded-xl bg-white border border-[#E6E4DC] space-y-1 shadow-subtle">
+              <div className="text-[#5C6672] font-semibold">2. Current State Snapshot:</div>
+              <div className="text-[#101418] font-bold">selectedColor = "{selectedColor}"</div>
+              <div className="text-[#8C96A2] text-[11px]">Component Re-render Count: {renderCount}</div>
             </div>
 
-            <div className="p-3 rounded-xl bg-slate-900 border border-canvas-border space-y-1">
-              <div className="text-slate-400">3. Last State Dispatch:</div>
-              <div className="text-amber-400 text-[11px]">{lastAction}</div>
+            <div className="p-3 rounded-xl bg-white border border-[#E6E4DC] space-y-1 shadow-subtle">
+              <div className="text-[#5C6672] font-semibold">3. Last State Dispatch:</div>
+              <div className="text-[#B7791F] text-[11px] font-bold">{lastAction}</div>
             </div>
           </div>
 
-          <div className="p-3 rounded-xl bg-blue-950/20 border border-blue-500/20 text-blue-300 text-xs leading-relaxed">
-            <strong className="text-white">Why it matters:</strong> React uses a virtual DOM diffing engine. Calling <code className="text-cyan-300">setSelectedColor</code> queues a state update, triggers component function execution, calculates virtual DOM diffs, and commits updates to the browser DOM without a full page reload.
+          <div className="p-3.5 rounded-xl bg-white border border-[#E6E4DC] text-[#5C6672] text-xs leading-relaxed shadow-subtle">
+            <strong className="text-[#101418]">Why it matters:</strong> React uses a virtual DOM diffing engine. Calling <code className="text-[#0E6E5C] font-bold">setSelectedColor</code> queues a state update, triggers component function execution, calculates virtual DOM diffs, and commits updates to the browser DOM without a full page reload.
           </div>
         </div>
       </div>

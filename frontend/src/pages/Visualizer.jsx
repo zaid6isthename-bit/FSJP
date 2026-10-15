@@ -189,16 +189,16 @@ export default function Visualizer() {
   };
 
   return (
-    <div className="min-h-screen bg-[#070A0F] text-slate-100 flex flex-col">
+    <div className="min-h-screen bg-[#FAFAF8] text-[#101418] flex flex-col">
       {/* Toast Notification */}
       {toast && (
         <div
-          className={`fixed top-20 right-6 z-50 px-4 py-2.5 rounded-xl border text-xs font-semibold shadow-2xl flex items-center gap-2 animate-slide-down ${
+          className={`fixed top-20 right-6 z-50 px-4 py-2.5 rounded-xl border text-xs font-semibold shadow-card flex items-center gap-2 animate-slide-down ${
             toast.type === 'error'
-              ? 'bg-red-950/90 text-red-300 border-red-500/40 shadow-glow-error'
+              ? 'bg-[#FAF0EC] text-[#A93226] border-[#E4C4B2]'
               : toast.type === 'success'
-              ? 'bg-emerald-950/90 text-emerald-300 border-emerald-500/40 shadow-glow-sm'
-              : 'bg-blue-950/90 text-sky-300 border-blue-500/40 shadow-glow-sm'
+              ? 'bg-[#EFF5F2] text-[#0A4A3F] border-[#CFE0D8]'
+              : 'bg-white text-[#101418] border-[#E6E4DC]'
           }`}
         >
           <span className="material-symbols-outlined text-sm">

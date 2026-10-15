@@ -138,19 +138,19 @@ DELETE /api/books/1   (200 OK)`,
   const chapter = chapters.find((c) => c.num === currentChapter) || chapters[0];
 
   return (
-    <div className="min-h-screen bg-[#070A0F] text-slate-100 pb-20">
+    <div className="min-h-screen bg-[#FAFAF8] text-[#101418] pb-20">
       {/* Header */}
-      <div className="border-b border-canvas-border bg-slate-950/40">
+      <div className="border-b border-[#E6E4DC] bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex items-center justify-between flex-wrap gap-4">
             <div>
-              <span className="text-[11px] font-mono px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/20 uppercase tracking-widest font-bold">
+              <span className="text-[11px] font-mono px-2.5 py-1 rounded-full bg-[#FEF7EC] text-[#B7791F] border border-[#F6E0B5] uppercase tracking-widest font-bold">
                 5–10 Minute Viva Demonstration Flow
               </span>
-              <h1 className="text-3xl font-extrabold tracking-tight text-white mt-2">
+              <h1 className="text-3xl font-black tracking-tight text-[#101418] mt-2 font-display">
                 JVM VISION Guided Presentation
               </h1>
-              <p className="text-xs text-slate-400 mt-1">
+              <p className="text-xs text-[#5C6672] mt-1">
                 Walk the professor through the 8 core chapters covering Java execution, memory models, web fundamentals, React, and Spring Boot.
               </p>
             </div>
@@ -160,39 +160,37 @@ DELETE /api/books/1   (200 OK)`,
               <button
                 onClick={() => setCurrentChapter((c) => Math.max(1, c - 1))}
                 disabled={currentChapter === 1}
-                className="px-3 py-1.5 rounded-xl text-xs font-mono bg-canvas-card border border-canvas-border text-slate-300 disabled:opacity-40 hover:text-white"
+                className="px-3.5 py-2 rounded-xl text-xs font-mono font-bold bg-white border border-[#E6E4DC] text-[#101418] disabled:opacity-30 hover:bg-[#FAFAF8] cursor-pointer shadow-subtle"
               >
-                ← Previous Chapter
+                ← Previous
               </button>
-              <span className="text-xs font-mono text-brand-cyan px-2">
+              <span className="text-xs font-mono text-[#0E6E5C] font-bold px-2">
                 Chapter {currentChapter} of 8
               </span>
               <button
                 onClick={() => setCurrentChapter((c) => Math.min(8, c + 1))}
                 disabled={currentChapter === 8}
-                className="px-3 py-1.5 rounded-xl text-xs font-mono bg-blue-600 hover:bg-blue-500 text-white font-semibold shadow-glow-sm disabled:opacity-40"
+                className="px-4 py-2 rounded-xl text-xs font-mono font-bold bg-[#0E6E5C] hover:bg-[#0A4A3F] text-white shadow-subtle disabled:opacity-30 cursor-pointer"
               >
-                Next Chapter →
+                Next →
               </button>
             </div>
           </div>
 
           {/* Stepper Dots Bar */}
-          <div className="grid grid-cols-8 gap-2 mt-6">
+          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-2 mt-6">
             {chapters.map((ch) => (
               <button
                 key={ch.num}
                 onClick={() => setCurrentChapter(ch.num)}
-                className={`p-2 rounded-xl text-left transition-all border ${
+                className={`p-2.5 rounded-xl text-left transition-all border cursor-pointer ${
                   currentChapter === ch.num
-                    ? 'bg-blue-600/20 border-blue-500 text-white shadow-glow-sm'
-                    : currentChapter > ch.num
-                    ? 'bg-slate-900/60 border-slate-800 text-slate-400 hover:text-white'
-                    : 'bg-slate-900/30 border-slate-800/60 text-slate-600 hover:text-slate-400'
+                    ? 'bg-[#101418] border-[#101418] text-white shadow-subtle'
+                    : 'bg-[#FAFAF8] border-[#E6E4DC] text-[#5C6672] hover:text-[#101418] hover:border-[#101418]'
                 }`}
               >
                 <div className="text-[10px] font-mono font-bold">Ch. 0{ch.num}</div>
-                <div className="text-[11px] font-sans truncate">{ch.title.split(':')[0]}</div>
+                <div className="text-[11px] font-sans truncate font-medium">{ch.title.split(':')[0]}</div>
               </button>
             ))}
           </div>
@@ -201,27 +199,27 @@ DELETE /api/books/1   (200 OK)`,
 
       {/* Main Chapter Content Card */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
-        <div className="p-8 rounded-3xl bg-canvas-card border border-canvas-border space-y-8 shadow-xl">
+        <div className="p-8 rounded-3xl bg-white border border-[#E6E4DC] space-y-8 shadow-card">
           
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-canvas-border pb-6">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-[#E6E4DC] pb-6">
             <div>
-              <span className="text-xs font-mono font-bold text-brand-cyan">
+              <span className="text-xs font-mono font-bold text-[#0E6E5C]">
                 DEMONSTRATION CHAPTER 0{chapter.num}
               </span>
-              <h2 className="text-2xl font-bold text-white tracking-tight mt-1">
+              <h2 className="text-2xl font-bold text-[#101418] tracking-tight mt-1 font-display">
                 {chapter.title}
               </h2>
-              <p className="text-sm text-cyan-300 font-mono mt-1">
+              <p className="text-sm text-[#0A4A3F] font-mono mt-1 font-semibold">
                 "{chapter.tagline}"
               </p>
-              <p className="text-xs text-slate-400 mt-2 max-w-2xl leading-relaxed">
+              <p className="text-xs text-[#5C6672] mt-2 max-w-2xl leading-relaxed">
                 {chapter.summary}
               </p>
             </div>
 
             <button
               onClick={() => navigate(chapter.actionRoute)}
-              className="px-5 py-3 rounded-2xl text-xs font-semibold bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-glow-sm hover:shadow-glow-md transition-all flex items-center gap-2 whitespace-nowrap self-start lg:self-center"
+              className="px-5 py-3 rounded-2xl text-xs font-bold bg-[#0E6E5C] hover:bg-[#0A4A3F] text-white shadow-subtle transition-all flex items-center gap-2 whitespace-nowrap self-start lg:self-center cursor-pointer"
             >
               <span className="material-symbols-outlined text-sm">open_in_new</span>
               {chapter.actionLabel}
@@ -231,28 +229,28 @@ DELETE /api/books/1   (200 OK)`,
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Visual Code Artifact */}
             <div className="space-y-3">
-              <h4 className="text-xs font-mono uppercase tracking-wider text-slate-400 flex items-center gap-2">
-                <span className="material-symbols-outlined text-sm text-brand-blue">code</span>
+              <h4 className="text-xs font-mono uppercase tracking-wider text-[#5C6672] flex items-center gap-2 font-bold font-display">
+                <span className="material-symbols-outlined text-sm text-[#0E6E5C]">code</span>
                 Prescribed Code / Architectural Pattern
               </h4>
-              <div className="p-5 rounded-2xl bg-slate-900 border border-canvas-border font-mono text-xs text-emerald-300 overflow-x-auto whitespace-pre">
+              <div className="p-5 rounded-2xl bg-[#FAFAF8] border border-[#E6E4DC] font-mono text-xs text-[#101418] overflow-x-auto whitespace-pre font-semibold leading-relaxed">
                 {chapter.visualCode}
               </div>
             </div>
 
             {/* Presentation Viva Points */}
             <div className="space-y-3">
-              <h4 className="text-xs font-mono uppercase tracking-wider text-slate-400 flex items-center gap-2">
-                <span className="material-symbols-outlined text-sm text-brand-cyan">record_voice_over</span>
+              <h4 className="text-xs font-mono uppercase tracking-wider text-[#5C6672] flex items-center gap-2 font-bold font-display">
+                <span className="material-symbols-outlined text-sm text-[#0E6E5C]">record_voice_over</span>
                 Viva Defense Key Talking Points
               </h4>
               <div className="space-y-3">
                 {chapter.highlights.map((point, idx) => (
-                  <div key={idx} className="p-3.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-300 flex items-start gap-2.5">
-                    <span className="material-symbols-outlined text-sm text-blue-400 mt-0.5">
+                  <div key={idx} className="p-3.5 rounded-xl bg-[#FAFAF8] border border-[#E6E4DC] text-xs text-[#101418] flex items-start gap-2.5">
+                    <span className="material-symbols-outlined text-sm text-[#0E6E5C] mt-0.5">
                       check_circle
                     </span>
-                    <span>{point}</span>
+                    <span className="font-medium">{point}</span>
                   </div>
                 ))}
               </div>

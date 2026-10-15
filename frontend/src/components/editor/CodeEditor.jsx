@@ -58,21 +58,21 @@ export default function CodeEditor({
   };
 
   return (
-    <div className="flex flex-col h-full bg-[#0D121D] rounded-2xl border border-canvas-border overflow-hidden shadow-2xl">
+    <div className="flex flex-col h-full bg-white rounded-2xl border border-[#E6E4DC] overflow-hidden shadow-card">
       {/* Editor Header */}
-      <div className="flex flex-wrap items-center justify-between px-4 py-2.5 bg-[#090D15] border-b border-canvas-border gap-2">
+      <div className="flex flex-wrap items-center justify-between px-4 py-2.5 bg-[#FAFAF8] border-b border-[#E6E4DC] gap-2">
         <div className="flex items-center gap-3 flex-1 min-w-[200px]">
           <div className="flex items-center gap-1.5">
-            <div className="w-3 h-3 rounded-full bg-red-500/70"></div>
-            <div className="w-3 h-3 rounded-full bg-amber-500/70"></div>
-            <div className="w-3 h-3 rounded-full bg-emerald-500/70"></div>
+            <div className="w-3 h-3 rounded-full bg-[#E6E4DC]"></div>
+            <div className="w-3 h-3 rounded-full bg-[#E6E4DC]"></div>
+            <div className="w-3 h-3 rounded-full bg-[#E6E4DC]"></div>
           </div>
           <input
             type="text"
             value={title}
             onChange={(e) => onTitleChange(e.target.value)}
             placeholder="Program Title..."
-            className="bg-transparent text-sm font-semibold text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-blue-500/50 px-2 py-0.5 rounded border border-transparent hover:border-canvas-border"
+            className="bg-transparent text-xs font-bold text-[#101418] placeholder-[#8C96A2] focus:outline-none focus:ring-1 focus:ring-[#0E6E5C] px-2 py-1 rounded border border-transparent hover:border-[#E6E4DC]"
           />
         </div>
 
@@ -85,9 +85,9 @@ export default function CodeEditor({
                 if (e.target.value) onSelectExample(e.target.value);
               }}
               defaultValue=""
-              className="bg-[#131B2B] text-slate-300 text-xs font-medium px-3 py-1.5 rounded-lg border border-canvas-border hover:border-slate-600 focus:outline-none cursor-pointer"
+              className="bg-white text-[#101418] text-xs font-semibold px-3 py-1.5 rounded-lg border border-[#E6E4DC] hover:border-[#101418] focus:outline-none cursor-pointer shadow-subtle"
             >
-              <option value="" disabled>Examples ▾</option>
+              <option value="" disabled>Load Example ▾</option>
               {examples.map((ex) => (
                 <option key={ex.id} value={ex.id}>
                   {ex.title} ({ex.category})
@@ -99,7 +99,7 @@ export default function CodeEditor({
           <button
             onClick={handleCopy}
             title="Copy Code"
-            className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-white/[0.06] transition-colors"
+            className="p-1.5 text-[#5C6672] hover:text-[#101418] rounded-lg hover:bg-white border border-transparent hover:border-[#E6E4DC] transition-all cursor-pointer"
           >
             <span className="material-symbols-outlined text-sm">content_copy</span>
           </button>
@@ -107,40 +107,40 @@ export default function CodeEditor({
           <button
             onClick={handleClear}
             title="Clear Editor"
-            className="p-1.5 text-slate-400 hover:text-red-400 rounded-lg hover:bg-white/[0.06] transition-colors"
+            className="p-1.5 text-[#5C6672] hover:text-[#A93226] rounded-lg hover:bg-white border border-transparent hover:border-[#E6E4DC] transition-all cursor-pointer"
           >
-            <span className="material-symbols-outlined text-sm">delete</span>
+            <span className="material-symbols-outlined text-sm">delete_sweep</span>
           </button>
 
-          {/* Validate Button */}
           <button
             onClick={onValidate}
-            className="px-2.5 py-1.5 text-xs font-medium text-slate-300 bg-[#162032] hover:bg-[#1E2C44] rounded-lg border border-canvas-border transition-colors flex items-center gap-1"
+            title="Validate Java Syntax"
+            className="px-3 py-1.5 rounded-lg text-xs font-semibold text-[#101418] bg-white hover:bg-[#F5F4EF] border border-[#E6E4DC] transition-all shadow-subtle flex items-center gap-1 cursor-pointer"
           >
-            <span className="material-symbols-outlined text-sm text-sky-400">spellcheck</span>
+            <span className="material-symbols-outlined text-sm text-[#0E6E5C]">spellcheck</span>
             Validate
           </button>
 
-          {/* Run Button */}
           <button
             onClick={onRun}
             disabled={isRunning}
-            className="px-4 py-1.5 text-xs font-semibold text-white bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-500 hover:to-sky-400 rounded-lg shadow-glow-sm transition-all flex items-center gap-1.5 active:scale-95 disabled:opacity-50 cursor-pointer"
+            title="Execute & Simulate Trace (Ctrl + Enter)"
+            className="px-4 py-1.5 rounded-xl text-xs font-bold text-white bg-[#0E6E5C] hover:bg-[#0A4A3F] shadow-subtle transition-all active:scale-95 disabled:opacity-50 flex items-center gap-1.5 cursor-pointer"
           >
-            <span className="material-symbols-outlined text-sm">
+            <span className="material-symbols-outlined text-base">
               {isRunning ? 'sync' : 'play_arrow'}
             </span>
-            {isRunning ? 'Simulating...' : 'Run (Ctrl+Enter)'}
+            <span>{isRunning ? 'Simulating...' : 'Run Java'}</span>
           </button>
         </div>
       </div>
 
-      {/* Editor Body */}
-      <div className="relative flex-1 flex overflow-hidden font-mono text-xs">
-        {/* Line Numbers with Execution Marker */}
+      {/* Editor Body: Gutter + Code Surface */}
+      <div className="relative flex-1 flex overflow-hidden min-h-[360px] bg-white">
+        {/* Line Numbers Gutter */}
         <div
           ref={lineNumbersRef}
-          className="w-12 bg-[#090D15] text-slate-500 text-right pr-3 select-none py-3 border-r border-canvas-border overflow-hidden leading-6"
+          className="w-12 py-3 bg-[#FAFAF8] border-r border-[#E6E4DC] select-none overflow-hidden shrink-0 text-right pr-3 leading-6"
         >
           {lines.map((_, idx) => {
             const lineNum = idx + 1;
@@ -152,18 +152,18 @@ export default function CodeEditor({
                 key={lineNum}
                 className={`relative flex items-center justify-end h-6 font-mono text-[11px] ${
                   isErr
-                    ? 'text-red-400 font-bold'
+                    ? 'text-[#A93226] font-bold'
                     : isExec
-                    ? 'text-sky-400 font-bold'
-                    : 'text-slate-600'
+                    ? 'text-[#0E6E5C] font-bold'
+                    : 'text-[#8C96A2]'
                 }`}
               >
                 {isErr ? (
-                  <span className="material-symbols-outlined text-red-500 text-[13px] absolute left-1">
+                  <span className="material-symbols-outlined text-[#A93226] text-[13px] absolute left-1">
                     error
                   </span>
                 ) : isExec ? (
-                  <span className="material-symbols-outlined text-sky-400 text-[13px] absolute left-1 animate-pulse">
+                  <span className="material-symbols-outlined text-[#0E6E5C] text-[13px] absolute left-1">
                     arrow_forward_ios
                   </span>
                 ) : null}
@@ -188,7 +188,7 @@ export default function CodeEditor({
                 <div
                   key={lineNum}
                   className={`h-6 w-full ${
-                    isErr ? 'error-line' : 'executing-line shadow-glow-sm'
+                    isErr ? 'error-line' : 'executing-line'
                   }`}
                 />
               );
@@ -206,15 +206,15 @@ export default function CodeEditor({
             autoCapitalize="off"
             autoComplete="off"
             autoCorrect="off"
-            className="absolute inset-0 w-full h-full bg-transparent text-slate-100 font-mono text-xs leading-6 p-3 pl-3 resize-none focus:outline-none select-text z-10 whitespace-pre"
+            className="absolute inset-0 w-full h-full bg-transparent text-[#101418] font-mono text-xs leading-6 p-3 pl-3 resize-none focus:outline-none select-text z-10 whitespace-pre"
           />
         </div>
       </div>
 
       {/* Editor Status Bar */}
-      <div className="flex items-center justify-between px-4 py-1.5 bg-[#090D15] border-t border-canvas-border text-[11px] text-slate-400 font-mono">
+      <div className="flex items-center justify-between px-4 py-2 bg-[#FAFAF8] border-t border-[#E6E4DC] text-[11px] text-[#5C6672] font-mono">
         <div className="flex items-center gap-3">
-          <span>Java (Educational Subset)</span>
+          <span className="font-semibold text-[#101418]">Java Educational Subset</span>
           <span>•</span>
           <span>{lines.length} lines</span>
           <span>•</span>
@@ -222,11 +222,11 @@ export default function CodeEditor({
         </div>
         <div>
           {errorLine ? (
-            <span className="text-red-400 font-medium">Failure detected on line {errorLine}</span>
+            <span className="text-[#A93226] font-bold">Failure detected on line {errorLine}</span>
           ) : activeLine ? (
-            <span className="text-sky-400 font-medium">Executing line {activeLine}</span>
+            <span className="text-[#0E6E5C] font-bold">Executing line {activeLine}</span>
           ) : (
-            <span className="text-slate-500">Ready to simulate</span>
+            <span className="text-[#8C96A2]">Ready to simulate</span>
           )}
         </div>
       </div>

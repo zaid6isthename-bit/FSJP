@@ -4,34 +4,70 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: 'class',
   theme: {
     extend: {
       colors: {
+        paper: '#FAFAF8',
+        card: '#FFFFFF',
+        ink: {
+          DEFAULT: '#101418',
+          muted: '#5C6672',
+          subtle: '#8C96A2',
+        },
+        line: {
+          DEFAULT: '#E6E4DC',
+          soft: '#EFEEE8',
+        },
+        signal: {
+          DEFAULT: '#0E6E5C',
+          ink: '#0A4A3F',
+          soft: '#EFF5F2',
+          border: '#CFE0D8',
+        },
+        amber: {
+          DEFAULT: '#B7791F',
+          ink: '#7B4A12',
+          soft: '#FEF7EC',
+          border: '#F6E0B5',
+        },
+        danger: {
+          DEFAULT: '#A93226',
+          ink: '#78241C',
+          soft: '#FAF0EC',
+          border: '#E4C4B2',
+        },
+        // Backward compatibility mappings to prevent breaks
         canvas: {
-          deep: '#070A0F',
-          base: '#0B0F17',
-          surface: '#111827',
-          elevated: '#162032',
-          border: 'rgba(255, 255, 255, 0.08)',
-          'border-subtle': 'rgba(255, 255, 255, 0.04)',
+          deep: '#FAFAF8',
+          base: '#FAFAF8',
+          surface: '#FFFFFF',
+          elevated: '#F5F4EF',
+          card: '#FFFFFF',
+          border: '#E6E4DC',
+          'border-subtle': '#EFEEE8',
         },
         brand: {
-          blue: '#2563EB',
-          cyan: '#38BDF8',
-          indigo: '#6366F1',
-          purple: '#8B5CF6',
+          blue: '#101418',
+          cyan: '#0E6E5C',
+          indigo: '#101418',
+          purple: '#0E6E5C',
         }
       },
       fontFamily: {
+        display: ['"Space Grotesk"', 'Inter', 'system-ui', 'sans-serif'],
         sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-        mono: ['"JetBrains Mono"', 'monospace'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
       boxShadow: {
-        'glow-sm': '0 0 15px -3px rgba(56, 189, 248, 0.15)',
-        'glow-md': '0 0 25px -4px rgba(56, 189, 248, 0.25)',
-        'glow-error': '0 0 25px -4px rgba(239, 68, 68, 0.35)',
-        'glow-brand': '0 0 30px -5px rgba(37, 99, 235, 0.3)',
+        'subtle': '0 1px 3px rgba(16, 20, 24, 0.05), 0 1px 2px rgba(16, 20, 24, 0.03)',
+        'card': '0 4px 20px -2px rgba(16, 20, 24, 0.06), 0 2px 6px -1px rgba(16, 20, 24, 0.03)',
+        'elevated': '0 18px 48px rgba(16, 20, 24, 0.08)',
+        'modal': '0 24px 64px -12px rgba(16, 20, 24, 0.14)',
+        // Compatibility shadows (neutral, non-glowing)
+        'glow-sm': '0 2px 8px rgba(16, 20, 24, 0.06)',
+        'glow-md': '0 4px 16px rgba(16, 20, 24, 0.08)',
+        'glow-error': '0 4px 18px rgba(169, 50, 38, 0.12)',
+        'glow-brand': '0 4px 18px rgba(14, 110, 92, 0.12)',
       },
       keyframes: {
         'pulse-subtle': {

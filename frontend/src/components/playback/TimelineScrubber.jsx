@@ -7,26 +7,26 @@ export default function TimelineScrubber({ currentIndex, totalEvents, events = [
 
   const getEventDotColor = (type) => {
     switch (type) {
-      case 'OBJECT_CREATED': return 'bg-purple-400';
+      case 'OBJECT_CREATED': return 'bg-[#101418]';
       case 'METHOD_ENTER':
-      case 'METHOD_EXIT': return 'bg-indigo-400';
+      case 'METHOD_EXIT': return 'bg-[#5C6672]';
       case 'FIELD_CHANGED':
-      case 'VARIABLE_CHANGED': return 'bg-sky-400';
+      case 'VARIABLE_CHANGED': return 'bg-[#0E6E5C]';
       case 'EXCEPTION_THROWN':
-      case 'PROGRAM_FAILED': return 'bg-red-500 ring-2 ring-red-400/50';
-      case 'OUTPUT_WRITTEN': return 'bg-emerald-400';
-      default: return 'bg-slate-600';
+      case 'PROGRAM_FAILED': return 'bg-[#A93226] ring-2 ring-[#E4C4B2]';
+      case 'OUTPUT_WRITTEN': return 'bg-[#0E6E5C]';
+      default: return 'bg-[#8C96A2]';
     }
   };
 
   return (
-    <div className="w-full px-4 py-3 bg-[#090D15] rounded-xl border border-canvas-border shadow-lg space-y-2">
-      <div className="flex items-center justify-between text-[11px] font-mono text-slate-400">
-        <span className="flex items-center gap-1.5">
-          <span className="material-symbols-outlined text-sm text-sky-400">history</span>
+    <div className="w-full px-4 py-3 bg-white rounded-xl border border-[#E6E4DC] shadow-card space-y-2">
+      <div className="flex items-center justify-between text-[11px] font-mono text-[#5C6672]">
+        <span className="flex items-center gap-1.5 font-semibold text-[#101418]">
+          <span className="material-symbols-outlined text-sm text-[#0E6E5C]">history</span>
           Execution Timeline (Time Travel)
         </span>
-        <span>
+        <span className="text-[#8C96A2]">
           Scrub to travel backward / forward in time
         </span>
       </div>
@@ -34,9 +34,9 @@ export default function TimelineScrubber({ currentIndex, totalEvents, events = [
       {/* Scrubber Track */}
       <div className="relative w-full h-5 flex items-center">
         {/* Background Track */}
-        <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden relative">
+        <div className="w-full h-2 bg-[#EFEEE8] rounded-full overflow-hidden relative border border-[#E6E4DC]">
           <div
-            className="h-full bg-gradient-to-r from-blue-600 to-sky-400 transition-all"
+            className="h-full bg-[#0E6E5C] transition-all"
             style={{ width: `${progressPercent}%` }}
           />
         </div>
@@ -51,7 +51,7 @@ export default function TimelineScrubber({ currentIndex, totalEvents, events = [
                   key={idx}
                   title={`Step ${idx + 1}: ${ev.eventType}`}
                   className={`w-2 h-2 rounded-full transition-all ${
-                    isPastOrCurrent ? getEventDotColor(ev.eventType) : 'bg-slate-700'
+                    isPastOrCurrent ? getEventDotColor(ev.eventType) : 'bg-[#D9D7CE]'
                   }`}
                 />
               );
@@ -71,7 +71,7 @@ export default function TimelineScrubber({ currentIndex, totalEvents, events = [
 
         {/* Scrubber Thumb */}
         <div
-          className="absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-white shadow-glow-md border-2 border-sky-500 pointer-events-none transition-all z-10"
+          className="absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-white shadow-card border-2 border-[#0E6E5C] pointer-events-none transition-all z-10"
           style={{ left: `calc(${progressPercent}% - 8px)` }}
         />
       </div>

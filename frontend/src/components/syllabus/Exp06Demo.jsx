@@ -81,29 +81,29 @@ export default function Exp06Demo() {
 
   return (
     <div className="space-y-6">
-      <div className="border-b border-canvas-border pb-4">
-        <h3 className="text-base font-semibold text-white">JSP Implicit Objects Inspector</h3>
-        <p className="text-xs text-slate-400">
+      <div className="border-b border-[#E6E4DC] pb-4">
+        <h3 className="text-base font-bold text-[#101418] font-display">JSP Implicit Objects Inspector</h3>
+        <p className="text-xs text-[#5C6672]">
           Inspect the 9 container-instantiated implicit objects automatically available in every JSP scriptlet and expression
         </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Object Selector */}
-        <div className="p-4 rounded-2xl bg-canvas-card border border-canvas-border space-y-2">
-          <h4 className="text-xs font-mono uppercase tracking-wider text-slate-400 px-2 mb-2">Implicit Objects</h4>
+        <div className="p-4 rounded-2xl bg-[#FAFAF8] border border-[#E6E4DC] space-y-2">
+          <h4 className="text-xs font-mono uppercase tracking-wider text-[#5C6672] px-2 mb-2 font-bold font-display">Implicit Objects</h4>
           {jspObjects.map((obj) => (
             <button
               key={obj.name}
               onClick={() => setSelectedObject(obj.name)}
-              className={`w-full p-2.5 rounded-xl text-left font-mono text-xs transition-all flex items-center justify-between ${
+              className={`w-full p-2.5 rounded-xl text-left font-mono text-xs transition-all flex items-center justify-between cursor-pointer border ${
                 selectedObject === obj.name
-                  ? 'bg-blue-600/20 text-blue-300 border border-blue-500/30 font-bold shadow-glow-sm'
-                  : 'text-slate-400 hover:text-white hover:bg-slate-900/60'
+                  ? 'bg-[#EFF5F2] text-[#0A4A3F] border-2 border-[#0E6E5C] font-bold shadow-subtle'
+                  : 'bg-white text-[#5C6672] border-[#E6E4DC] hover:text-[#101418]'
               }`}
             >
               <span>{obj.name}</span>
-              <span className="text-[10px] px-1.5 py-0.5 rounded bg-slate-900 text-slate-400 font-sans">
+              <span className="text-[10px] px-2 py-0.5 rounded bg-[#FAFAF8] text-[#5C6672] border border-[#E6E4DC] font-sans font-semibold">
                 {obj.scope}
               </span>
             </button>
@@ -111,29 +111,29 @@ export default function Exp06Demo() {
         </div>
 
         {/* Object Details & Live State */}
-        <div className="lg:col-span-2 p-6 rounded-2xl bg-canvas-card border border-canvas-border space-y-5">
-          <div className="flex items-center justify-between pb-3 border-b border-canvas-border">
+        <div className="lg:col-span-2 p-6 rounded-2xl bg-[#FAFAF8] border border-[#E6E4DC] space-y-5">
+          <div className="flex items-center justify-between pb-3 border-b border-[#E6E4DC] flex-wrap gap-2">
             <div>
-              <span className="text-base font-mono font-bold text-brand-cyan">{currentObj.name}</span>
-              <span className="ml-2 text-xs font-mono text-slate-400">({currentObj.scope})</span>
+              <span className="text-base font-mono font-bold text-[#0E6E5C]">{currentObj.name}</span>
+              <span className="ml-2 text-xs font-mono text-[#5C6672]">({currentObj.scope})</span>
             </div>
-            <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">
+            <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-white text-[#101418] border border-[#E6E4DC] font-semibold">
               {currentObj.type}
             </span>
           </div>
 
           <div>
-            <h5 className="text-xs font-mono uppercase tracking-wider text-slate-400 mb-1">Architectural Role</h5>
-            <p className="text-xs text-slate-300 leading-relaxed">{currentObj.purpose}</p>
+            <h5 className="text-xs font-mono uppercase tracking-wider text-[#5C6672] mb-1 font-bold font-display">Architectural Role</h5>
+            <p className="text-xs text-[#101418] leading-relaxed font-medium">{currentObj.purpose}</p>
           </div>
 
           <div>
-            <h5 className="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">Simulated Runtime State</h5>
-            <div className="p-4 rounded-xl bg-slate-900 border border-canvas-border font-mono text-xs space-y-2">
+            <h5 className="text-xs font-mono uppercase tracking-wider text-[#5C6672] mb-2 font-bold font-display">Simulated Runtime State</h5>
+            <div className="p-4 rounded-xl bg-white border border-[#E6E4DC] font-mono text-xs space-y-2 shadow-subtle">
               {Object.entries(currentObj.liveState).map(([key, val]) => (
-                <div key={key} className="flex justify-between py-1 px-2 rounded bg-slate-800/40">
-                  <span className="text-slate-400">{key}:</span>
-                  <span className="text-emerald-400 font-semibold">{String(val)}</span>
+                <div key={key} className="flex justify-between py-1 px-2.5 rounded bg-[#FAFAF8] border border-[#EFEEE8]">
+                  <span className="text-[#5C6672]">{key}:</span>
+                  <span className="text-[#0E6E5C] font-bold">{String(val)}</span>
                 </div>
               ))}
             </div>

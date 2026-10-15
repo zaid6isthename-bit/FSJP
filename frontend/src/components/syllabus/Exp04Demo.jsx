@@ -42,18 +42,18 @@ export default function Exp04Demo() {
 
   return (
     <div className="space-y-6">
-      <div className="border-b border-canvas-border pb-4">
-        <h3 className="text-base font-semibold text-white">Servlet Container & HTTP Request Simulator</h3>
-        <p className="text-xs text-slate-400">
+      <div className="border-b border-[#E6E4DC] pb-4">
+        <h3 className="text-base font-bold text-[#101418] font-display">Servlet Container & HTTP Request Simulator</h3>
+        <p className="text-xs text-[#5C6672]">
           Visualize how Jakarta Servlet containers dispatch requests to GenericServlet (service()) and HttpServlet (doGet() / doPost())
         </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Request Configuration */}
-        <div className="p-5 rounded-2xl bg-canvas-card border border-canvas-border space-y-4">
-          <h4 className="text-xs font-mono uppercase tracking-wider text-slate-400 flex items-center gap-2">
-            <span className="material-symbols-outlined text-sm text-brand-blue">http</span>
+        <div className="p-5 rounded-2xl bg-[#FAFAF8] border border-[#E6E4DC] space-y-4">
+          <h4 className="text-xs font-mono uppercase tracking-wider text-[#5C6672] flex items-center gap-2 font-bold font-display">
+            <span className="material-symbols-outlined text-sm text-[#0E6E5C]">http</span>
             HTTP Request Constructor
           </h4>
 
@@ -61,10 +61,10 @@ export default function Exp04Demo() {
             <button
               type="button"
               onClick={() => setMethod('GET')}
-              className={`flex-1 py-2 rounded-xl font-mono text-xs font-bold transition-all ${
+              className={`flex-1 py-2.5 rounded-xl font-mono text-xs font-bold transition-all cursor-pointer border ${
                 method === 'GET'
-                  ? 'bg-blue-600 text-white shadow-glow-sm'
-                  : 'bg-slate-900 text-slate-400 border border-canvas-border'
+                  ? 'bg-[#101418] text-white border-[#101418] shadow-subtle'
+                  : 'bg-white text-[#5C6672] border-[#E6E4DC] hover:text-[#101418]'
               }`}
             >
               GET Request (doGet)
@@ -72,10 +72,10 @@ export default function Exp04Demo() {
             <button
               type="button"
               onClick={() => setMethod('POST')}
-              className={`flex-1 py-2 rounded-xl font-mono text-xs font-bold transition-all ${
+              className={`flex-1 py-2.5 rounded-xl font-mono text-xs font-bold transition-all cursor-pointer border ${
                 method === 'POST'
-                  ? 'bg-emerald-600 text-white shadow-glow-sm'
-                  : 'bg-slate-900 text-slate-400 border border-canvas-border'
+                  ? 'bg-[#101418] text-white border-[#101418] shadow-subtle'
+                  : 'bg-white text-[#5C6672] border-[#E6E4DC] hover:text-[#101418]'
               }`}
             >
               POST Request (doPost)
@@ -84,30 +84,30 @@ export default function Exp04Demo() {
 
           <div className="space-y-3 font-mono text-xs">
             <div>
-              <label className="block text-[11px] text-slate-400 mb-1">Target Endpoint URL</label>
-              <div className="px-3 py-2 rounded-xl bg-slate-900 border border-canvas-border text-cyan-400">
+              <label className="block text-[11px] text-[#5C6672] mb-1 font-bold">Target Endpoint URL</label>
+              <div className="px-3 py-2 rounded-xl bg-white border border-[#E6E4DC] text-[#0E6E5C] font-bold shadow-subtle">
                 http://localhost:8080/StudentServlet
               </div>
             </div>
 
             <div>
-              <label className="block text-[11px] text-slate-400 mb-1">Parameter: name</label>
+              <label className="block text-[11px] text-[#5C6672] mb-1 font-bold">Parameter: name</label>
               <input
                 type="text"
                 value={studentName}
                 onChange={(e) => setStudentName(e.target.value)}
-                className="w-full px-3 py-2 text-xs rounded-xl bg-slate-900 border border-canvas-border text-white"
+                className="w-full px-3 py-2 text-xs rounded-xl bg-white border border-[#E6E4DC] text-[#101418] focus:border-[#0E6E5C] focus:outline-none shadow-subtle font-medium"
               />
             </div>
 
             {method === 'POST' && (
               <div>
-                <label className="block text-[11px] text-slate-400 mb-1">Parameter: course</label>
+                <label className="block text-[11px] text-[#5C6672] mb-1 font-bold">Parameter: course</label>
                 <input
                   type="text"
                   value={course}
                   onChange={(e) => setCourse(e.target.value)}
-                  className="w-full px-3 py-2 text-xs rounded-xl bg-slate-900 border border-canvas-border text-white"
+                  className="w-full px-3 py-2 text-xs rounded-xl bg-white border border-[#E6E4DC] text-[#101418] focus:border-[#0E6E5C] focus:outline-none shadow-subtle font-medium"
                 />
               </div>
             )}
@@ -115,7 +115,7 @@ export default function Exp04Demo() {
             <button
               onClick={simulateRequest}
               disabled={isSimulating}
-              className="w-full py-2.5 rounded-xl font-sans font-semibold text-xs bg-blue-600 hover:bg-blue-500 text-white shadow-glow-sm transition-all flex items-center justify-center gap-2"
+              className="w-full py-2.5 rounded-xl font-sans font-bold text-xs bg-[#0E6E5C] hover:bg-[#0A4A3F] text-white shadow-subtle transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
             >
               <span className="material-symbols-outlined text-sm">send</span>
               Dispatch HTTP {method} to Servlet
@@ -124,9 +124,9 @@ export default function Exp04Demo() {
         </div>
 
         {/* Lifecycle Flow Pipeline */}
-        <div className="p-5 rounded-2xl bg-canvas-card border border-canvas-border space-y-4">
-          <h4 className="text-xs font-mono uppercase tracking-wider text-slate-400 flex items-center gap-2">
-            <span className="material-symbols-outlined text-sm text-brand-cyan">alt_route</span>
+        <div className="p-5 rounded-2xl bg-[#FAFAF8] border border-[#E6E4DC] space-y-4">
+          <h4 className="text-xs font-mono uppercase tracking-wider text-[#5C6672] flex items-center gap-2 font-bold font-display">
+            <span className="material-symbols-outlined text-sm text-[#0E6E5C]">alt_route</span>
             Servlet Lifecycle Pipeline
           </h4>
 
@@ -141,29 +141,29 @@ export default function Exp04Demo() {
                 key={item.step}
                 className={`p-3 rounded-xl border transition-all ${
                   activeStep === item.step
-                    ? 'bg-blue-500/20 border-blue-500/40 text-blue-300 shadow-glow-sm'
+                    ? 'bg-[#EFF5F2] border-2 border-[#0E6E5C] text-[#0A4A3F] shadow-subtle'
                     : activeStep > item.step
-                    ? 'bg-emerald-950/20 border-emerald-500/30 text-emerald-300'
-                    : 'bg-slate-900/60 border-slate-800 text-slate-500'
+                    ? 'bg-white border-[#CFE0D8] text-[#101418]'
+                    : 'bg-white border-[#E6E4DC] text-[#8C96A2]'
                 }`}
               >
                 <div className="flex items-center justify-between font-bold">
                   <span>{item.step}. {item.label}</span>
-                  {activeStep === item.step && <span className="text-[10px] text-blue-400 animate-pulse">PROCESSING</span>}
-                  {activeStep > item.step && <span className="text-[10px] text-emerald-400">DONE</span>}
+                  {activeStep === item.step && <span className="text-[10px] text-[#0E6E5C] animate-pulse">PROCESSING</span>}
+                  {activeStep > item.step && <span className="text-[10px] text-[#0E6E5C]">DONE</span>}
                 </div>
-                <div className="text-[11px] text-slate-400 font-sans mt-0.5">{item.desc}</div>
+                <div className="text-[11px] text-[#5C6672] font-sans mt-0.5">{item.desc}</div>
               </div>
             ))}
           </div>
 
           {response && (
-            <div className="mt-4 p-3.5 rounded-xl bg-slate-900 border border-emerald-500/30 font-mono text-xs space-y-1.5 animate-fadeIn">
-              <div className="flex justify-between text-emerald-400 font-bold border-b border-slate-800 pb-1">
+            <div className="mt-4 p-3.5 rounded-xl bg-white border border-[#CFE0D8] font-mono text-xs space-y-1.5 animate-fadeIn shadow-subtle">
+              <div className="flex justify-between text-[#0E6E5C] font-bold border-b border-[#E6E4DC] pb-1">
                 <span>Status: {response.status}</span>
                 <span>{response.contentType}</span>
               </div>
-              <pre className="text-slate-300 text-[11px] overflow-x-auto whitespace-pre-wrap pt-1">
+              <pre className="text-[#101418] text-[11px] overflow-x-auto whitespace-pre-wrap pt-1 font-semibold">
                 {response.body}
               </pre>
             </div>
